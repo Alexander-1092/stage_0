@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
 }
 
 html {
@@ -68,11 +69,17 @@ a {
 }
 
 .header__logo-title {
+    letter-spacing: 6%;
+    line-height: 110%;
     font-size: 32px;
     color: var(--color-btn-marker);
 }
 
-.header__logo-subtitle {}
+.header__logo-subtitle {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 13px;
+}
 
 .header__menu {}
 
@@ -87,6 +94,9 @@ a {
 .header__item {}
 
 .header__link {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 160%;
+    font-size: 15px;
     color: var(--color-title);
     text-decoration: none;
 }
@@ -101,16 +111,43 @@ a {
 .not-only {}
 
 .not-only__body {
+    display: flex;
+    align-items: center;
     padding-top: 180px;
 }
 
-.not-only__title-btn {}
+.not-only__title-btn {
+    width: 460px;
+    display: flex;
+    gap: 42px;
+    flex-direction: column;
+}
 
-.not-only__title {}
+.not-only__title {
+    width: 360px;
+    font-size: 44px;
+    font-weight: 400px;
 
-.not-only__text {}
+}
 
-.not-only__btn {}
+.not-only__text {
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-text);
+}
+
+.not-only__btn {
+    width: 207px;
+    padding: 15px 45px;
+    border-radius: 100px;
+    background-color: var(--color-btn-marker);
+    color: var(--color-btn-text);
+}
+
+.not-only__btn:hover {
+    background-color: var(--color-btn-hover);
+    cursor: pointer;
+}
 
 .box-img {}
 
