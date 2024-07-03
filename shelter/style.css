@@ -22,6 +22,7 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
+    letter-spacing: 6%;
 }
 
 h1,
@@ -152,10 +153,11 @@ a {
 
 .about__body {
     padding-top: 80px;
-    padding-bottom: 100px;
+    padding-bottom: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 120px;
 }
 
@@ -194,31 +196,100 @@ a {
     margin-bottom: 0px;
 }
 
-.our-Friends {}
+.our-Friends {
+    position: relative;
+}
 
-.our-Friends__body {}
+.our-Friends__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.our-Friends__title {}
+.our-Friends__title {
+    width: 415px;
+    padding-bottom: 59px;
+    text-align: center;
+    color: var(--color-title);
+    font-size: 35px;
+    height: 130%;
+    letter-spacing: 6%;
+}
 
 .slider {}
 
-.our-Friends__slider {}
+.our-Friends__slider {
+    padding-bottom: 90px;
+}
 
-.slider__track {}
+.slider__track {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+    flex-wrap: wrap;
+}
 
-.slider__slide {}
+.slider__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
 
 .slider__img {}
 
-.slider__title {}
+.slider__title {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 6%;
+    color: var(--color-title);
+}
 
-.slider__btn {}
+.slider__btn {
+    width: 187px;
+    padding: 15px 45px;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 6%;
+    color: var(--color-btn-text);
+    background-color: #fff;
+    border: 2px solid #000000;
+    border-radius: 100px;
+}
 
-.slider__arrow-prev {}
+.slider__arrow {
+    position: absolute;
+    top: calc(50% + 35px);
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid rgb(241, 205, 179);
+}
 
-.slider__arrow-next {}
+.slider__arrow-prev {
+    left: 25px;
+}
 
-.our-Friends__btn {}
+.slider__arrow-next {
+    right: 25px;
+    transform: translate(50%, -50%);
+}
+
+.our-Friends__btn {
+    width: 261px;
+    padding: 15px 45px;
+    background-color: var(--color-btn-marker);
+    border-radius: 100px;
+    font-size: 17px;
+    line-height: 130%;
+}
 
 .help {}
 
