@@ -49,9 +49,6 @@ h2 {
 }
 
 
-
-.header {}
-
 .header__container {
     position: absolute;
     top: 0;
@@ -86,6 +83,7 @@ h2 {
     font-size: 32px;
     font-weight: 400;
     color: var(--color-btn-marker);
+    height: 35px;
 }
 
 .header__logo-subtitle {
@@ -110,6 +108,7 @@ h2 {
 
 .header__link {
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
     line-height: 160%;
     font-size: 15px;
     color: var(--color-title);
@@ -139,8 +138,10 @@ h2 {
     flex-direction: column;
 }
 
+
 .not-only__title {
     width: 310px;
+    max-height: 114px;
     font-size: 44px;
     line-height: 130%;
     letter-spacing: 0;
@@ -157,6 +158,7 @@ h2 {
 
 .not-only__btn {
     width: 207px;
+    height: 52px;
     padding: 15px 45px;
     border-radius: 100px;
     background-color: var(--color-btn-marker);
@@ -172,11 +174,24 @@ h2 {
     cursor: pointer;
 }
 
+.box-img {}
+
+.not-only__box-img {
+    width: 698px;
+    height: 728px;
+    position: relative;
+    z-index: 5;
+    background-image: url(./assets/index/img/start-screen-puppy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
 
 
 .about__body {
     padding-top: 80px;
-    padding-bottom: 180px;
+    padding-bottom: 175px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,9 +214,6 @@ h2 {
     max-width: 370px;
     margin-bottom: 24px;
     color: var(--color-title);
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 6%;
 }
 
 .about__text {
@@ -230,7 +242,7 @@ h2 {
 }
 
 .our-Friends__title {
-    width: 415px;
+    max-width: 415px;
     padding-bottom: 59px;
     text-align: center;
     color: var(--color-title);
