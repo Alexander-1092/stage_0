@@ -174,7 +174,6 @@ h2 {
     cursor: pointer;
 }
 
-.box-img {}
 
 .not-only__box-img {
     width: 698px;
@@ -191,14 +190,16 @@ h2 {
 
 .about__body {
     padding-top: 80px;
-    padding-bottom: 175px;
+    padding-bottom: 179px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 120px;
 }
 
-.about__box-img {}
+.about__box-img {
+    max-height: 408px;
+}
 
 .about__img {}
 
@@ -207,11 +208,12 @@ h2 {
 }
 
 .about__block-right {
-    padding-top: 14px;
+    
 }
 
 .about__title {
     max-width: 370px;
+    max-height: 92px;
     margin-bottom: 24px;
     color: var(--color-title);
 }
@@ -223,12 +225,17 @@ h2 {
     font-size: 15px;
     line-height: 160%;
     text-align: left;
+    font-weight: 400;
 
 }
 
-.block-right:last-child {
+.about__text:last-child {
+    margin-bottom: 0;
+}
+
+/* .block-right:last-child {
     margin-bottom: 0px;
-}
+} */
 
 .our-Friends {
     position: relative;
