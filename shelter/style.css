@@ -180,7 +180,6 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 120px;
 }
 
@@ -189,7 +188,7 @@ h2 {
 .about__img {}
 
 .block-right {
-    width: 430px;
+    max-width: 430px;
 }
 
 .about__block-right {
@@ -197,7 +196,7 @@ h2 {
 }
 
 .about__title {
-    width: 370px;
+    max-width: 370px;
     margin-bottom: 24px;
     color: var(--color-title);
     font-size: 35px;
