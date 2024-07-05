@@ -115,6 +115,16 @@ h2 {
     text-decoration: none;
 }
 
+.header__item {
+    transition: all 1s;
+}
+
+.header__item:hover {
+    border-bottom: 1px solid var(--color-btn-marker);
+}
+
+
+
 
 .container__general {
     background: url(./assets/index/svg/noise_transparent.svg), url(./assets/index/svg/noise_transparent@2x.svg), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
