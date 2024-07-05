@@ -561,6 +561,14 @@ h2 {
     color: var(--color-btn-marker);
 }
 
+.contact__link-icon:hover {
+    color: var(--color-btn-hover);
+}
+
+.contact__link-icon:active {
+    color: var(--color-btn-marker);
+}
+
 .footer__tel {}
 
 .footer__location {
