@@ -337,8 +337,13 @@ h2 {
     background-color: var(--color-btn-hover);
 }
 
+.slider__arrow:active>.slider__symbol {
+    color: var(--color-not-only-opacity);
+}
+
 .slider__arrow:active {
     background-color: #fff;
+    border: 2px solid var(--color-not-only-opacity);
 }
 
 .slider__arrow-prev {
@@ -348,6 +353,21 @@ h2 {
 .slider__arrow-next {
     right: 25px;
     transform: translate(50%, -50%);
+}
+
+.slider__symbol {
+    font-size: 22px;
+    color: #000000;
+    font-weight: 100;
+}
+
+
+.slider__arrow-symbol-prev {
+    transform: rotate(90deg);
+}
+
+.slider__arrow-symbol-next {
+    transform: rotate(-90deg);
 }
 
 .our-Friends__btn {
@@ -433,13 +453,12 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .addition__box-img {}
 
-.addition__img {
-    
-}
+.addition__img {}
 
 .addition__block-right {
     display: flex;
