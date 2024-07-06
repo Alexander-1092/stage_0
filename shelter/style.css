@@ -305,7 +305,8 @@ h2 {
     display: flex;
     justify-content: space-between;
     gap: 90px;
-    flex-wrap: wrap;
+    overflow: hidden;
+
 }
 
 .slider__slide {
@@ -473,8 +474,21 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
+    gap: 55px 120px;
+    flex-wrap: wrap;
 }
+
+@media (max-width:880px) {
+    .help__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 55px 60px;
+        flex-wrap: wrap;
+    }
+}
+
 
 .help__box>figure {
     display: flex;
@@ -482,9 +496,6 @@ h2 {
     align-items: center;
 }
 
-.help__box-top {
-    margin-bottom: 55px;
-}
 
 .help__box-img {
     margin-bottom: 30px;
@@ -498,7 +509,6 @@ h2 {
     color: var(--color-title);
 }
 
-.help__box-bottom {}
 
 .addition {
     margin-bottom: 100px;
