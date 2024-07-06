@@ -113,14 +113,19 @@ h2 {
     font-size: 15px;
     color: var(--color-title);
     text-decoration: none;
+    transition: all 0.5s;
 }
 
 .header__item {
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .header__item:hover {
     border-bottom: 1px solid var(--color-btn-marker);
+}
+
+.header__item:hover>.header__link {
+    color: var(--color-not-only-opacity);
 }
 
 
@@ -289,7 +294,15 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    cursor: pointer;
+}
 
+.slider__slide:hover>img {
+    filter: opacity(0.5);
+}
+
+.slider__slide:hover>span {
+    filter: opacity(0.5);
 }
 
 .slider__img {}
@@ -301,6 +314,8 @@ h2 {
     line-height: 23px;
     color: var(--color-title);
 }
+
+
 
 .slider__btn {
     width: 187px;
