@@ -125,7 +125,7 @@
 .slider__track {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px 40px;
     overflow: hidden;
     flex-wrap: wrap;
 
@@ -138,6 +138,7 @@
     align-items: center;
     gap: 30px;
     cursor: pointer;
+    padding-bottom: 30px;
 }
 
 .slider__slide:hover>img {
