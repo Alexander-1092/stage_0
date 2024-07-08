@@ -114,7 +114,11 @@
     height: 92px;
     margin-bottom: 59px;
     text-align: center;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: calc(35px * 0.06);
     color: var(--color-title);
+    font-weight: 400;
 
 }
 
