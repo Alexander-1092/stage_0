@@ -108,13 +108,10 @@
     max-height: 408px;
 }
 
-.about__img {}
-
 .block-right {
     max-width: 430px;
 }
 
-.about__block-right {}
 
 .about__title {
     max-width: 370px;
@@ -386,9 +383,6 @@
     flex-wrap: wrap;
 }
 
-.addition__box-img {}
-
-.addition__img {}
 
 .addition__block-right {
     display: flex;
@@ -435,8 +429,6 @@
 .addition__card:active {
     background-color: var(--color-btn-marker);
 }
-
-.addition__icon-card {}
 
 .addition__text {
     max-width: 380px;
