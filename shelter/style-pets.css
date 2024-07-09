@@ -1,16 +1,6 @@
 @import url("./main.css");
 @import url("./footer.css");
 
-:root {
-    --color-btn-marker: #F1CDB3;
-    --color-btn-hover: #FDDCC4;
-    --color-title: #545454;
-    --color-text: #4C4C4C;
-    --color-btn-text: #292929;
-    --colot-text-help-opacity: #B2B2B2;
-    --color-not-only-opacity: #CDCDCD;
-}
-
 
 .header {
     margin-bottom: 80px;
@@ -222,6 +212,14 @@
     color: #000000;
 }
 
+.slider__navigation>.slider__pag-inactive {
+    border: 2px solid var(--color-not-only-opacity);
+    pointer-events: none;
+}
+
+.slider__pag-inactive>div {
+    background-color: var(--color-not-only-opacity);
+}
 
 .slider__pag-box:hover {
     background-color: var(--color-btn-hover);
@@ -236,7 +234,6 @@
 .slider__pag-box:active>.slider__pag {
     background-color: var(--color-not-only-opacity);
 }
-
 
 
 .slider__navigation>div {
@@ -279,8 +276,6 @@
 
 .slider__pag-arrow-next {
     transform: rotate(25deg) translateY(-2px);
-
-
 }
 
 .slider__pag-arrow-next::after {
