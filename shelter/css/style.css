@@ -2,25 +2,11 @@
 @import url("./main.css");
 @import url("./footer.css");
 
-:root {
-    --color-btn-marker: #F1CDB3;
-    --color-btn-hover: #FDDCC4;
-    --color-title: #545454;
-    --color-text: #4C4C4C;
-    --color-btn-text: #292929;
-    --colot-text-help-opacity: #B2B2B2;
-    --color-not-only-opacity: #CDCDCD;
-}
-
-.main {}
-
 
 .container__general {
     background: url(./assets/index/svg/noise_transparent.svg), url(./assets/index/svg/noise_transparent@2x.svg), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
-
-.not-only {}
 
 
 .not-only__body {
@@ -91,7 +77,7 @@
     height: 728px;
     position: relative;
     z-index: 5;
-    background-image: url(./assets/index/img/start-screen-puppy.png);
+    background-image: url(../assets/index/img/start-screen-puppy.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
