@@ -8,6 +8,9 @@
 }
 
 
+.container__uniq {
+    background-color: #F6F6F6;
+}
 
 .not-only__body {
     display: flex;
@@ -112,7 +115,7 @@
 
 .about__body {
     padding-top: 80px;
-    padding-bottom: 179px;
+    padding-bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,10 +169,13 @@
 
 .our-Friends {
     position: relative;
-    margin-bottom: 179px;
+    padding-top: 80px;
+    padding-bottom: 100px;
 }
 
+
 .our-Friends__body {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,7 +290,7 @@
 
 .slider__arrow {
     position: absolute;
-    top: calc(50% + 19px);
+    top: calc(50% + 10px);
     transform: translate(-50%, -50%);
     width: 52px;
     height: 52px;
@@ -366,6 +372,7 @@
 }
 
 .help {
+    margin-top: 80px;
     margin-bottom: 180px;
 }
 
