@@ -309,7 +309,7 @@
 
 .help {
     margin-top: 80px;
-    margin-bottom: 180px;
+    margin-bottom: 100px;
 }
 
 .help__body {
@@ -369,6 +369,7 @@
 
 
 .addition {
+    margin-top: 80px;
     margin-bottom: 100px;
 }
 
