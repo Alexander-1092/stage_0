@@ -176,6 +176,16 @@
     align-items: center;
 }
 
+
+@media (max-width:1200px) {
+    .our-Friends__body {
+        padding-top: 80px;
+    }
+
+}
+
+
+
 .our-Friends__title {
     max-width: 400px;
     height: 92px;
@@ -194,8 +204,17 @@
     justify-content: space-between;
     gap: 90px;
     overflow: hidden;
-
 }
+
+@media (max-width:1200px) {
+    .slider__track {
+        max-width: 580px;
+        gap: 40px;
+
+    }
+}
+
+
 
 .slider__slide {
     display: flex;
@@ -204,6 +223,7 @@
     align-items: center;
     gap: 30px;
     cursor: pointer;
+
 }
 
 .slider__slide:hover>img {
@@ -299,6 +319,13 @@
     right: 25px;
     transform: translate(50%, -50%);
 }
+
+@media (max-width:1200px) {
+    .slider__arrow {
+        top: calc(50% + 55px);
+    }
+}
+
 
 .slider__symbol {
     font-size: 22px;
