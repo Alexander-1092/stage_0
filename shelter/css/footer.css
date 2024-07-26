@@ -56,6 +56,8 @@ h2 {
     align-items: center;
 }
 
+
+
 .footer__box {
     margin-bottom: 40px;
     display: flex;
@@ -63,6 +65,9 @@ h2 {
     align-items: center;
     gap: 160px;
 }
+
+
+
 
 .footer__contact {
     display: flex;
@@ -75,12 +80,34 @@ h2 {
     text-align: left;
 }
 
+@media (max-width:1200px) {
+    .footer__body {
+        padding-top: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer__box {
+        padding: 0px 34px 25px 34px;
+        gap: 60px;
+    }
+
+    .footer__title {
+        width: 280px;
+        text-align: left;
+    }
+
+}
+
+
+
 .contact {
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 20px;
 }
+
 
 
 .contact__link-icon {
