@@ -7,3 +7,12 @@ const pet =
 console.log(main);
 console.log(pet);
 console.log("100/100");
+
+const burger = document.querySelector(".burger");
+const headerList = document.querySelector(".header__menu");
+
+console.log(headerList);
+
+burger.addEventListener("click", () => {
+  headerList.classList.toggle("active-burger");
+});

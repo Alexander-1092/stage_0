@@ -3,7 +3,10 @@
 
 
 
-
+.header {
+    position: relative;
+    z-index: 2;
+}
 
 
 .header__body {
@@ -63,6 +66,51 @@
     justify-content: space-between;
     list-style: none;
 }
+
+
+@media (max-width:700px) {
+    .header__menu {
+        position: absolute;
+        top: -900px;
+        right: 0px;
+    }
+
+    .header__list {
+        flex-direction: column;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-btn-marker);
+    }
+
+    .burger::after {
+        position: absolute;
+        top: 10px;
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-btn-marker);
+    }
+
+    .burger::before {
+        position: absolute;
+        top: -10px;
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-btn-marker);
+    }
+
+    .active-burger {
+        top: 0;
+    }
+
+}
+
 
 
 .header__link {
