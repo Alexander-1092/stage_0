@@ -75,8 +75,11 @@
     transition: all 0.5s;
 }
 
-.header__link--activ {
+.header__item--active {
     border-bottom: 3px solid var(--color-btn-marker);
+}
+
+.header__link--activ {
     color: var(--color-btn-text);
     pointer-events: none;
 }
@@ -88,7 +91,7 @@
 
 
 .header__item:hover>.header__link {
-    color: var(--color-not-only-opacity);
+    color: var(--color-btn-text);
 }
 
 
@@ -180,7 +183,7 @@
     font-size: 17px;
     line-height: 130%;
     font-weight: 400;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.6px;
     color: var(--color-btn-text);
     background-color: #fff;
     border: 2px solid var(--color-btn-marker);
