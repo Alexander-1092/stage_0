@@ -210,6 +210,10 @@
 
 
 @media (max-width:700px) {
+    .about {
+        height: 974px;
+    }
+
     .about__body {
         padding: 42px 0px;
         gap: 42px;
@@ -217,6 +221,9 @@
     }
 
     .about__title {
+        width: 250px;
+        height: 64px;
+        letter-spacing: calc(25px * 0.06);
         font-size: 25px;
     }
 
@@ -229,6 +236,8 @@
     .about__text {
         width: 270px;
         text-align: justify;
+        gap: 22px;
+        letter-spacing: 0px;
     }
 
     .about__img {
@@ -430,15 +439,22 @@
 
 @media (max-width:700px) {
     .our-Friends {
+        height: 791px;
         padding: 42px 0px;
     }
 
     .our-Friends__title {
+        height: 66px;
         margin-bottom: 41px;
+        letter-spacing: calc(25px* 0.06);
     }
 
     .slider__track {
         max-width: 270px;
+    }
+
+    .slider__btn {
+        letter-spacing: calc(15px* 0.06);
     }
 
     .slider__arrows {
@@ -525,6 +541,7 @@
 
 @media (max-width:700px) {
     .help {
+        height: 661px;
         margin: 42px 0px;
     }
 
@@ -535,6 +552,7 @@
     }
 
     .help__box {
+        height: 555px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
@@ -546,7 +564,7 @@
     .help__box-img {
         width: 50px;
         height: 50px;
-        margin-bottom: 20.5px;
+        margin-bottom: 20px;
     }
 
     .help__subtitle {
@@ -641,6 +659,7 @@
 
 @media (max-width:700px) {
     .addition {
+        height: 459px;
         margin-top: 41px;
         margin-bottom: 42px;
     }
