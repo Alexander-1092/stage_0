@@ -250,7 +250,10 @@
 
 .slider__pagin-num {
     font-size: 20px;
+    background-color: var(--color-btn-marker);
+    pointer-events: none;
 }
+
 
 
 .slider__pag {
