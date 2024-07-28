@@ -94,3 +94,7 @@
 .header__item:hover>.header__link {
     color: #FAFAFA;
 }
+
+.header__item:active>.header__link {
+    color: var(--color-not-only-opacity);
+}

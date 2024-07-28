@@ -91,8 +91,18 @@
 
 
 .header__item:hover>.header__link {
+    color: var(--color-btn-marker);
+}
+
+.header__item:hover>.header__link--activ {
     color: var(--color-btn-text);
 }
+
+.header__item:active>.header__link {
+    color: var(--color-title);
+}
+
+
 
 
 .container-uniq {
