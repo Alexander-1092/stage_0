@@ -215,6 +215,7 @@
     }
 
     .about__body {
+        flex-direction: column-reverse;
         padding: 42px 0px;
         gap: 42px;
         text-align: center;
@@ -331,9 +332,9 @@
     width: 187px;
     height: 52px;
     padding: 15px 45px;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 130%;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.06px;
     color: var(--color-btn-text);
     background-color: #fff;
     border: 2px solid var(--color-btn-marker);
