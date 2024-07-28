@@ -125,14 +125,14 @@
     font-weight: 400;
     line-height: 160%;
     font-size: 15px;
-    color: var(--color-title);
+    color: var(--color-not-only-opacity);
     text-decoration: none;
     transition: all 0.5s;
 }
 
 .header__link--activ {
     border-bottom: 3px solid var(--color-btn-marker);
-    color: var(--color-not-only-opacity);
+    color: #FAFAFA;
     pointer-events: none;
 }
 
@@ -142,5 +142,9 @@
 
 
 .header__item:hover>.header__link {
+    color: #FAFAFA;
+}
+
+.header__item:active>.header__link {
     color: var(--color-not-only-opacity);
 }

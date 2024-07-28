@@ -123,9 +123,12 @@
     transition: all 0.5s;
 }
 
-.header__link--activ {
+.header__item--active {
     border-bottom: 3px solid var(--color-btn-marker);
-    color: var(--color-not-only-opacity);
+}
+
+.header__link--activ {
+    color: var(--color-btn-text);
     pointer-events: none;
 }
 
@@ -136,8 +139,18 @@
 
 
 .header__item:hover>.header__link {
-    color: var(--color-not-only-opacity);
+    color: var(--color-btn-marker);
 }
+
+.header__item:hover>.header__link--activ {
+    color: var(--color-btn-text);
+}
+
+.header__item:active>.header__link {
+    color: var(--color-title);
+}
+
+
 
 
 .container-uniq {
@@ -225,12 +238,13 @@
     width: 187px;
     height: 52px;
     padding: 15px 45px;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 130%;
-    letter-spacing: calc(17px * 0.06);
+    font-weight: 400;
+    letter-spacing: 0.6px;
     color: var(--color-btn-text);
     background-color: #fff;
-    border: 2px solid #000000;
+    border: 2px solid var(--color-btn-marker);
     border-radius: 100px;
     cursor: pointer;
     transition: all 0.5s;
@@ -242,8 +256,8 @@
 }
 
 .slider__btn:active {
-    background-color: #fff;
-    border: 2px solid #000000;
+    background-color: var(--color-btn-marker);
+    border: 2px solid var(--color-btn-marker);
 }
 
 .slider__navigation {
@@ -298,7 +312,10 @@
 
 .slider__pagin-num {
     font-size: 20px;
+    background-color: var(--color-btn-marker);
+    pointer-events: none;
 }
+
 
 
 .slider__pag {

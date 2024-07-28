@@ -331,12 +331,12 @@
     width: 187px;
     height: 52px;
     padding: 15px 45px;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 130%;
-    letter-spacing: calc(17px * 0.06);
+    letter-spacing: 0.6px;
     color: var(--color-btn-text);
     background-color: #fff;
-    border: 2px solid #000000;
+    border: 2px solid var(--color-btn-marker);
     border-radius: 100px;
     cursor: pointer;
     transition: all 0.5s;
@@ -348,8 +348,8 @@
 }
 
 .slider__btn:active {
-    background-color: #fff;
-    border: 2px solid #000000;
+    background-color: var(--color-btn-marker);
+    border: 2px solid var(--color-btn-marker);
 }
 
 .slider__arrow {
