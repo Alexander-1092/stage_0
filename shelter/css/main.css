@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Arial"), url(../assets/fonts/arial/._arial-regular.ttf);
+}
+
+@font-face {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Georgia"), url(../assets/fonts/georgia/._georgia-regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
