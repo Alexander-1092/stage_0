@@ -91,7 +91,7 @@
 
 
 .header__item:hover>.header__link {
-    color: var(--color-btn-marker);
+    color: var(--color-btn-text);
 }
 
 .header__item:hover>.header__link--activ {
