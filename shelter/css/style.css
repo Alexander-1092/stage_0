@@ -212,13 +212,14 @@
     padding: 15px 45px;
     font-size: 17px;
     line-height: 130%;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     color: var(--color-btn-text);
     background-color: #fff;
     border: 2px solid var(--color-btn-marker);
     border-radius: 100px;
     cursor: pointer;
     transition: all 0.5s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .slider__btn:hover {
