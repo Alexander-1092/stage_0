@@ -69,10 +69,19 @@
 
 
 @media (max-width:700px) {
+
+
+    .header__body {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
     .header__menu {
         position: absolute;
         top: -900px;
         right: 0px;
+        padding: 248px 30px;
+        background-color: #292929;
     }
 
     .header__list {
