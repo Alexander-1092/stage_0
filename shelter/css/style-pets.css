@@ -148,7 +148,7 @@
 
 
 .header__item:hover>.header__link {
-    color: var(--color-btn-marker);
+    color: var(--color-btn-text);
 }
 
 .header__item:hover>.header__link--activ {
@@ -224,9 +224,18 @@
     filter: opacity(0.5);
 }
 
+.slider__slide:hover>button {
+    background-color: var(--color-btn-hover);
+}
+
 .slider__slide:active>span {
     filter: opacity(1);
 }
+
+.slider__slide:active>button {
+    background-color: var(--color-btn-marker);
+}
+
 
 .slider__img {
     transition: all 0.7s;
@@ -246,15 +255,15 @@
 .slider__btn {
     width: 187px;
     height: 52px;
-    padding: 15px 45px;
     font-size: 17px;
     line-height: 130%;
     font-weight: 400;
-    letter-spacing: 0.6px;
+    letter-spacing: calc(17px * 0.06);
     color: var(--color-btn-text);
     background-color: #fff;
     border: 2px solid var(--color-btn-marker);
     border-radius: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
     transition: all 0.5s;
 }
