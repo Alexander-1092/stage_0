@@ -179,6 +179,10 @@
     filter: opacity(0.5);
 }
 
+.slider__slide:hover>button {
+    background-color: var(--color-btn-hover);
+}
+
 .slider__slide:active>img {
     filter: opacity(1);
 }
@@ -189,6 +193,10 @@
 
 .slider__slide:active>span {
     filter: opacity(1);
+}
+
+.slider__slide:active>button {
+    background-color: var(--color-btn-marker);
 }
 
 .slider__img {
