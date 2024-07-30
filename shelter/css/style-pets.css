@@ -1,7 +1,12 @@
 @import url("./main.css");
 @import url("./footer.css");
 
+@media (max-width:700px) {
+    h2 {
+        font-size: 25px;
+    }
 
+}
 
 .header {
     position: relative;
@@ -104,6 +109,10 @@
     color: var(--color-title);
 }
 
+.burger {
+    display: none;
+}
+
 
 @media (max-width:950px) {}
 
@@ -133,7 +142,7 @@
         position: relative;
         width: 30px;
         height: 2px;
-        background-color: var(--color-btn-marker);
+        background-color: #000000;
     }
 
     .burger::after {
@@ -142,7 +151,7 @@
         content: "";
         width: 30px;
         height: 2px;
-        background-color: var(--color-btn-marker);
+        background-color: #000000;
     }
 
     .burger::before {
@@ -151,7 +160,7 @@
         content: "";
         width: 30px;
         height: 2px;
-        background-color: var(--color-btn-marker);
+        background-color: #000000;
     }
 
     .active-burger {
@@ -160,9 +169,6 @@
 
 }
 
-.burger {
-    display: none;
-}
 
 .container-uniq {
     background-color: #F6F6F6;
@@ -390,3 +396,29 @@
         height: 1365px;
     }
 }
+
+@media (max-width:700px) {
+
+    .our-Friends__body {
+        margin-top: 42px;
+
+    }
+
+    .our-Friends__slider {
+        padding-bottom: 42px;
+    }
+
+    .our-Friends__title {
+        margin-bottom: 15px;
+        font-size: 25px;
+        line-height: 130%;
+        letter-spacing: calc(25px * 0.06);
+    }
+
+    .slider__navigation {
+        gap: 10px;
+    }
+
+    .slider__track {}
+}
+
