@@ -117,7 +117,7 @@
 @media (max-width:950px) {}
 
 
-@media (max-width:700px) {
+@media (max-width:767px) {
 
 
     .header__body {
@@ -421,4 +421,3 @@
 
     .slider__track {}
 }
-
