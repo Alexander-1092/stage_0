@@ -13,10 +13,14 @@ console.log(total);
 console.log("100/100");
 
 const burger = document.querySelector(".burger");
-const headerList = document.querySelector(".header__menu");
-
-console.log(headerList);
+const headerMenu = document.querySelector(".header__menu");
+const headerList = document.querySelector(".header__list ");
+const headerLink = document.querySelector(".header__link");
+const headerLinkActiv = document.querySelector(".header__link--activ");
 
 burger.addEventListener("click", () => {
-  headerList.classList.toggle("active-burger");
+  burger.classList.toggle("active-burger");
+  headerMenu.classList.toggle("active-menu");
+  headerList.classList.toggle("active-header__list");
+  headerLink.classList.toggle("active-header__link");
 });
