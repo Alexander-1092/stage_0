@@ -17,10 +17,14 @@ const headerMenu = document.querySelector(".header__menu");
 const headerList = document.querySelector(".header__list ");
 const headerLink = document.querySelector(".header__link");
 const headerLinkActiv = document.querySelector(".header__link--activ");
+const headerItemActive = document.querySelector("active-header__itemActive");
 
 burger.addEventListener("click", () => {
   burger.classList.toggle("active-burger");
+
   headerMenu.classList.toggle("active-menu");
+  
   headerList.classList.toggle("active-header__list");
   headerLink.classList.toggle("active-header__link");
+  headerItemActive.classList.toggle("active-header__itemActive");
 });

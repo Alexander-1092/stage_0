@@ -63,6 +63,9 @@
     transition: all 0.5s;
 }
 
+.burger {
+    display: none;
+}
 
 .header__list {
     display: flex;
@@ -79,22 +82,21 @@
     font-size: 15px;
     color: var(--color-title);
     text-decoration: none;
-    transition: all 0.5s;
+    transition: all 0.5s ease;
+
 }
 
-.header__item--active {
+.active-header__item {
     border-bottom: 3px solid var(--color-btn-marker);
 }
+
+.header__item--active {}
 
 .header__link--activ {
     color: var(--color-btn-text);
     pointer-events: none;
 }
 
-
-.header__item {
-    transition: all 0.5s;
-}
 
 
 .header__item:hover>.header__link {
@@ -109,17 +111,8 @@
     color: var(--color-title);
 }
 
-.burger {
-    display: none;
-}
-
-
-@media (max-width:950px) {}
-
 
 @media (max-width:767px) {
-
-
     .header__body {
         padding-right: 10px;
         padding-left: 10px;
@@ -127,15 +120,60 @@
 
     .header__menu {
         position: absolute;
-        top: -900px;
+        top: 0px;
         right: 0px;
-        padding: 248px 30px;
+        width: 0px;
+        height: 823px;
+        padding: 248px 0px;
         background-color: #292929;
+        overflow: hidden;
+        transition: width 1s ease 0.3s;
     }
+
 
     .header__list {
         flex-direction: column;
+        color: transparent;
+
     }
+
+    .active-header__item {
+        border-bottom: 3px solid transparent;
+
+    }
+
+    .active-header__link {
+        color: inherit;
+    }
+
+    .active-header__list {
+        color: var(--color-not-only-opacity);
+        transition: color 0.3s ease 0.7s;
+    }
+
+
+    .header__link {
+        font-size: 32px;
+        color: inherit;
+    }
+
+    .active-menu {
+        width: 320px;
+    }
+
+
+
+    .header__link--activ {
+        color: #F6F6F6;
+        transition: color 0.3s ease 0.8s;
+    }
+
+    .active-header__item--active {
+        border-color: var(--color-btn-marker);
+        transition: border-color 0.3s ease 0.8s;
+
+    }
+
 
     .burger {
         display: block;
@@ -143,6 +181,7 @@
         width: 30px;
         height: 2px;
         background-color: #000000;
+        transition: all 0.7s ease;
     }
 
     .burger::after {
@@ -164,8 +203,11 @@
     }
 
     .active-burger {
-        top: 0;
+        transform: rotate(90deg);
     }
+
+
+
 
 }
 

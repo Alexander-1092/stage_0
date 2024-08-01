@@ -83,8 +83,6 @@
     pointer-events: none;
 }
 
-.header__item {}
-
 
 .header__item:hover>.header__link {
     color: #FAFAFA;
