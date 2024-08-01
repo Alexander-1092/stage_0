@@ -19,12 +19,30 @@ const headerLink = document.querySelector(".header__link");
 const headerLinkActiv = document.querySelector(".header__link--activ");
 const headerItemActive = document.querySelector("active-header__itemActive");
 
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active-burger");
+burger.addEventListener("click", (e) => {
+  openCloseMenu();
+});
 
+const openCloseMenu = () => {
+  burger.classList.toggle("active-burger");
   headerMenu.classList.toggle("active-menu");
-  
   headerList.classList.toggle("active-header__list");
   headerLink.classList.toggle("active-header__link");
   headerItemActive.classList.toggle("active-header__itemActive");
+};
+
+headerList.addEventListener("click", (e) => {
+  if (e.target.className === "header__link") {
+    openCloseMenu();
+  }
+});
+
+window.addEventListener("click", (e) => {
+  console.log(e.target.className.slice(0, 6));
+  if (
+    e.target.className.slice(0, 6) !== "header" &&
+    e.target.className.slice(0, 6) !== "burger"
+  ) {
+    openCloseMenu();
+  }
 });
