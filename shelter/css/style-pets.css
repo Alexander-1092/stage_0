@@ -11,7 +11,13 @@
 .header {
     position: relative;
     z-index: 2;
+
 }
+
+.filter-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+}
+
 
 
 .header__body {
@@ -90,7 +96,6 @@
     border-bottom: 3px solid var(--color-btn-marker);
 }
 
-.header__item--active {}
 
 .header__link--activ {
     color: var(--color-btn-text);
@@ -113,6 +118,7 @@
 
 
 @media (max-width:767px) {
+
     .header__body {
         padding-right: 10px;
         padding-left: 10px;
@@ -120,10 +126,11 @@
 
     .header__menu {
         position: absolute;
+        z-index: 10;
         top: 0px;
         right: 0px;
         width: 0px;
-        height: 823px;
+        height: 100vh;
         padding: 248px 0px;
         background-color: #292929;
         overflow: hidden;
@@ -178,6 +185,7 @@
     .burger {
         display: block;
         position: relative;
+        z-index: 10;
         width: 30px;
         height: 2px;
         background-color: #000000;
@@ -206,10 +214,12 @@
         transform: rotate(90deg);
     }
 
-
-
-
+    .active-filter {
+        filter: brightness(0.5);
+    }
 }
+
+.main {}
 
 
 .container-uniq {

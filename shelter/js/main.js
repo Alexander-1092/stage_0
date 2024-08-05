@@ -12,18 +12,25 @@ console.log(pet);
 console.log(total);
 console.log("100/100");
 
+const body = document.querySelector(".body");
 const burger = document.querySelector(".burger");
 const headerMenu = document.querySelector(".header__menu");
 const headerList = document.querySelector(".header__list ");
 const headerLink = document.querySelector(".header__link");
 const headerLinkActiv = document.querySelector(".header__link--activ");
 const headerItemActive = document.querySelector("active-header__itemActive");
+const mainBlock = document.querySelector(".main");
+const headerLogo = document.querySelector(".header__logo");
 
 burger.addEventListener("click", (e) => {
   openCloseMenu();
 });
 
 const openCloseMenu = () => {
+  body.classList.toggle("inactive-body");
+  mainBlock.classList.toggle("active-filter");
+  headerLogo.classList.toggle("active-filter");
+
   burger.classList.toggle("active-burger");
   headerMenu.classList.toggle("active-menu");
   headerList.classList.toggle("active-header__list");

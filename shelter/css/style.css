@@ -3,10 +3,13 @@
 @import url("./footer.css");
 
 
+
 .main {
     position: relative;
     margin-top: -90px;
     z-index: 1;
+
+
 }
 
 
@@ -20,6 +23,7 @@
 
 .container__general {
     background: url(../assets/index/svg/noise_transparent.svg), url(../assets/index/svg/noise_transparent@2x.svg), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+
 }
 
 
@@ -126,7 +130,7 @@
     }
 }
 
-@media (max-width:700px) {
+@media (max-width:767px) {
     .not-only__title-btn {
         padding-bottom: 105px;
         display: flex;
@@ -148,6 +152,10 @@
         width: 260px;
         height: 271px;
         justify-self: end;
+    }
+
+    .active-filter {
+        filter: brightness(0.5);
     }
 }
 
