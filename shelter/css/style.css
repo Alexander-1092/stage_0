@@ -261,6 +261,7 @@
     position: relative;
     padding-top: 80px;
     padding-bottom: 100px;
+    overflow: hidden;
 }
 
 
@@ -285,13 +286,19 @@
 
 .our-Friends__slider {
     padding-bottom: 90px;
+    overflow: hidden;
+
 }
 
 .slider__track {
+    max-width: 990px;
     display: flex;
     justify-content: space-between;
     gap: 90px;
-    overflow: hidden;
+    transform: translateX(0px);
+    transition: transform 0.7s ease;
+
+
 }
 
 

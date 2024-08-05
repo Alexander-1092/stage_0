@@ -32,12 +32,12 @@ headerList.addEventListener("click", (e) => {
   }
 });
 
-window.addEventListener("click", (e) => {
-  console.log(e.target.className.slice(0, 6));
-  if (
-    e.target.className.slice(0, 6) !== "header" &&
-    e.target.className.slice(0, 6) !== "burger"
-  ) {
-    openCloseMenu();
-  }
-});
+// window.addEventListener("click", (e) => {
+//   console.log(e.target.className.slice(0, 6));
+//   if (
+//     e.target.className.slice(0, 6) !== "header" &&
+//     e.target.className.slice(0, 6) !== "burger"
+//   ) {
+//     openCloseMenu();
+//   }
+// });
