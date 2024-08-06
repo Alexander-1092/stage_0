@@ -82,10 +82,28 @@ sliderArrowPrev.addEventListener("click", (e) => {
     counter = 1860;
   } else if (counter === 0 && gapSliderTrack == "0px") {
     counter = 1890;
-  }
-  else {
+  } else {
     counter =
       counter - (parseInt(widthSliderTrack, 10) + parseInt(gapSliderTrack, 10));
   }
   moveSliderTrack(counter);
 });
+
+const sliderImg = document.querySelectorAll(".slider__img");
+
+const randomNumber = () => {
+  return Math.round(Number(Math.random() * 10));
+};
+
+const createListRandomEightNum = () => {
+  let listRandomEightNum = [];
+  while (listRandomEightNum.length <= 7) {
+    let num = randomNumber();
+    if (!listRandomEightNum.includes(num)) {
+      listRandomEightNum.push(num);
+    }
+  }
+  return listRandomEightNum;
+};
+
+console.log(createListRandomEightNum());
