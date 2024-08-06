@@ -475,6 +475,7 @@
 
     .slider__track {
         max-width: 270px;
+        gap: 0px;
     }
 
     .slider__btn {

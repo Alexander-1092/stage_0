@@ -60,19 +60,32 @@ const moveSliderTrack = (counter) => {
 };
 
 sliderArrowNext.addEventListener("click", (e) => {
-  if (counter === 2090) {
+  let widthSliderTrack = sliderTrack.offsetWidth;
+  let gapSliderTrack = window.getComputedStyle(sliderTrack).gap;
+  if (counter >= 1860 && gapSliderTrack != "90px") {
+    counter = 0;
+  } else if (gapSliderTrack == "90px" && counter >= 2160) {
     counter = 0;
   } else {
-    counter += 1045;
+    counter =
+      counter + (parseInt(widthSliderTrack, 10) + parseInt(gapSliderTrack, 10));
   }
   moveSliderTrack(counter);
 });
 
 sliderArrowPrev.addEventListener("click", (e) => {
-  if (counter === 0) {
-    counter = 2090;
-  } else {
-    counter -= 1045;
+  let widthSliderTrack = sliderTrack.offsetWidth;
+  let gapSliderTrack = window.getComputedStyle(sliderTrack).gap;
+  if (counter === 0 && gapSliderTrack == "90px") {
+    counter = 2160;
+  } else if (counter === 0 && gapSliderTrack == "40px") {
+    counter = 1860;
+  } else if (counter === 0 && gapSliderTrack == "0px") {
+    counter = 1890;
+  }
+  else {
+    counter =
+      counter - (parseInt(widthSliderTrack, 10) + parseInt(gapSliderTrack, 10));
   }
   moveSliderTrack(counter);
 });
