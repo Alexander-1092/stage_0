@@ -39,14 +39,14 @@ headerList.addEventListener("click", (e) => {
 // });
 
 const linkImgSlider = [
-  "./assets/index/img/pets-katrine.png",
-  "./assets/index/img/pets-jennifer.png",
-  "./assets/index/img/pets-woody.png",
-  "./assets/index/img/pets-charly.png",
-  "./assets/index/img/pets-fredd.png",
-  "./assets/index/img/pets-scarlet.png",
-  "./assets/index/img/pets-timmy.png",
-  "./assets/index/img/sophia.png",
+  ["./assets/index/img/pets-katrine.png", "katrine"],
+  ["./assets/index/img/pets-jennifer.png", "Jennifer"],
+  ["./assets/index/img/pets-woody.png", "Woody"],
+  ["./assets/index/img/pets-charly.png", "Charly"],
+  ["./assets/index/img/pets-fredd.png", "Fredd"],
+  ["./assets/index/img/pets-scarlet.png", "Scarlet"],
+  ["./assets/index/img/pets-timmy.png", "Timmy"],
+  ["./assets/index/img/sophia.png", "Sophia"],
 ];
 
 const sliderTrack = document.querySelector(".slider__track");
@@ -54,6 +54,8 @@ const sliderArrowPrev = document.querySelector(".slider__arrow-prev");
 const sliderArrowNext = document.querySelector(".slider__arrow-next");
 
 let counter = 0;
+let counterClickNext = 0;
+let counterClickPrev = 0;
 
 const moveSliderTrack = (counter) => {
   sliderTrack.style.transform = `translateX(-${counter}px)`;
@@ -71,6 +73,11 @@ sliderArrowNext.addEventListener("click", (e) => {
       counter + (parseInt(widthSliderTrack, 10) + parseInt(gapSliderTrack, 10));
   }
   moveSliderTrack(counter);
+
+  counterClickNext += 1;
+  if (counterClickNext % 2 === 0) {
+    changePictureName();
+  }
 });
 
 sliderArrowPrev.addEventListener("click", (e) => {
@@ -87,9 +94,16 @@ sliderArrowPrev.addEventListener("click", (e) => {
       counter - (parseInt(widthSliderTrack, 10) + parseInt(gapSliderTrack, 10));
   }
   moveSliderTrack(counter);
+
+  counterClickPrev += 1;
+  if (counterClickPrev % 2 === 0) {
+    changePictureName();
+  }
 });
 
 const sliderImg = document.querySelectorAll(".slider__img");
+
+const sliderSlide = document.querySelectorAll(".slider__slide");
 
 const randomNumber = () => {
   return Math.round(Number(Math.random() * 10));
@@ -99,11 +113,20 @@ const createListRandomEightNum = () => {
   let listRandomEightNum = [];
   while (listRandomEightNum.length <= 7) {
     let num = randomNumber();
-    if (!listRandomEightNum.includes(num)) {
+    if (!listRandomEightNum.includes(num) && num <= 7) {
       listRandomEightNum.push(num);
     }
   }
   return listRandomEightNum;
 };
 
-console.log(createListRandomEightNum());
+const changePictureName = () => {
+  const listRandomNum = createListRandomEightNum();
+  for (let index = 0; index < sliderSlide.length; index++) {
+    sliderSlide[index].children[0].src = linkImgSlider[listRandomNum[index]][0];
+    sliderSlide[index].children[1].innerHTML =
+      linkImgSlider[listRandomNum[index]][1];
+  }
+};
+
+changePictureName();
