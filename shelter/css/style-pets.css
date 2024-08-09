@@ -1,9 +1,17 @@
 @import url("./main.css");
 @import url("./footer.css");
 
+@media (max-width:700px) {
+    h2 {
+        font-size: 25px;
+    }
 
+}
 
-
+.header {
+    position: relative;
+    z-index: 2;
+}
 
 
 .header__body {
@@ -64,7 +72,6 @@
     list-style: none;
 }
 
-
 .header__link {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -102,7 +109,65 @@
     color: var(--color-title);
 }
 
+.burger {
+    display: none;
+}
 
+
+@media (max-width:950px) {}
+
+
+@media (max-width:767px) {
+
+
+    .header__body {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .header__menu {
+        position: absolute;
+        top: -900px;
+        right: 0px;
+        padding: 248px 30px;
+        background-color: #292929;
+    }
+
+    .header__list {
+        flex-direction: column;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 2px;
+        background-color: #000000;
+    }
+
+    .burger::after {
+        position: absolute;
+        top: 10px;
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: #000000;
+    }
+
+    .burger::before {
+        position: absolute;
+        top: -10px;
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: #000000;
+    }
+
+    .active-burger {
+        top: 0;
+    }
+
+}
 
 
 .container-uniq {
@@ -313,4 +378,45 @@
 .slider__pag-arrow-next::after {
     transform: rotate(-50deg) translate(2px, 2px);
     background-color: inherit;
+}
+
+@media (max-width:950px) {
+    .our-Friends__slider {
+        padding-bottom: 76px;
+    }
+
+    .our-Friends__title {
+        margin-bottom: 30px;
+    }
+
+    .slider__track {
+        margin-bottom: 40px;
+        justify-content: center;
+        gap: 30px 40px;
+        height: 1365px;
+    }
+}
+
+@media (max-width:700px) {
+
+    .our-Friends__body {
+        margin-top: 42px;
+
+    }
+
+    .our-Friends__slider {
+        padding-bottom: 42px;
+    }
+
+    .our-Friends__title {
+        margin-bottom: 15px;
+        font-size: 25px;
+        line-height: 130%;
+        letter-spacing: calc(25px * 0.06);
+    }
+
+    .slider__navigation {
+        gap: 10px;
+    }
+
 }
