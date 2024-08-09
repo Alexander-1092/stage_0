@@ -75,9 +75,11 @@ sliderArrowNext.addEventListener("click", (e) => {
   moveSliderTrack(counter);
 
   counterClickNext += 1;
+  counterClickPrev = 0;
   if (counterClickNext % 2 === 0) {
     changePictureName();
   }
+  console.log(window.getComputedStyle(sliderTrack).transform.slice(18, 24));
 });
 
 sliderArrowPrev.addEventListener("click", (e) => {
@@ -96,6 +98,7 @@ sliderArrowPrev.addEventListener("click", (e) => {
   moveSliderTrack(counter);
 
   counterClickPrev += 1;
+  counterClickNext = 0;
   if (counterClickPrev % 2 === 0) {
     changePictureName();
   }
