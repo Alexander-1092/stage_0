@@ -45,8 +45,8 @@ const linkImgSlider = [
   ["./assets/index/img/pets-jennifer.png", "Jennifer"],
   ["./assets/index/img/pets-woody.png", "Woody"],
   ["./assets/index/img/pets-charly.png", "Charly"],
-  ["./assets/index/img/pets-fredd.png", "Fredd"],
-  ["./assets/index/img/pets-scarlet.png", "Scarlet"],
+  ["./assets/index/img/pets-fredd.png", "Freddie"],
+  ["./assets/index/img/pets-scarlet.png", "Scarlett"],
   ["./assets/index/img/pets-timmy.png", "Timmy"],
   ["./assets/index/img/sophia.png", "Sophia"],
 ];
@@ -136,10 +136,45 @@ const changePictureName = () => {
 
 changePictureName();
 
-const pupup = document.querySelector(".pupup");
+const popup = document.querySelector(".pupup");
+const popupTitle = document.querySelector(".popup__title");
+const popupType = document.querySelector(".popup__type");
+const popupBreed = document.querySelector(".popup__breed");
+const popupImg = document.querySelector(".popup__img");
+const popupDescription = document.querySelector(".popup__description");
+const popupAge = document.querySelector(".popup__age");
+const popupInoculations = document.querySelector(".popup__inoculations");
+const popupDiseases = document.querySelector(".popup__diseases");
+const popupParasites = document.querySelector(".popup__parasites");
 
 sliderTrack.addEventListener("click", (e) => {
-  if (e.target.parentElement.className == "slider__slide") {
-    pupup.classList.toggle("active-popup");
-  }
+  showDelPupup(e);
+  const namePet = showNamePet(e);
+  changeCardPet(namePet);
 });
+
+const showDelPupup = (e) => {
+  if (e.target.parentElement.className == "slider__slide") {
+    popup.classList.toggle("active-popup");
+  }
+};
+
+const showNamePet = (e) => {
+  return e.target.parentElement.children[1].innerHTML;
+};
+
+const changeCardPet = (namePet) => {
+  for (let index = 0; index < pets.length; index++) {
+    if (pets[index].name === namePet) {
+      popupTitle.innerHTML = namePet;
+      popupType.innerHTML = `${pets[index].type} -`;
+      popupBreed.innerHTML = pets[index].breed;
+      popupImg.src = pets[index].img;
+      popupDescription.innerHTML = pets[index].description;
+      popupAge.innerHTML = pets[index].age;
+      popupInoculations.innerHTML = pets[index].inoculations;
+      popupDiseases.innerHTML = pets[index].diseases;
+      popupParasites.innerHTML = pets[index].parasites;
+    }
+  }
+};
