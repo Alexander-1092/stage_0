@@ -135,3 +135,11 @@ const changePictureName = () => {
 };
 
 changePictureName();
+
+const pupup = document.querySelector(".pupup");
+
+sliderTrack.addEventListener("click", (e) => {
+  if (e.target.parentElement.className == "slider__slide") {
+    pupup.classList.toggle("active-popup");
+  }
+});
