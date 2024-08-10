@@ -1,3 +1,5 @@
+import { pets } from "./list-pets.js";
+
 const body = document.querySelector(".body");
 const burger = document.querySelector(".burger");
 const headerMenu = document.querySelector(".header__menu");
