@@ -5,7 +5,6 @@ const burger = document.querySelector(".burger");
 const headerMenu = document.querySelector(".header__menu");
 const headerList = document.querySelector(".header__list ");
 const headerLink = document.querySelector(".header__link");
-const headerLinkActiv = document.querySelector(".header__link--activ");
 const mainBlock = document.querySelector(".main");
 const headerLogo = document.querySelector(".header__logo");
 
@@ -29,16 +28,6 @@ headerList.addEventListener("click", (e) => {
     openCloseMenu();
   }
 });
-
-// Доработать, закрывает меню если нажать вне его области
-// window.addEventListener("click", (e) => {
-//   if (
-//     e.target.className.slice(0, 6) !== "header" &&
-//     e.target.className.slice(0, 6) !== "burger"
-//   ) {
-//     openCloseMenu();
-//   }
-// });
 
 const linkImgSlider = [
   ["./assets/index/img/pets-katrine.png", "katrine"],
@@ -136,6 +125,8 @@ const changePictureName = () => {
 
 changePictureName();
 
+const wrapper = document.querySelector(".wrapper");
+
 const popup = document.querySelector(".pupup");
 const popupTitle = document.querySelector(".popup__title");
 const popupType = document.querySelector(".popup__type");
@@ -147,15 +138,21 @@ const popupInoculations = document.querySelector(".popup__inoculations");
 const popupDiseases = document.querySelector(".popup__diseases");
 const popupParasites = document.querySelector(".popup__parasites");
 
+let counterClickWin = 0;
+
 sliderTrack.addEventListener("click", (e) => {
-  showDelPupup(e);
+  activFilterWrapper();
+  inactiveBody();
+
+  showPupup(e);
   const namePet = showNamePet(e);
   changeCardPet(namePet);
+  inactiveEventSlider();
 });
 
-const showDelPupup = (e) => {
+const showPupup = (e) => {
   if (e.target.parentElement.className == "slider__slide") {
-    popup.classList.toggle("active-popup");
+    popup.classList.add("active-popup");
   }
 };
 
@@ -178,3 +175,36 @@ const changeCardPet = (namePet) => {
     }
   }
 };
+
+const activFilterWrapper = () => {
+  wrapper.classList.toggle("active-wrapper");
+};
+
+const inactiveBody = () => {
+  body.classList.toggle("inactive-body");
+};
+
+const inactiveEventSlider = () => {
+  sliderTrack.classList.toggle("inactive-slider__track");
+};
+
+window.addEventListener("click", (e) => {
+  const parentsPopup = e.target.parentElement.parentElement.className;
+  if (popup.className === "pupup active-popup") {
+    if (
+      counterClickWin !== 0 &&
+      parentsPopup !== "pupup active-popup" &&
+      parentsPopup !== "popup__info" &&
+      parentsPopup !== "popup__body" &&
+      parentsPopup !== "body inactive-body"
+    ) {
+      popup.classList.remove("active-popup");
+      activFilterWrapper();
+      inactiveBody();
+      inactiveEventSlider();
+      counterClickWin = 0;
+    } else {
+      counterClickWin += 1;
+    }
+  }
+});

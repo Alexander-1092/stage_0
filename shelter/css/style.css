@@ -295,10 +295,11 @@
     gap: 90px;
     transform: translateX(0px);
     transition: transform 0.7s ease;
-
-
 }
 
+.inactive-slider__track {
+    pointer-events: none;
+}
 
 .slider__slide {
     display: flex;
@@ -307,6 +308,7 @@
     align-items: center;
     gap: 30px;
     cursor: pointer;
+
 
 }
 
