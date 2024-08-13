@@ -127,7 +127,7 @@ changePictureName();
 
 const wrapper = document.querySelector(".wrapper");
 
-const popup = document.querySelector(".pupup");
+const popup = document.querySelector(".popup");
 const popupTitle = document.querySelector(".popup__title");
 const popupType = document.querySelector(".popup__type");
 const popupBreed = document.querySelector(".popup__breed");
@@ -144,13 +144,13 @@ sliderTrack.addEventListener("click", (e) => {
   activFilterWrapper();
   inactiveBody();
 
-  showPupup(e);
+  showPopup(e);
   const namePet = showNamePet(e);
   changeCardPet(namePet);
   inactiveEventSlider();
 });
 
-const showPupup = (e) => {
+const showPopup = (e) => {
   if (e.target.parentElement.className == "slider__slide") {
     popup.classList.add("active-popup");
   }
@@ -190,10 +190,10 @@ const inactiveEventSlider = () => {
 
 window.addEventListener("click", (e) => {
   const parentsPopup = e.target.parentElement.parentElement.className;
-  if (popup.className === "pupup active-popup") {
+  if (popup.className === "popup active-popup") {
     if (
       counterClickWin !== 0 &&
-      parentsPopup !== "pupup active-popup" &&
+      parentsPopup !== "popup active-popup" &&
       parentsPopup !== "popup__info" &&
       parentsPopup !== "popup__body" &&
       parentsPopup !== "body inactive-body"
@@ -207,4 +207,14 @@ window.addEventListener("click", (e) => {
       counterClickWin += 1;
     }
   }
+});
+
+const popupCrossBox = document.querySelector(".popup__cross-box");
+
+popupCrossBox.addEventListener("click", () => {
+  popup.classList.remove("active-popup");
+  activFilterWrapper();
+  inactiveBody();
+  inactiveEventSlider();
+  counterClickWin = 0;
 });
