@@ -34,6 +34,75 @@ headerList.addEventListener("click", (e) => {
   }
 });
 
+const randomNumber = () => {
+  return Math.round(Number(Math.random() * 10));
+};
+
+let counterGoodCardInMatrix = 0;
+
+const createListNumRandomUniq = (numPages, numCard) => {
+  let emptyArray = Array.from({ length: numPages }, () =>
+    Array(numCard).fill("*")
+  );
+  let flag = false;
+  let obj = {};
+  emptyArray.forEach((arr) => {
+    for (let index = 0; index < arr.length; index++) {
+      flag = false;
+      let stop = 0;
+
+      while (flag != true) {
+        let numRandom = randomNumber();
+
+        if (
+          numRandom <= 7 &&
+          !arr.includes(numRandom) &&
+          (obj[numRandom] === undefined || obj[numRandom] <= 5)
+        ) {
+          if (obj.hasOwnProperty(numRandom)) {
+            obj[numRandom] = obj[numRandom] + 1;
+          } else {
+            obj[numRandom] = 1;
+          }
+
+          arr[index] = numRandom;
+          flag = true;
+          counterGoodCardInMatrix += 1;
+        }
+
+        stop += 1;
+        if (stop > 1000) {
+          break;
+        }
+      }
+    }
+  });
+  return emptyArray;
+};
+
+let listMat = [];
+
+const restartCreateListNumRandomUniq = (quantityPages, quantityCard) => {
+  let stopWhile = 0;
+
+  while (counterGoodCardInMatrix !== 48) {
+    let listNum = createListNumRandomUniq(quantityPages, quantityCard);
+    stopWhile += 1;
+    if (stopWhile > 300) {
+      break;
+    } else if (counterGoodCardInMatrix === 48) {
+      listMat = listNum;
+      break;
+    } else {
+      counterGoodCardInMatrix = 0;
+    }
+  }
+  return listMat;
+};
+
+restartCreateListNumRandomUniq(16, 3);
+console.log(listMat);
+
 const wrapper = document.querySelector(".wrapper");
 
 const sliderTrack = document.querySelector(".slider__track");
@@ -57,7 +126,6 @@ sliderTrack.addEventListener("click", (e) => {
 
   showPopup(e);
   const namePet = showNamePet(e);
-  console.log(namePet);
   changeCardPet(namePet);
   inactiveEventSlider();
 });
