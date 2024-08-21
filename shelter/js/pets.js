@@ -3,6 +3,8 @@ import { pets } from "./list-pets.js";
 const body = document.querySelector(".body");
 const header = document.querySelector(".header");
 
+const sliderTrack = document.querySelector(".slider__track");
+
 const burger = document.querySelector(".burger");
 const headerMenu = document.querySelector(".header__menu");
 const headerList = document.querySelector(".header__list ");
@@ -100,12 +102,89 @@ const restartCreateListNumRandomUniq = (quantityPages, quantityCard) => {
   return listMat;
 };
 
-restartCreateListNumRandomUniq(16, 3);
-console.log(listMat);
+let quantityPages = 1;
+let counerQuantityPages = 1;
+let numberOfcardsPerPage = 8;
+
+const sliderPaginNum = document.querySelector(".slider__pagin-num");
+const sliderPaginNext = document.querySelector(".slider__pagin-next");
+const sliderPaginBack = document.querySelector(".slider__pagin-back");
+
+const widthPage = window.innerWidth;
+
+const setSliderParameters = () => {
+  if (widthPage > 949) {
+    quantityPages = 6;
+    numberOfcardsPerPage = 8;
+    restartCreateListNumRandomUniq(quantityPages, numberOfcardsPerPage);
+  } else if (widthPage > 599) {
+    quantityPages = 8;
+    numberOfcardsPerPage = 6;
+    restartCreateListNumRandomUniq(quantityPages, numberOfcardsPerPage);
+  } else {
+    quantityPages = 16;
+    numberOfcardsPerPage = 3;
+    restartCreateListNumRandomUniq(quantityPages, numberOfcardsPerPage);
+  }
+};
+setSliderParameters();
+
+sliderPaginNext.addEventListener("click", () => {
+  lockUnlockArrows();
+  turnPageForward();
+});
+
+const lockUnlockArrows = () => {
+  if (counerQuantityPages === quantityPages - 1) {
+    sliderPaginNext.classList.add("slider__pag-inactive");
+  }
+  if (counerQuantityPages >= 1) {
+    sliderPaginBack.classList.remove("slider__pag-inactive");
+  }
+};
+
+const turnPageForward = () => {
+  if (counerQuantityPages < quantityPages) {
+    counerQuantityPages += 1;
+    sliderPaginNum.innerHTML = counerQuantityPages;
+    createSetCards();
+  }
+};
+
+sliderPaginBack.addEventListener("click", () => {
+  if (counerQuantityPages <= quantityPages && counerQuantityPages > 1) {
+    counerQuantityPages -= 1;
+    sliderPaginNum.innerHTML = counerQuantityPages;
+    createSetCards();
+  }
+  if (counerQuantityPages < quantityPages) {
+    sliderPaginNext.classList.remove("slider__pag-inactive");
+  }
+  if (counerQuantityPages <= 1) {
+    sliderPaginBack.classList.add("slider__pag-inactive");
+  }
+});
+
+window.addEventListener("resize", () => {
+  console.log("Новая ширина окна:", window.innerWidth);
+  setSliderParameters();
+  createSetCards();
+  lockUnlockArrows();
+  turnPageForward();
+});
+
+const createSetCards = () => {
+  for (let index = 0; index < numberOfcardsPerPage; index++) {
+    sliderTrack.children[index].children[0].src =
+      pets[listMat[counerQuantityPages - 1][index]].img;
+    sliderTrack.children[index].children[1].innerHTML =
+      pets[listMat[counerQuantityPages - 1][index]].name;
+  }
+};
+
+createSetCards();
 
 const wrapper = document.querySelector(".wrapper");
-
-const sliderTrack = document.querySelector(".slider__track");
 
 const popup = document.querySelector(".popup");
 const popupTitle = document.querySelector(".popup__title");
