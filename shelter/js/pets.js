@@ -94,6 +94,7 @@ const restartCreateListNumRandomUniq = (quantityPages, quantityCard) => {
       break;
     } else if (counterGoodCardInMatrix === 48) {
       listMat = listNum;
+      counterGoodCardInMatrix = 0;
       break;
     } else {
       counterGoodCardInMatrix = 0;
@@ -110,18 +111,21 @@ const sliderPaginNum = document.querySelector(".slider__pagin-num");
 const sliderPaginNext = document.querySelector(".slider__pagin-next");
 const sliderPaginBack = document.querySelector(".slider__pagin-back");
 
-const widthPage = window.innerWidth;
+let widthPage = window.innerWidth;
 
 const setSliderParameters = () => {
+  widthPage = window.innerWidth;
+  counerQuantityPages = 1;
   if (widthPage > 949) {
     quantityPages = 6;
     numberOfcardsPerPage = 8;
+
     restartCreateListNumRandomUniq(quantityPages, numberOfcardsPerPage);
   } else if (widthPage > 599) {
     quantityPages = 8;
     numberOfcardsPerPage = 6;
     restartCreateListNumRandomUniq(quantityPages, numberOfcardsPerPage);
-  } else {
+  } else if (widthPage < 600) {
     quantityPages = 16;
     numberOfcardsPerPage = 3;
     restartCreateListNumRandomUniq(quantityPages, numberOfcardsPerPage);
@@ -152,25 +156,33 @@ const turnPageForward = () => {
 };
 
 sliderPaginBack.addEventListener("click", () => {
+  turnPageBack();
+  lockUnlockArrowsBack();
+});
+
+const turnPageBack = () => {
   if (counerQuantityPages <= quantityPages && counerQuantityPages > 1) {
     counerQuantityPages -= 1;
     sliderPaginNum.innerHTML = counerQuantityPages;
     createSetCards();
   }
+};
+
+const lockUnlockArrowsBack = () => {
   if (counerQuantityPages < quantityPages) {
     sliderPaginNext.classList.remove("slider__pag-inactive");
   }
   if (counerQuantityPages <= 1) {
     sliderPaginBack.classList.add("slider__pag-inactive");
   }
-});
+};
 
 window.addEventListener("resize", () => {
-  console.log("Новая ширина окна:", window.innerWidth);
   setSliderParameters();
+  sliderPaginNum.innerHTML = counerQuantityPages;
   createSetCards();
   lockUnlockArrows();
-  turnPageForward();
+  lockUnlockArrowsBack();
 });
 
 const createSetCards = () => {
