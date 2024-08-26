@@ -136,6 +136,7 @@ setSliderParameters();
 sliderPaginNext.addEventListener("click", () => {
   lockUnlockArrows();
   turnPageForward();
+  activeInactivePaginBackBackPaginNextNext();
 });
 
 const lockUnlockArrows = () => {
@@ -158,6 +159,7 @@ const turnPageForward = () => {
 sliderPaginBack.addEventListener("click", () => {
   turnPageBack();
   lockUnlockArrowsBack();
+  activeInactivePaginBackBackPaginNextNext();
 });
 
 const turnPageBack = () => {
@@ -177,12 +179,51 @@ const lockUnlockArrowsBack = () => {
   }
 };
 
+const sliderPaginNextNext = document.querySelector(".slider__pagin-next-next");
+
+sliderPaginNextNext.addEventListener("click", () => {
+  counerQuantityPages = quantityPages;
+  sliderPaginNum.innerHTML = counerQuantityPages;
+  createSetCards();
+  activeInactivePaginBackBackPaginNextNext();
+});
+
+const slider__paginBackBack = document.querySelector(
+  ".slider__pagin-back-back"
+);
+
+slider__paginBackBack.addEventListener("click", () => {
+  counerQuantityPages = 1;
+  sliderPaginNum.innerHTML = counerQuantityPages;
+  createSetCards();
+  activeInactivePaginBackBackPaginNextNext();
+});
+
+const activeInactivePaginBackBackPaginNextNext = () => {
+  if (counerQuantityPages > 1) {
+    slider__paginBackBack.classList.remove("slider__pag-inactive");
+    sliderPaginBack.classList.remove("slider__pag-inactive");
+  } else if (counerQuantityPages <= 1) {
+    slider__paginBackBack.classList.add("slider__pag-inactive");
+    sliderPaginBack.classList.add("slider__pag-inactive");
+  }
+
+  if (counerQuantityPages === quantityPages) {
+    sliderPaginNextNext.classList.add("slider__pag-inactive");
+    sliderPaginNext.classList.add("slider__pag-inactive");
+  } else if (counerQuantityPages < quantityPages) {
+    sliderPaginNextNext.classList.remove("slider__pag-inactive");
+    sliderPaginNext.classList.remove("slider__pag-inactive");
+  }
+};
+
 window.addEventListener("resize", () => {
   setSliderParameters();
   sliderPaginNum.innerHTML = counerQuantityPages;
   createSetCards();
   lockUnlockArrows();
   lockUnlockArrowsBack();
+  activeInactivePaginBackBackPaginNextNext();
 });
 
 const createSetCards = () => {
@@ -212,18 +253,20 @@ const popupParasites = document.querySelector(".popup__parasites");
 let counterClickWin = 0;
 
 sliderTrack.addEventListener("click", (e) => {
-  activFilterWrapper();
-  inactiveBody();
-
-  showPopup(e);
-  const namePet = showNamePet(e);
-  changeCardPet(namePet);
-  inactiveEventSlider();
+  if (e.target.parentElement.className == "slider__slide") {
+    activFilterWrapper();
+    inactiveBody();
+    showPopup(e);
+    const namePet = showNamePet(e);
+    changeCardPet(namePet);
+    inactiveEventSlider();
+  }
 });
 
 const showPopup = (e) => {
   if (e.target.parentElement.className == "slider__slide") {
     popup.classList.add("active-popup");
+    sliderTrack.classList.add("slider__track-Inactive");
   }
 };
 
@@ -253,6 +296,7 @@ const activFilterWrapper = () => {
 
 const inactiveBody = () => {
   body.classList.toggle("inactive-body");
+  sliderTrack.classList.remove("slider__track-Inactive");
 };
 
 const inactiveEventSlider = () => {

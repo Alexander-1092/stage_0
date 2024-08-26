@@ -262,6 +262,11 @@
 
 }
 
+
+.slider__track-Inactive {
+    pointer-events: none;
+}
+
 .slider__slide {
     display: flex;
     flex-direction: column;
