@@ -70,7 +70,6 @@ sliderArrowNext.addEventListener("click", (e) => {
   if (counterClickNext % 2 === 0) {
     changePictureName();
   }
-  console.log(window.getComputedStyle(sliderTrack).transform.slice(18, 24));
 });
 
 sliderArrowPrev.addEventListener("click", (e) => {
