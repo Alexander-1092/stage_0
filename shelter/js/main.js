@@ -141,13 +141,14 @@ const popupParasites = document.querySelector(".popup__parasites");
 let counterClickWin = 0;
 
 sliderTrack.addEventListener("click", (e) => {
-  activFilterWrapper();
-  inactiveBody();
-
-  showPopup(e);
-  const namePet = showNamePet(e);
-  changeCardPet(namePet);
-  inactiveEventSlider();
+  if (e.target.parentElement.className == "slider__slide") {
+    activFilterWrapper();
+    inactiveBody();
+    showPopup(e);
+    const namePet = showNamePet(e);
+    changeCardPet(namePet);
+    inactiveEventSlider();
+  }
 });
 
 const showPopup = (e) => {
