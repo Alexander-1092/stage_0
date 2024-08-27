@@ -94,8 +94,6 @@ sliderArrowPrev.addEventListener("click", (e) => {
   }
 });
 
-const sliderImg = document.querySelectorAll(".slider__img");
-
 const sliderSlide = document.querySelectorAll(".slider__slide");
 
 const randomNumber = () => {
@@ -123,6 +121,11 @@ const changePictureName = () => {
 };
 
 changePictureName();
+
+window.addEventListener("resize", () => {
+  counter = 0;
+  moveSliderTrack(counter);
+});
 
 const wrapper = document.querySelector(".wrapper");
 
