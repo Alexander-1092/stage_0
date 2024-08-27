@@ -216,6 +216,8 @@
 
     .active-filter {
         filter: brightness(0.5);
+        pointer-events: none;
+
     }
 }
 
@@ -485,6 +487,7 @@
     z-index: 100;
     background-color: #fff;
     border-radius: 5px;
+
 }
 
 .active-popup {
@@ -501,11 +504,7 @@
 }
 
 
-@media (max-width: 1200px) {
-    .popup__body {
-        width: 82.03vw;
-    }
-}
+
 
 
 .pop__img-box {
@@ -525,12 +524,7 @@
     margin-right: 20px;
 }
 
-@media (max-width: 1200px) {
-    .popup__info {
-        margin-left: 11px;
-        margin-right: 9px;
-    }
-}
+
 
 .popup__title {
     margin-top: 50px;
@@ -538,7 +532,6 @@
     text-align: left;
     color: #000000;
 }
-
 
 
 
@@ -574,13 +567,6 @@
     color: #000000;
 }
 
-
-@media (max-width: 1200px) {
-    .popup__description {
-        font-size: 13px;
-    }
-}
-
 .popup__list {
     position: relative;
 }
@@ -599,13 +585,12 @@
 .popup__list>li::before {
     content: "•";
     color: var(--color-btn-marker);
-
-
 }
 
 .popup__list>li>span {
     font-weight: 400;
 }
+
 
 .popup__cross-box {
     position: absolute;
@@ -650,9 +635,60 @@
 }
 
 
+@media (max-width: 1200px) {
+    .popup__body {
+        width: 82.03vw;
+    }
+
+    .popup__description {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .pop__img-box {
+        align-items: end;
+        height: 350px;
+    }
+
+    .popup__info {
+        margin-left: 11px;
+        margin-right: 9px;
+        margin-bottom: 37px;
+    }
+
+    .popup__title {
+        margin-top: 10px;
+        margin-bottom: 9px;
+        height: 45px;
+    }
+
+    .popup__description {
+        margin-top: 20px;
+        margin-bottom: 19px;
+        letter-spacing: calc(13px * 0.06);
+        font-weight: 400;
+    }
+
+    .popup__list>li {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup__body {
+        width: 82.03vw;
+        grid-template-columns: 350px 280px;
+    }
+}
 
 @media (max-width:750px) {
-
+    .popup__cross-box {
+        position: absolute;
+        top: -52px;
+        right: -25px;
+    }
 
     .popup__body {
         max-width: 240px;
@@ -672,6 +708,7 @@
         align-items: center;
         margin-left: 11px;
         margin-right: 9px;
+        margin-bottom: 10px;
     }
 
     .popup__title {

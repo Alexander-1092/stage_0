@@ -1,6 +1,7 @@
 import { pets } from "./list-pets.js";
 
 const body = document.querySelector(".body");
+const wrapper = document.querySelector(".wrapper");
 const burger = document.querySelector(".burger");
 const headerMenu = document.querySelector(".header__menu");
 const headerList = document.querySelector(".header__list ");
@@ -16,6 +17,7 @@ const openCloseMenu = () => {
   body.classList.toggle("inactive-body");
   mainBlock.classList.toggle("active-filter");
   headerLogo.classList.toggle("active-filter");
+  
 
   burger.classList.toggle("active-burger");
   headerMenu.classList.toggle("active-menu");
@@ -126,8 +128,6 @@ window.addEventListener("resize", () => {
   counter = 0;
   moveSliderTrack(counter);
 });
-
-const wrapper = document.querySelector(".wrapper");
 
 const popup = document.querySelector(".popup");
 const popupTitle = document.querySelector(".popup__title");
