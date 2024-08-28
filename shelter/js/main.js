@@ -17,7 +17,6 @@ const openCloseMenu = () => {
   body.classList.toggle("inactive-body");
   mainBlock.classList.toggle("active-filter");
   headerLogo.classList.toggle("active-filter");
-  
 
   burger.classList.toggle("active-burger");
   headerMenu.classList.toggle("active-menu");
@@ -221,3 +220,7 @@ popupCrossBox.addEventListener("click", () => {
   inactiveEventSlider();
   counterClickWin = 0;
 });
+
+console.log(
+  "Реализация burger menu на обеих страницах: +26\n Реализация слайдера-карусели на странице Main: +36\n Реализация пагинации на странице Pets: +36\n Реализация попап на обеих страницах: +12\n Итог: 100/100"
+);
