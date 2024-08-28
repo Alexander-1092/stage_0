@@ -6,11 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/main.js"></script>
     <link rel="icon" href="./favicon-16x16.png" type="image/x-icon">
+    <script defer type="module" src="./js/main.js"></script>
 </head>
 
-<body>
+<body class="body">
+    <div class="popup">
+        <div class="popup__cross-box">
+            <span class="popup__cross"></span>
+        </div>
+        <div class="popup__body">
+            <div class="pop__img-box">
+                <img class="popup__img" src="./assets/images/pets-jennifer.png" alt="pet">
+            </div>
+            <div class="popup__info">
+                <h2 class="popup__title">Jennifer</h2>
+                <div class="popup__box-title-type">
+                    <h3 class="popup__type">Dog - </h3>
+                    <span class="popup__breed">Labrador</span>
+                </div>
+
+                <p class="popup__description"> Jennifer is a sweet 2 months old Labrador that is patiently waiting
+                    to find
+                    a new forever home. This girl really enjoys being able to go outside to run and play, but won't
+                    hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                <ul class="popup__list">
+                    <li>
+                        Age:
+                        <span class="popup__age">2 months</span>
+                    </li>
+                    <li>
+                        Inoculations:
+                        <span class="popup__inoculations">none</span>
+                    </li>
+                    <li>
+                        Diseases:
+                        <span class="popup__diseases">none</span>
+                    </li>
+                    <li>
+                        Parasites:
+                        <span class="popup__parasites">none</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <header class="header">
             <div class="container">
@@ -70,7 +110,7 @@
                     </section>
                 </div>
             </div>
-            <div class="container">
+            <div class="container container__white">
                 <section class="about" id="about__id">
                     <div class="about__body">
                         <div class="box-img about__box-img">
@@ -125,6 +165,35 @@
                                         <span class="slider__title">Woody</span>
                                         <button class="slider__btn" type="button">Learn more</button>
                                     </div>
+                                    <div class="slider__slide">
+                                        <img class="slider__img" src="./assets/index/img/pets-charly.png"
+                                            alt="photo cat">
+                                        <span class="slider__title">Charly</span>
+                                        <button class="slider__btn" type="button">Learn more</button>
+                                    </div>
+                                    <div class="slider__slide">
+                                        <img class="slider__img" src="./assets/index/img/pets-fredd.png"
+                                            alt="photo cat">
+                                        <span class="slider__title">Freed</span>
+                                        <button class="slider__btn" type="button">Learn more</button>
+                                    </div>
+                                    <div class="slider__slide">
+                                        <img class="slider__img" src="./assets/index/img/pets-scarlet.png"
+                                            alt="photo cat">
+                                        <span class="slider__title">Scarlett</span>
+                                        <button class="slider__btn" type="button">Learn more</button>
+                                    </div>
+                                    <div class="slider__slide">
+                                        <img class="slider__img" src="./assets/index/img/pets-timmy.png"
+                                            alt="photo cat">
+                                        <span class="slider__title">Timmy</span>
+                                        <button class="slider__btn" type="button">Learn more</button>
+                                    </div>
+                                    <div class="slider__slide">
+                                        <img class="slider__img" src="./assets/index/img/sophia.png" alt="photo cat">
+                                        <span class="slider__title">Sophia</span>
+                                        <button class="slider__btn" type="button">Learn more</button>
+                                    </div>
                                 </div>
                                 <div class="slider__arrows">
                                     <div class="slider__arrow slider__arrow-prev">
@@ -146,7 +215,7 @@
                     </section>
                 </div>
             </div>
-            <div class="container">
+            <div class="container container__white">
                 <section class="help" id="help__id">
                     <div class="help__body">
                         <h2 class="help__title">How you can help
