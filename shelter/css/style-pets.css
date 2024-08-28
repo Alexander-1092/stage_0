@@ -198,7 +198,7 @@
         content: "";
         width: 30px;
         height: 2px;
-        background-color: #000000;
+        background-color: inherit;
     }
 
     .burger::before {
@@ -207,11 +207,12 @@
         content: "";
         width: 30px;
         height: 2px;
-        background-color: #000000;
+        background-color: inherit;
     }
 
     .active-burger {
         transform: rotate(90deg);
+        background-color: var(--color-btn-marker);
     }
 
     .active-filter {
