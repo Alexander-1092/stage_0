@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.pic-wraper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wraper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    height: 100%;
+}
+
+.player {
+    position: relative;
+    z-index: 10;
+    width: 400px;
+    max-height: 600px;
+    outline: 8px solid #8b3f3f;
+}
+
+
+.pic-box img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.box-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.btn-player {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.btn-player:hover {
+    background-color: #0056b3;
+}
+
+.btn-player:active {
+    background-color: #ffffff;
+}
+
+.btn-player img {
+    width: 100%;
+}
+
+.prev-btn {
+    transform: rotate(180deg);
+}
+
+.pic-stop {
+    display: none;
+}
+
+.pic-player-active {
+    display: block;
+}
+
+.pic-player-inactive {
+    display: none;
+}
+
+.track-control {
+    width: 100%;
+}
+
+.track-progress {
+    width: 100%;
+    height: 35px;
+    background-color: #c41f27;
+    appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background: #ecf0f1;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    -webkit-appearance: none;
+    margin-top: -4px;
+}
+
+.sing-info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 8px;
+    border-top: 3px solid #8b3f3f;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 20px;
+    border: 1px solid #ecf0f1;
+    padding-left: 5px;
+}
+
+.footer-box a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 1s ease;
+
+}
+
+.logo {
+    width: 100px;
+    background-color: #fff;
+}
+
+a:hover {
+    color: #8b3f3f;
+}
