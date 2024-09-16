@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio-player</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./main.js"></script>
+    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body>
+    <img src="./assets/img/wrapper.jpg" class="pic-wraper" alt="background">
+    <div class="wraper">
+        <div class="player">
+            <div class="container">
+                <div class="pic-box">
+                    <img src="./assets/img/админы.jpg" class="covers" alt="cover">
+                </div>
+                <div class="nav">
+                    <div class="track-control">
+                        <input type="range" min="1" max="100" value="0" class="track-progress" id="myRange">
+                    </div>
+                    <div class="music-box">
+                        <audio class="song" src="./assets/media/Админы сервер держат.mp3"></audio>
+                        <div class="box-btn">
+                            <div class="prev-btn btn-player">
+                                <img src="./assets/img/next.png" class="pic-btn-prev" alt="">
+                            </div>
+                            <div class="play-btn btn-player">
+                                <img src="./assets/img/arrow-play.png" class="pic-play" alt="">
+                                <img src="./assets/img/pause-btn.png" class="pic-stop" alt="">
+                            </div>
+                            <div class="next-btn btn-player">
+                                <img src="./assets/img/next.png" class="pic-btn-next" alt="">
+                            </div>
+                        </div>
+                        <div class="sing-Info">
+                            <div class="sing-info-box">
+                                <div class="time-Couneter">00:00</div>
+                                <div class="name-sing">Админы сервер держат</div>
+                                <div class="total-time">04:23</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-box">
+                <a href="https://github.com/Alexander-1092" class="link-git" target="_blank">Alex 2024</a>
+                <a href="https://rs.school/" class="link-cours" target="_blank">JavaScript/Front-end</a>
+                <img src="./assets/svg/rs_school_js.svg" class="logo" alt="logo">
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
