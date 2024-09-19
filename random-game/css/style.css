@@ -3,3 +3,93 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  color: #ffffff;
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url(../assets/img/main/main-backround.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .wrapper .header .container .header__title {
+  -webkit-text-stroke: 1px #000000;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .main {
+  flex: 1;
+}
+body .wrapper .main .container .nav {
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+}
+body .wrapper .main .container .nav .nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.375rem;
+}
+body .wrapper .main .container .nav .nav__list .nav__item {
+  transition: transform 0.5s ease-in-out;
+}
+body .wrapper .main .container .nav .nav__list .nav__item .nav__link {
+  font-size: 3rem;
+  cursor: pointer;
+  text-shadow: 0 0 10px black, 0 2px 0 #000000;
+}
+body .wrapper .main .container .nav .nav__list .nav__item:hover {
+  transform: scale(1.2);
+}
+body .wrapper .footer .container .footer__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body .wrapper .footer .container .footer__list .footer__item {
+  transition: transform 0.5s ease-in-out;
+}
+body .wrapper .footer .container .footer__list .footer__item .footer__link {
+  font-size: 1.5rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .footer .container .footer__list .footer__item:hover {
+  transform: scale(1.2);
+}
+body .wrapper .footer .container .footer__list .footer__item .footer__img {
+  width: 6.25rem;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 460px) {
+  html {
+    font-size: 9px;
+  }
+}
