@@ -19,6 +19,50 @@ li {
   list-style-type: none;
 }
 
+body .popup-NewGame {
+  padding: 1.875rem 4.375rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  border-radius: 0.625rem;
+  background-image: url(../assets/img/mapNewGame/860.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .popup-NewGame .popup-NewGame__text {
+  text-align: center;
+  font-size: 1.375rem;
+  color: #ffffff;
+  font-weight: 700;
+  -webkit-text-stroke: 0.5px #000000;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .popup-NewGame .popup-NewGame__nameUser {
+  font-size: 1.375rem;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+body .popup-NewGame .popup-NewGame__btn {
+  font-size: 1.125rem;
+  padding: 0.3125rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+body .popup-NewGame .popup-NewGame__btn:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+body .popup-NewGame .popup-NewGame__btn:active {
+  color: #000000;
+  background-color: #ffffff;
+}
 body .wrapper {
   display: flex;
   flex-direction: column;
@@ -28,6 +72,8 @@ body .wrapper {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  filter: brightness(0.4);
+  pointer-events: none;
 }
 body .wrapper .header .container .header__title {
   color: #c7936b;
