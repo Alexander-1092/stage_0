@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+li {
+  list-style-type: none;
+}
+
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url(../assets/img/mapNewGame/chef-rpg-main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .wrapper .header .container .header__title {
+  color: #c7936b;
+  -webkit-text-stroke: 1px #ffffff;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .main {
+  flex: 1;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 460px) {
+  html {
+    font-size: 9px;
+  }
+}
