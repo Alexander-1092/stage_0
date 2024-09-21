@@ -88,14 +88,73 @@ body .wrapper .header .container .header__title {
 body .wrapper .main {
   flex: 1;
 }
-body .wrapper .footer .container .footer__nav .footer__link-back {
-  display: block;
-  font-size: 24px;
-  font-weight: 500;
+body .wrapper .main .container .box-games {
+  margin-top: 20vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 3.125rem;
+}
+body .wrapper .main .container .box-games .box-games__task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4375rem;
+  font-size: 1.5rem;
+  -webkit-text-stroke: 0.2px #000000;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   transition: color 0.5s ease-in-out;
 }
-body .wrapper .footer .container .footer__nav .footer__link-back:hover {
+body .wrapper .main .container .box-games .box-games__task:hover > img {
+  color: #c7936b;
+  transform: scale(1.2);
+}
+body .wrapper .main .container .box-games .box-games__task:hover > span {
+  color: #c7936b;
+}
+body .wrapper .main .container .box-games .box-games__task:hover > .box-games-img_castl {
+  transform: scale(1.7);
+}
+body .wrapper .main .container .box-games .box-games__task img {
+  width: 6.25rem;
+  height: 6.25rem;
+  -o-object-fit: fill;
+     object-fit: fill;
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .box-games .box-games__task .box-games-img_castl {
+  transform: scale(1.5);
+}
+body .wrapper .footer .container .gameItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back {
+  transition: color 0.5s ease-in-out;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back:hover {
   color: #000000;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .gameItems__icon {
+  width: 2.5rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__life {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart {
+  display: flex;
+  gap: 5px;
+}
+body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart .gameItems__icon {
+  width: 1.5625rem;
 }
 body .activ-wrapper {
   pointer-events: all;
