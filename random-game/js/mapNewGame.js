@@ -4,6 +4,15 @@ const wrapper = document.querySelector(".wrapper");
 const popupNewGame = document.querySelector(".popup-NewGame");
 const userName = {};
 
+const checkPlayer = () => {
+  if (localStorage.getItem("userName") !== null) {
+    wrapper.classList.add("activ-wrapper");
+    popupNewGame.classList.add("inactive-popup-NewGame");
+  }
+};
+
+checkPlayer();
+
 popupNewGameBtn.addEventListener("click", () => {
   removePopup(popupNewGameNameUser);
 });
@@ -13,7 +22,7 @@ const removePopup = (popupNewGameNameUser) => {
     wrapper.classList.add("activ-wrapper");
     popupNewGame.classList.add("inactive-popup-NewGame");
     setNameUser(popupNewGameNameUser.value);
-    localStorage.setItem(userName.userName, JSON.stringify(userName));
+    localStorage.setItem("userName", JSON.stringify(userName));
   }
 };
 
