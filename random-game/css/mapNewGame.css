@@ -63,6 +63,9 @@ body .popup-NewGame .popup-NewGame__btn:active {
   color: #000000;
   background-color: #ffffff;
 }
+body .inactive-popup-NewGame {
+  display: none;
+}
 body .wrapper {
   display: flex;
   flex-direction: column;
@@ -85,6 +88,11 @@ body .wrapper .header .container .header__title {
 body .wrapper .main {
   flex: 1;
 }
+body .activ-wrapper {
+  pointer-events: all;
+  filter: brightness(1);
+}
+
 @media (max-width: 600px) {
   html {
     font-size: 14px;
