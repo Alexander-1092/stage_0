@@ -64,6 +64,9 @@ body .wrapper .main .container .nav .nav__list .nav__item .nav__link {
 body .wrapper .main .container .nav .nav__list .nav__item:hover {
   transform: scale(1.2);
 }
+body .wrapper .main .container .nav .nav__list .nav__item .block-nav__link {
+  pointer-events: none;
+}
 body .wrapper .footer .container .footer__list {
   display: flex;
   justify-content: space-between;

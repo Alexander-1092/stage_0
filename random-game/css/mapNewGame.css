@@ -88,6 +88,15 @@ body .wrapper .header .container .header__title {
 body .wrapper .main {
   flex: 1;
 }
+body .wrapper .footer .container .footer__nav .footer__link-back {
+  display: block;
+  font-size: 24px;
+  font-weight: 500;
+  transition: color 0.5s ease-in-out;
+}
+body .wrapper .footer .container .footer__nav .footer__link-back:hover {
+  color: #000000;
+}
 body .activ-wrapper {
   pointer-events: all;
   filter: brightness(1);
