@@ -29,3 +29,21 @@ const removePopup = (popupNewGameNameUser) => {
 const setNameUser = (name) => {
   userName.userName = name;
 };
+
+const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
+
+const checkHeart = () => {
+  let counterHeart = localStorage.getItem("counterHeart");
+  createHeart(Number(counterHeart));
+};
+
+const createHeart = (counterHeart) => {
+  for (let index = 0; index < counterHeart; index++) {
+    gameItemsBoxHeart.insertAdjacentHTML(
+      "afterbegin",
+      "<img class='gameItems__icon' src='./assets/img/general/240px-Heart.svg.png'alt='icon heart'>"
+    );
+  }
+};
+
+checkHeart();

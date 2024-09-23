@@ -3,6 +3,7 @@ const navLinkContinue = document.querySelector(".nav__link_continue");
 
 navLinkNewGame.addEventListener("click", () => {
   checkGame();
+  localStorage.setItem("counterHeart", JSON.stringify(6));
 });
 
 const checkContinue = () => {
