@@ -103,7 +103,6 @@ checkHeart();
 
 const restarHeart = (counterHeart) => {
   for (let index = 0; index < counterHeart; index++) {
-    console.log(gameItemsBoxHeart.children[index]);
     gameItemsBoxHeart.removeChild(gameItemsBoxHeart.children[0]);
   }
 };
