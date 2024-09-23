@@ -74,6 +74,11 @@ body .wrapper .main .container .game-field .game-field__answers .game-field__car
     grid-template-columns: repeat(3, 1fr);
   }
 }
+body .wrapper .main .container .game-field .game-field__answers .active-game-field__card {
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+  pointer-events: none;
+}
 body .wrapper .main .container .game-field .game-field__questions {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -106,6 +111,11 @@ body .wrapper .main .container .game-field .game-field__questions .game-field__c
   body .wrapper .main .container .game-field .game-field__questions {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+body .wrapper .main .container .game-field .game-field__questions .active-game-field__card {
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+  pointer-events: none;
 }
 body .wrapper .footer .container .gameItems {
   display: flex;
