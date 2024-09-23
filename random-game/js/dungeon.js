@@ -68,5 +68,42 @@ const compareAnswers = (oneAnswer, twoAnswer) => {
   } else {
     linkActiveTag.classList.remove("active-game-field__card");
     linkActiveTagTwo.classList.remove("active-game-field__card");
+
+    delheart();
+  }
+};
+
+const delheart = () => {
+  let counterHeart = localStorage.getItem("counterHeart");
+  restarHeart(counterHeart);
+  localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
+
+  checkHeart(counterHeart - 1);
+};
+
+// Блок сердечек
+const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
+
+const checkHeart = () => {
+  let counterHeart = localStorage.getItem("counterHeart");
+  createHeart(Number(counterHeart));
+};
+
+const createHeart = (counterHeart) => {
+  for (let index = 0; index < counterHeart; index++) {
+    gameItemsBoxHeart.insertAdjacentHTML(
+      "afterbegin",
+      "<img class='gameItems__icon' src='./assets/img/general/240px-Heart.svg.png'alt='icon heart'>"
+    );
+  }
+};
+
+checkHeart();
+//
+
+const restarHeart = (counterHeart) => {
+  for (let index = 0; index < counterHeart; index++) {
+    console.log(gameItemsBoxHeart.children[index]);
+    gameItemsBoxHeart.removeChild(gameItemsBoxHeart.children[0]);
   }
 };
