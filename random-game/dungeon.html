@@ -4,56 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карта</title>
-    <link rel="stylesheet" href="./css/mapNewGame.css">
-    <script defer src="./js/mapNewGame.js"></script>
+    <title>Подземелье файловых команд</title>
+    <link rel="stylesheet" href="./css/dungeon.css">
+    <script defer src="./js/dungeon.js"></script>
 </head>
 
 <body>
-    <div class="popup-NewGame">
-        <p class="popup-NewGame__text">
-            Приветствую тебя игрок!
-        </p>
-        <p class="popup-NewGame__text">Назови свое имя, чтобы начать приключения</p>
-        <input class="popup-NewGame__nameUser" type="text">
-        <button type="button" class="popup-NewGame__btn">начать приключения</button>
-    </div>
     <div class="wrapper">
         <header class="header">
             <div class="container">
-                <h1 class="header__title">Карта приключений</h1>
+                <h1 class="header__title">Подземелье файловых команд</h1>
             </div>
         </header>
         <main class="main">
             <div class="container">
-                <div class="box-games">
-                    <a href="./dungeon.html" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/Attachment-1.png" alt="logo game">
-                        <span>Подземелье файловых команд</span>
-                    </a>
-                    <a href="#" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/unnamed.png" alt="logo game">
-                        <span>Кузница репозитория</span>
-                    </a>
-                    <a href="#" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/png-klev-club-p-labirint-png-12.png" alt="logo game">
-                        <span>Лабиринт веток Гит</span>
-                    </a>
-                    <a href="#" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/book.png" alt="logo game">
-                        <span>Теневая комната</span>
-                    </a>
-                    <a href="#" class="box-games__task">
-                        <img class="box-games-img_castl" src="./assets/img/mapNewGame/csaasas2.png" alt="logo game">
-                        <span>Удаленный град Гитхаб</span>
-                    </a>
+                <div class="game-field">
+                    <ul class="game-field__answers">
+                        <li class="game-field__card">cd ..</li>
+                        <li class="game-field__card">cd /</li>
+                        <li class="game-field__card">cd -</li>
+                        <li class="game-field__card">cd ~</li>
+                        <li class="game-field__card">ls</li>
+                        <li class="game-field__card">code .</li>
+                        <li class="game-field__card">touch</li>
+                        <li class="game-field__card">mkdir</li>
+                        <li class="game-field__card">rm</li>
+                        <li class="game-field__card">rmdir</li>
+                    </ul>
+                    <ul class="game-field__questions">
+                        <li class="game-field__card">переместиться на одну папку вперед</li>
+                        <li class="game-field__card">создать файл</li>
+                        <li class="game-field__card">создать папку</li>
+                        <li class="game-field__card">переместиться на одну папку назад</li>
+                        <li class="game-field__card">удалить папку</li>
+                        <li class="game-field__card">посмотреть содержимое папки</li>
+                        <li class="game-field__card">удалить файл</li>
+                        <li class="game-field__card">открыть папку в редакторе кода</li>
+                        <li class="game-field__card">перейти к домашней папке</li>
+                        <li class="game-field__card">вернуться к предыдущей папке</li>
+                    </ul>
                 </div>
+
             </div>
         </main>
         <footer class="footer">
             <div class="container">
                 <div class="gameItems">
-                    <a class="gameItems__link-back" href="./index.html">Вернуться в меню</a>
+                    <a class="gameItems__link-back" href="./mapNewGame.html">Вернуться на карту</a>
                     <div class="gameItems__skills">
                         <span title="ваши достижения">Мои навыки:</span>
                         <div class="gameItems__box-skills">
