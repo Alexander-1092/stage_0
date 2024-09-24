@@ -23,7 +23,7 @@ body {
   overflow: hidden;
 }
 body .popupEndGame {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   z-index: 2;
@@ -45,6 +45,10 @@ body .popupEndGame .popupEndGame__title {
   text-align: center;
   font-size: 2.625rem;
   color: #ffffff;
+  -webkit-text-stroke: 1px #000000;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 body .popupEndGame .popupEndGame__text {
   margin-bottom: 5rem;
@@ -78,7 +82,7 @@ body .popupStart {
   background-image: url(../assets/img/dounge/dungeon.jpg);
   background-size: cover;
   background-position: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 body .popupStart .popupStart__title {
@@ -144,16 +148,19 @@ body .wrapper .main .container .game-field .game-field__answers .game-field__car
   align-items: center;
   max-width: 10.625rem;
   font-size: 2rem;
-  color: #ffffff;
-  border: 1px solid #000000;
+  color: #dd4343;
+  background-image: url(../assets/img/dounge/bril.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding: 1.25rem;
   border-radius: 1.5625rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 body .wrapper .main .container .game-field .game-field__answers .game-field__card:hover {
-  background-color: #fff;
   color: #000000;
+  transform: scale(1.2);
 }
 @media (max-width: 340px) {
   body .wrapper .main .container .game-field .game-field__answers {
@@ -162,8 +169,8 @@ body .wrapper .main .container .game-field .game-field__answers .game-field__car
 }
 body .wrapper .main .container .game-field .game-field__answers .active-game-field__card {
   color: rgb(0, 0, 0);
-  background-color: #fff;
   pointer-events: none;
+  filter: brightness(0.5);
 }
 body .wrapper .main .container .game-field .game-field__questions {
   display: grid;
@@ -171,21 +178,25 @@ body .wrapper .main .container .game-field .game-field__questions {
   gap: 3.125rem;
 }
 body .wrapper .main .container .game-field .game-field__questions .game-field__card {
+  padding: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 10.625rem;
   font-size: 1.5rem;
-  color: #ffffff;
-  border: 1px solid #000000;
-  padding: 1.25rem;
+  font-weight: 700;
+  color: #0a226e;
+  background-image: url(../assets/img/dounge/bril2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   text-align: center;
   border-radius: 1.5625rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 body .wrapper .main .container .game-field .game-field__questions .game-field__card:hover {
-  background-color: #fff;
+  transform: scale(1.2);
   color: #000000;
 }
 @media (max-width: 980px) {
@@ -200,8 +211,8 @@ body .wrapper .main .container .game-field .game-field__questions .game-field__c
 }
 body .wrapper .main .container .game-field .game-field__questions .active-game-field__card {
   color: rgb(0, 0, 0);
-  background-color: #fff;
   pointer-events: none;
+  filter: brightness(0.5);
 }
 body .wrapper .footer .container .gameItems {
   display: flex;
@@ -260,6 +271,11 @@ body .inactive-wrapper {
   overflow: visible;
 }
 
+@media (max-width: 1100px) {
+  html {
+    font-size: 15px;
+  }
+}
 @media (max-width: 600px) {
   html {
     font-size: 14px;
@@ -273,5 +289,10 @@ body .inactive-wrapper {
 @media (max-width: 430px) {
   html {
     font-size: 9px;
+  }
+}
+@media (max-width: 370px) {
+  html {
+    font-size: 8px;
   }
 }
