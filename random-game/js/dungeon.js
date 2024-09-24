@@ -221,3 +221,29 @@ popupStartBtn.addEventListener("click", () => {
 
 sayHelloUser(userName);
 playSoundMain();
+
+const gameItemsIconSkills = document.querySelectorAll(
+  ".gameItems__icon_skills"
+);
+
+const showReceivedSkills = () => {
+  let dataSkills = JSON.parse(localStorage.getItem("skills"));
+
+  dataSkills.forEach((skill) => {
+    if (skill === "noob") {
+      gameItemsIconSkills[0].classList.add("active-gameItems__icon_skills");
+    } else if (skill === "doungeon") {
+      gameItemsIconSkills[1].classList.add("active-gameItems__icon_skills");
+    } else if (skill === "smithy") {
+      gameItemsIconSkills[2].classList.add("active-gameItems__icon_skills");
+    } else if (skill === "labyrinth") {
+      gameItemsIconSkills[3].classList.add("active-gameItems__icon_skills");
+    } else if (skill === "shadow") {
+      gameItemsIconSkills[4].classList.add("active-gameItems__icon_skills");
+    } else if (skill === "sky") {
+      gameItemsIconSkills[5].classList.add("active-gameItems__icon_skills");
+    }
+  });
+};
+
+showReceivedSkills();

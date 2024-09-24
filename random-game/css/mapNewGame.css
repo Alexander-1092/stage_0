@@ -154,12 +154,12 @@ body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-s
   gap: 10px;
   flex-wrap: wrap;
 }
-body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .gameItems__icon {
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .gameItems__icon_skills {
   width: 2rem;
   display: none;
 }
-body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .gameItems__icon:nth-child(1) {
-  display: block;
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .active-gameItems__icon_skills {
+  display: flex;
 }
 body .wrapper .footer .container .gameItems .gameItems__life {
   display: flex;
