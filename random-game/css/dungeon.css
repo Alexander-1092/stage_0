@@ -74,7 +74,7 @@ body .popupStart {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 3.125rem;
   background-image: url(../assets/img/dounge/dungeon.jpg);
   background-size: cover;
   background-position: center;
@@ -82,19 +82,19 @@ body .popupStart {
   width: 100%;
 }
 body .popupStart .popupStart__title {
-  font-size: 36px;
+  font-size: 2.25rem;
   color: #ffffff;
 }
 body .popupStart .popupStart__text {
   width: 50%;
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
   color: #ffffff;
 }
 body .popupStart .popupStart__btn {
-  padding: 15px 30px;
-  font-size: 32px;
-  border-radius: 10px;
+  padding: 0.9375rem 1.875rem;
+  font-size: 2rem;
+  border-radius: 0.625rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }

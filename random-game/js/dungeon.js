@@ -81,10 +81,19 @@ const compareAnswers = (oneAnswer, twoAnswer) => {
 
   if (correctAnswers == numberOfCardPairs) {
     stopPlaySoundMain();
+    addSkillLocalStorage();
     showYouWin(userName);
     playSoundWin();
   }
 };
+
+//функция для перезаписи скиллов
+const addSkillLocalStorage = () => {
+  let data = JSON.parse(localStorage.getItem("skills"));
+  data.push("doungeon");
+  localStorage.setItem("skills", JSON.stringify(data));
+};
+//
 
 // Блок сердечек
 const delheart = () => {
