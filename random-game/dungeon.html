@@ -9,15 +9,22 @@
     <script defer src="./js/dungeon.js"></script>
 </head>
 
-<body>
+<body class="body">
     <audio class="sound-win" src="./assets/media/general/kirya-pomedorkas-adventures-ost-z_uk-pobedy.mp3"></audio>
     <audio class="sound-loose" src="./assets/media/general/hello-darkness-my-old-friend-sound-effect.mp3"></audio>
     <audio class="sound-error" src="./assets/media/general/erorr1.mp3"></audio>
     <audio class="sound-right" src="./assets/media/general/right.mp3"></audio>
+    <audio class="sound-main" src="./assets/media/dounge/grig-per-gjunt-v-peshhere-gornogo-korolja.mp3" loop></audio>
     <div class="popupEndGame">
         <h2 class="popupEndGame__title">Вы победили!</h2>
         <p class="popupEndGame__text">Вы получили достижение - мастер темных мест</p>
         <a class="popupEndGame__link" href="./mapNewGame.html">ОК</a>
+    </div>
+    <div class="popupStart">
+        <h2 class="popupStart__title">Привет</h2>
+        <p class="popupStart__text">Ты вошел в подземелье файловых команд. Чтобы покарить подземелье ты должен
+            совместить действия с их командами. Желаю удачи!</p>
+        <button type="button" class="popupStart__btn">Продолжить</button>
     </div>
     <div class="wrapper">
         <header class="header">

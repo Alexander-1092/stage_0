@@ -22,6 +22,7 @@ checkContinue();
 
 const checkGame = () => {
   if (localStorage.getItem("userName") !== null) {
-    localStorage.clear();
+    localStorage.removeItem("counterHeart");
+    localStorage.removeItem("userName");
   }
 };

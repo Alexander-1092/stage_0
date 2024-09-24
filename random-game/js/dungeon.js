@@ -80,6 +80,7 @@ const compareAnswers = (oneAnswer, twoAnswer) => {
   }
 
   if (correctAnswers == numberOfCardPairs) {
+    stopPlaySoundMain();
     showYouWin(userName);
     playSoundWin();
   }
@@ -91,6 +92,7 @@ const delheart = () => {
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
+    stopPlaySoundMain();
     showYouLoose(userName);
     playSoundLoose();
   }
@@ -149,6 +151,18 @@ popupEndGameLink.addEventListener("click", () => {
   wrapper.classList.remove("inactive-wrapper");
 });
 
+//music
+const soundMain = document.querySelector(".sound-main");
+function playSoundMain() {
+  soundMain.currentTime = 0;
+  soundMain.play();
+}
+
+function stopPlaySoundMain() {
+  soundMain.pause();
+  soundMain.currentTime = 0;
+}
+
 const soundError = document.querySelector(".sound-error");
 
 function playSoundEroro() {
@@ -176,3 +190,25 @@ function playSoundLoose() {
   soundLoose.currentTime = 0;
   soundLoose.play();
 }
+//
+
+//popup start
+
+const popupStart = document.querySelector(".popupStart");
+const popupStartTitle = document.querySelector(".popupStart__title");
+const popupStartBtn = document.querySelector(".popupStart__btn");
+const body = document.querySelector(".body");
+
+popupStartBtn.addEventListener("click", () => {});
+
+const sayHelloUser = (userName) => {
+  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Привет ${userName}</h2>`;
+};
+
+popupStartBtn.addEventListener("click", () => {
+  popupStart.classList.add("inactive-popupStart");
+  body.classList.add("active-body");
+});
+
+sayHelloUser(userName);
+playSoundMain();

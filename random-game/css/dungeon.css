@@ -19,6 +19,9 @@ li {
   list-style-type: none;
 }
 
+body {
+  overflow: hidden;
+}
 body .popupEndGame {
   position: absolute;
   top: 50%;
@@ -60,6 +63,47 @@ body .popupEndGame .popupEndGame__link:hover {
 }
 body .active-popupEndGame {
   display: flex;
+}
+body .popupStart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-image: url(../assets/img/dounge/dungeon.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+body .popupStart .popupStart__title {
+  font-size: 36px;
+  color: #ffffff;
+}
+body .popupStart .popupStart__text {
+  width: 50%;
+  text-align: center;
+  font-size: 32px;
+  color: #ffffff;
+}
+body .popupStart .popupStart__btn {
+  padding: 15px 30px;
+  font-size: 32px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+body .popupStart .popupStart__btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+body .inactive-popupStart {
+  display: none;
 }
 body .wrapper {
   display: flex;
@@ -210,6 +254,10 @@ body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-hea
 }
 body .inactive-wrapper {
   filter: brightness(0.5);
+}
+
+.active-body {
+  overflow: visible;
 }
 
 @media (max-width: 600px) {
