@@ -7,7 +7,11 @@ navLinkNewGame.addEventListener("click", () => {
 });
 
 const checkContinue = () => {
-  if (localStorage.getItem("userName") === null) {
+  console.log(localStorage.getItem("counterHeart") < 0);
+  if (
+    localStorage.getItem("userName") === null ||
+    localStorage.getItem("counterHeart") <= 0
+  ) {
     navLinkContinue.classList.add("block-nav__link");
   } else {
     navLinkContinue.classList.remove("block-nav__link");
