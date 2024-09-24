@@ -67,17 +67,21 @@ const numberOfCardPairs = 10;
 const compareAnswers = (oneAnswer, twoAnswer) => {
   if (answer[oneAnswer] === twoAnswer) {
     correctAnswers += 1;
+    playSoundRight();
   } else if (answer[twoAnswer] === oneAnswer) {
     correctAnswers += 1;
+    playSoundRight();
   } else {
     linkActiveTag.classList.remove("active-game-field__card");
     linkActiveTagTwo.classList.remove("active-game-field__card");
+    playSoundEroro();
 
     delheart();
   }
 
   if (correctAnswers == numberOfCardPairs) {
     showYouWin(userName);
+    playSoundWin();
   }
 };
 
@@ -87,7 +91,8 @@ const delheart = () => {
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
-    showYouWin(userName);
+    showYouLoose(userName);
+    playSoundLoose();
   }
   checkHeart(counterHeart - 1);
 };
@@ -109,7 +114,6 @@ const createHeart = (counterHeart) => {
 };
 
 checkHeart();
-//
 
 const restarHeart = (counterHeart) => {
   for (let index = 0; index < counterHeart; index++) {
@@ -122,12 +126,53 @@ const restarHeart = (counterHeart) => {
 const popupEndGame = document.querySelector(".popupEndGame");
 const popupEndGameText = document.querySelector(".popupEndGame__text");
 const popupEndGameLink = document.querySelector(".popupEndGame__link");
+const wrapper = document.querySelector(".wrapper");
+const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - мастер темных мест</p>`;
   popupEndGame.classList.add("active-popupEndGame");
+  wrapper.classList.add("inactive-wrapper");
+};
+
+const showYouLoose = (userName) => {
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб в темных тонелях поземелья</p>`;
+  popupEndGameTitle.innerHTML =
+    "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
+  popupEndGameLink.href = "./index.html";
+  popupEndGame.classList.add("active-popupEndGame");
+  wrapper.classList.add("inactive-wrapper");
 };
 
 popupEndGameLink.addEventListener("click", () => {
   popupEndGame.classList.remove("active-popupEndGame");
+  wrapper.classList.remove("inactive-wrapper");
 });
+
+const soundError = document.querySelector(".sound-error");
+
+function playSoundEroro() {
+  soundError.currentTime = 0;
+  soundError.play();
+}
+
+const soundRight = document.querySelector(".sound-right");
+
+function playSoundRight() {
+  soundRight.currentTime = 0;
+  soundRight.play();
+}
+
+const soundWin = document.querySelector(".sound-win");
+
+function playSoundWin() {
+  soundWin.currentTime = 0;
+  soundWin.play();
+}
+
+const soundLoose = document.querySelector(".sound-loose");
+
+function playSoundLoose() {
+  soundLoose.currentTime = 0;
+  soundLoose.play();
+}

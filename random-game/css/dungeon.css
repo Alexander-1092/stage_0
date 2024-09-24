@@ -23,6 +23,7 @@ body .popupEndGame {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 2;
   transform: translate(-50%, -50%);
   display: none;
   flex-direction: column;
@@ -206,6 +207,9 @@ body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-hea
 }
 body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart .gameItems__icon {
   width: 2rem;
+}
+body .inactive-wrapper {
+  filter: brightness(0.5);
 }
 
 @media (max-width: 600px) {
