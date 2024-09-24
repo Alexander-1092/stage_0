@@ -10,6 +10,7 @@ const answer = {
   "rmdir ": "удалить папку",
   "code .": "открыть папку в редакторе кода",
 };
+const userName = JSON.parse(localStorage.getItem("userName")).userName;
 
 const gameField = document.querySelector(".game-field");
 const headerTitle = document.querySelector(".header__title");
@@ -60,28 +61,37 @@ const searchingAnswer = (textCard) => {
   }
 };
 
+let correctAnswers = 0;
+const numberOfCardPairs = 10;
+
 const compareAnswers = (oneAnswer, twoAnswer) => {
   if (answer[oneAnswer] === twoAnswer) {
-    console.log("yes");
+    correctAnswers += 1;
   } else if (answer[twoAnswer] === oneAnswer) {
-    console.log("yes");
+    correctAnswers += 1;
   } else {
     linkActiveTag.classList.remove("active-game-field__card");
     linkActiveTagTwo.classList.remove("active-game-field__card");
 
     delheart();
   }
+
+  if (correctAnswers == numberOfCardPairs) {
+    showYouWin(userName);
+  }
 };
 
+// Блок сердечек
 const delheart = () => {
   let counterHeart = localStorage.getItem("counterHeart");
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
-
+  if (counterHeart == 1) {
+    showYouWin(userName);
+  }
   checkHeart(counterHeart - 1);
 };
 
-// Блок сердечек
 const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
 
 const checkHeart = () => {
@@ -106,3 +116,18 @@ const restarHeart = (counterHeart) => {
     gameItemsBoxHeart.removeChild(gameItemsBoxHeart.children[0]);
   }
 };
+
+//popup
+
+const popupEndGame = document.querySelector(".popupEndGame");
+const popupEndGameText = document.querySelector(".popupEndGame__text");
+const popupEndGameLink = document.querySelector(".popupEndGame__link");
+
+const showYouWin = (userName) => {
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - мастер темных мест</p>`;
+  popupEndGame.classList.add("active-popupEndGame");
+};
+
+popupEndGameLink.addEventListener("click", () => {
+  popupEndGame.classList.remove("active-popupEndGame");
+});
