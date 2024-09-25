@@ -34,7 +34,7 @@ body .popupEndGame {
   justify-content: center;
   gap: 1.875rem;
   padding: 1.25rem 12.5rem;
-  background-image: url(../assets/img/dounge/winPopup.jpg);
+  background-image: url(../assets/img/smithy/smithy.jfif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -54,7 +54,8 @@ body .popupEndGame .popupEndGame__text {
   margin-bottom: 5rem;
   text-align: center;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 body .popupEndGame .popupEndGame__link {
   margin-bottom: 1.875rem;
@@ -73,7 +74,7 @@ body .popupStart {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,6 +131,7 @@ body .wrapper .main {
   flex: 1;
 }
 body .wrapper .main .container .slider {
+  margin-top: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,29 +144,64 @@ body .wrapper .main .container .slider .slider__title {
 }
 body .wrapper .main .container .slider .slider__track {
   margin-bottom: 6.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body .wrapper .main .container .slider .slider__track .slider__questions .slider__text {
+  text-align: center;
   margin-bottom: 3.125rem;
   font-size: 2rem;
   color: #ffffff;
 }
+body .wrapper .main .container .slider .slider__track .slider__btn {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1.25rem;
+  width: 12.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+body .wrapper .main .container .slider .slider__track .slider__btn:hover {
+  transform: scale(1.1);
+}
+body .wrapper .main .container .slider .slider__track .slider__btn:active {
+  transform: rotate(-150deg) scale(1.2);
+}
+body .wrapper .main .container .slider .slider__track .active__alider-btn {
+  transform: rotate(-150deg) scale(1.2);
+}
+body .wrapper .main .container .slider .slider__track .slider__answer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 body .wrapper .main .container .slider .slider__track .slider__answer label {
+  position: relative;
+  z-index: 2;
   font-size: 2rem;
-  color: #ffffff;
+  color: #000000;
+  transition: all 0.5s ease-in-out;
 }
 body .wrapper .main .container .slider .slider__track .slider__answer label .slider__input {
   padding-left: 0.3125rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
   font-size: 2rem;
 }
-body .wrapper .main .container .slider .slider__btn {
-  padding: 0.9375rem 3.125rem;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
+body .wrapper .main .container .slider .slider__track .slider__answer label:hover {
+  color: #501605;
 }
-body .wrapper .main .container .slider .slider__btn:hover {
-  color: #ffffff;
-  background-color: #000000;
+body .wrapper .main .container .slider .slider__track .slider__answer .slider__img-sword {
+  position: absolute;
+  top: -8rem;
+  left: 2.5rem;
+  z-index: 1;
+  width: 18.75rem;
+  transform: rotate(-135deg);
 }
 body .wrapper .footer .container .gameItems {
   display: flex;

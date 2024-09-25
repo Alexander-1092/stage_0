@@ -9,7 +9,7 @@ const gameItemsIconSkills = document.querySelectorAll(
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("doungeon");
+  data.push("smithy");
   localStorage.setItem("skills", JSON.stringify(data));
 };
 const showReceivedSkills = () => {
@@ -88,13 +88,14 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - мастер темных мест</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Гефест репозиториев</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
+  addSkillLocalStorage();
 };
 
 const showYouLoose = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб в темных тонелях поземелья</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб от прилетевшего в лоб молота.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
   popupEndGameLink.href = "./index.html";
@@ -108,6 +109,8 @@ popupEndGameLink.addEventListener("click", () => {
 });
 //
 
+//функция для перезаписи скиллов
+
 //Смена вопроса
 
 const sliderBtn = document.querySelector(".slider__btn");
@@ -118,7 +121,20 @@ sliderBtn.addEventListener("click", () => {
   checkAnswer();
 });
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    sliderBtn.classList.add("active__alider-btn");
+    setTimeout(() => {
+      sliderBtn.classList.remove("active__alider-btn");
+    }, 300);
+    countQeuestion += 1;
+    rerecordAnswers(answers, countQeuestion);
+    checkAnswer();
+  }
+});
+
 let countQeuestion = 0;
+let counterСorrectАnswers = 0;
 const sliderText = document.querySelector(".slider__text");
 
 const rerecordAnswers = (answers, countQeuestion) => {
@@ -130,9 +146,56 @@ rerecordAnswers(answers, countQeuestion);
 const sliderInput = document.querySelector(".slider__input");
 
 const checkAnswer = () => {
-  console.log(answers[countQeuestion - 1][1]);
   if (sliderInput.value === answers[countQeuestion - 1][1]) {
+    playSoundRight();
+    counterСorrectАnswers += 1;
   } else {
+    playSoundEroro();
     delheart();
   }
+  if (counterСorrectАnswers === 6) {
+    showYouWin(userName);
+  }
+  sliderInput.value = "";
 };
+
+//music
+const soundMain = document.querySelector(".sound-main");
+function playSoundMain() {
+  soundMain.currentTime = 0;
+  soundMain.play();
+}
+
+function stopPlaySoundMain() {
+  soundMain.pause();
+  soundMain.currentTime = 0;
+}
+
+const soundError = document.querySelector(".sound-error");
+
+function playSoundEroro() {
+  soundError.currentTime = 0;
+  soundError.play();
+}
+
+const soundRight = document.querySelector(".sound-right");
+
+function playSoundRight() {
+  soundRight.currentTime = 0;
+  soundRight.play();
+}
+
+const soundWin = document.querySelector(".sound-win");
+
+function playSoundWin() {
+  soundWin.currentTime = 0;
+  soundWin.play();
+}
+
+const soundLoose = document.querySelector(".sound-loose");
+
+function playSoundLoose() {
+  soundLoose.currentTime = 0;
+  soundLoose.play();
+}
+//
