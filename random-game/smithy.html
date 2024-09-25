@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кузница репозитория</title>
     <link rel="stylesheet" href="./css/smithy.css">
-    <script defer src="./js/smithy.js"></script>
-
+    <script defer type="module" src="./js/answers.js"></script>
+    <script defer type="module" src="./js/smithy.js"></script>
 </head>
 
-<body>
+<body class="body">
+    <div class="popupEndGame">
+        <h2 class="popupEndGame__title">Вы победили!</h2>
+        <p class="popupEndGame__text">Вы получили достижение - мастер темных мест</p>
+        <a class="popupEndGame__link" href="./mapNewGame.html">ОК</a>
+    </div>
+    <div class="popupStart">
+        <h2 class="popupStart__title">Приветствую тебя герой</h2>
+        <p class="popupStart__text">Тебе предстоит выковать магический меч. Чтобы это сделать тебе нужно наложить на
+            него руны. Однако прошлый кузнец не успел оставить точные инструкции, но остались подсказки. Следуя
+            подсказка выведи нужные магические слова на мече.</p>
+        <button type="button" class="popupStart__btn">Продолжить</button>
+    </div>
     <div class="wrapper">
         <header class="header">
             <div class="container">
@@ -19,6 +31,21 @@
         </header>
         <main class="main">
             <div class="container">
+                <div class="slider">
+                    <h2 class="slider__title">Создайте руну</h2>
+                    <div class="slider__track">
+                        <div class="slider__questions">
+                            <p class="slider__text"></p>
+                        </div>
+                        <div class="slider__answer">
+                            <label>
+                                git
+                                <input class="slider__input" type="text">
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" class="slider__btn">Создать руну</button>
+                </div>
             </div>
         </main>
         <footer class="footer">

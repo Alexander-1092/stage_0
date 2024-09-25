@@ -1,4 +1,10 @@
+import { answers } from "./answers.js";
+
 const userName = JSON.parse(localStorage.getItem("userName")).userName;
+const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
+const gameItemsIconSkills = document.querySelectorAll(
+  ".gameItems__icon_skills"
+);
 
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
@@ -6,11 +12,6 @@ const addSkillLocalStorage = () => {
   data.push("doungeon");
   localStorage.setItem("skills", JSON.stringify(data));
 };
-
-const gameItemsIconSkills = document.querySelectorAll(
-  ".gameItems__icon_skills"
-);
-
 const showReceivedSkills = () => {
   let dataSkills = JSON.parse(localStorage.getItem("skills"));
 
@@ -30,31 +31,21 @@ const showReceivedSkills = () => {
     }
   });
 };
-
 showReceivedSkills();
-
-//
-
 // Блок сердечек
 const delheart = () => {
   let counterHeart = localStorage.getItem("counterHeart");
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
-    stopPlaySoundMain();
     showYouLoose(userName);
-    playSoundLoose();
   }
   checkHeart(counterHeart - 1);
 };
-
-const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
-
 const checkHeart = () => {
   let counterHeart = localStorage.getItem("counterHeart");
   createHeart(Number(counterHeart));
 };
-
 const createHeart = (counterHeart) => {
   for (let index = 0; index < counterHeart; index++) {
     gameItemsBoxHeart.insertAdjacentHTML(
@@ -63,11 +54,85 @@ const createHeart = (counterHeart) => {
     );
   }
 };
-
 checkHeart();
-
 const restarHeart = (counterHeart) => {
   for (let index = 0; index < counterHeart; index++) {
     gameItemsBoxHeart.removeChild(gameItemsBoxHeart.children[0]);
+  }
+};
+
+//приветствие игрока
+const popupStart = document.querySelector(".popupStart");
+const popupStartTitle = document.querySelector(".popupStart__title");
+const popupStartBtn = document.querySelector(".popupStart__btn");
+const body = document.querySelector(".body");
+
+const sayHelloUser = (userName) => {
+  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Приветствую тебя ${userName}</h2>`;
+};
+
+//закрыть попап приветствия
+popupStartBtn.addEventListener("click", () => {
+  popupStart.classList.add("inactive-popupStart");
+  body.classList.add("active-body");
+});
+
+sayHelloUser(userName);
+//
+
+//попап победа-поражения
+const popupEndGame = document.querySelector(".popupEndGame");
+const popupEndGameText = document.querySelector(".popupEndGame__text");
+const popupEndGameLink = document.querySelector(".popupEndGame__link");
+const wrapper = document.querySelector(".wrapper");
+const popupEndGameTitle = document.querySelector(".popupEndGame__title");
+
+const showYouWin = (userName) => {
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - мастер темных мест</p>`;
+  popupEndGame.classList.add("active-popupEndGame");
+  wrapper.classList.add("inactive-wrapper");
+};
+
+const showYouLoose = (userName) => {
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб в темных тонелях поземелья</p>`;
+  popupEndGameTitle.innerHTML =
+    "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
+  popupEndGameLink.href = "./index.html";
+  popupEndGame.classList.add("active-popupEndGame");
+  wrapper.classList.add("inactive-wrapper");
+};
+
+popupEndGameLink.addEventListener("click", () => {
+  popupEndGame.classList.remove("active-popupEndGame");
+  wrapper.classList.remove("inactive-wrapper");
+});
+//
+
+//Смена вопроса
+
+const sliderBtn = document.querySelector(".slider__btn");
+
+sliderBtn.addEventListener("click", () => {
+  countQeuestion += 1;
+  rerecordAnswers(answers, countQeuestion);
+  checkAnswer();
+});
+
+let countQeuestion = 0;
+const sliderText = document.querySelector(".slider__text");
+
+const rerecordAnswers = (answers, countQeuestion) => {
+  sliderText.textContent = answers[countQeuestion][0];
+};
+
+rerecordAnswers(answers, countQeuestion);
+
+const sliderInput = document.querySelector(".slider__input");
+
+const checkAnswer = () => {
+  console.log(answers[countQeuestion - 1][1]);
+  if (sliderInput.value === answers[countQeuestion - 1][1]) {
+  } else {
+    delheart();
   }
 };

@@ -19,6 +19,96 @@ li {
   list-style-type: none;
 }
 
+body {
+  overflow: hidden;
+}
+body .popupEndGame {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+  padding: 1.25rem 12.5rem;
+  background-image: url(../assets/img/dounge/winPopup.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.625rem;
+}
+body .popupEndGame .popupEndGame__title {
+  margin-bottom: 6.25rem;
+  text-align: center;
+  font-size: 2.625rem;
+  color: #ffffff;
+  -webkit-text-stroke: 1px #000000;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .popupEndGame .popupEndGame__text {
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+}
+body .popupEndGame .popupEndGame__link {
+  margin-bottom: 1.875rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+body .popupEndGame .popupEndGame__link:hover {
+  transform: scale(1.2);
+}
+body .active-popupEndGame {
+  display: flex;
+}
+body .popupStart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem;
+  background-image: url(../assets/img/smithy/smithy2.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+body .popupStart .popupStart__title {
+  font-size: 2.25rem;
+  color: #ffffff;
+}
+body .popupStart .popupStart__text {
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  color: #ffffff;
+}
+body .popupStart .popupStart__btn {
+  padding: 0.9375rem 1.875rem;
+  font-size: 2rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+body .popupStart .popupStart__btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+body .inactive-popupStart {
+  display: none;
+}
 body .wrapper {
   display: flex;
   flex-direction: column;
@@ -38,6 +128,43 @@ body .wrapper .header .container .header__title {
 }
 body .wrapper .main {
   flex: 1;
+}
+body .wrapper .main .container .slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .wrapper .main .container .slider .slider__title {
+  margin-bottom: 6.25rem;
+  font-size: 42px;
+  color: #501605;
+}
+body .wrapper .main .container .slider .slider__track {
+  margin-bottom: 6.25rem;
+}
+body .wrapper .main .container .slider .slider__track .slider__questions .slider__text {
+  margin-bottom: 3.125rem;
+  font-size: 2rem;
+  color: #ffffff;
+}
+body .wrapper .main .container .slider .slider__track .slider__answer label {
+  font-size: 2rem;
+  color: #ffffff;
+}
+body .wrapper .main .container .slider .slider__track .slider__answer label .slider__input {
+  padding-left: 0.3125rem;
+  font-size: 2rem;
+}
+body .wrapper .main .container .slider .slider__btn {
+  padding: 0.9375rem 3.125rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .slider .slider__btn:hover {
+  color: #ffffff;
+  background-color: #000000;
 }
 body .wrapper .footer .container .gameItems {
   display: flex;
@@ -87,6 +214,13 @@ body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-hea
 }
 body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart .gameItems__icon {
   width: 2rem;
+}
+body .inactive-wrapper {
+  filter: brightness(0.5);
+}
+
+.active-body {
+  overflow: visible;
 }
 
 @media (max-width: 1100px) {
