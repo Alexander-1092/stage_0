@@ -6,6 +6,17 @@ const gameItemsIconSkills = document.querySelectorAll(
   ".gameItems__icon_skills"
 );
 
+//перемешиваем массив вопросов
+const mixArray = (answers) => {
+  for (let i = answers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [answers[i], answers[j]] = [answers[j], answers[i]];
+  }
+};
+
+mixArray(answers);
+//
+
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
@@ -163,7 +174,7 @@ const checkAnswer = () => {
   sliderInput.value = "";
 };
 
-//Исправление
+//попап Исправления
 const popupCorrectionText = document.querySelector(".popup-correction__text");
 const popupCorrection = document.querySelector(".popup-correction");
 
