@@ -49,6 +49,7 @@ const delheart = () => {
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
+    stopPlaySoundMain();
     showYouLoose(userName);
     playSoundLoose();
   }
@@ -169,6 +170,7 @@ const checkAnswer = () => {
     delheart();
   }
   if (counterСorrectАnswers === 6) {
+    stopPlaySoundMain();
     showYouWin(userName);
   }
   sliderInput.value = "";
@@ -199,6 +201,7 @@ function playSoundMain() {
   soundMain.currentTime = 0;
   soundMain.play();
 }
+playSoundMain();
 
 function stopPlaySoundMain() {
   soundMain.pause();

@@ -73,3 +73,10 @@ const showReceivedSkills = () => {
 };
 
 showReceivedSkills();
+
+const mainAudio = document.querySelector(".main-audio");
+function playSoundMain() {
+  mainAudio.currentTime = 0;
+  mainAudio.play();
+}
+playSoundMain();

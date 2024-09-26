@@ -208,12 +208,12 @@ body .wrapper .main .container .slider .slider__track .slider__answer .slider__i
 body .wrapper .main .container .slider .popup-correction {
   position: absolute;
   bottom: 0rem;
-  left: -600px;
+  left: -900px;
   transition: all 1s ease-in-out;
 }
 body .wrapper .main .container .slider .popup-correction .popup-correction__text {
-  font-size: 2.25rem;
-  color: #18c54c;
+  font-size: 2.7rem;
+  color: #6ac585;
   font-weight: 700;
   -webkit-text-stroke: 1px #000000;
 }
