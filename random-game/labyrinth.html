@@ -4,57 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карта</title>
-    <link rel="stylesheet" href="./css/mapNewGame.css">
-    <script defer src="./js/mapNewGame.js"></script>
+    <title>Лабиринт веток Гит</title>
+    <link rel="stylesheet" href="./css/labyrinth.css">
+    <script defer src="./js/labyrinth.js"></script>
 </head>
 
-<body>
-    <audio class="main-audio" src="./assets/media/general/mainmusic.mp3" loop></audio>
-    <div class="popup-NewGame">
-        <p class="popup-NewGame__text">
-            Приветствую тебя игрок!
-        </p>
-        <p class="popup-NewGame__text">Назови свое имя, чтобы начать приключения</p>
-        <input class="popup-NewGame__nameUser" type="text">
-        <button type="button" class="popup-NewGame__btn">начать приключения</button>
+<body class="body">
+    <div class="popupEndGame">
+        <h2 class="popupEndGame__title">Вы победили!</h2>
+        <p class="popupEndGame__text">Вы получили достижение - Сусанин Гита</p>
+        <a class="popupEndGame__link" href="./mapNewGame.html">ОК</a>
+    </div>
+    <div class="popupStart">
+        <h2 class="popupStart__title">Добро пожаловать в лабиринт Гит</h2>
+        <p class="popupStart__text">Я хз пока</p>
+        <button type="button" class="popupStart__btn">Продолжить</button>
     </div>
     <div class="wrapper">
         <header class="header">
             <div class="container">
-                <h1 class="header__title">Карта приключений</h1>
+                <h1 class="header__title">Лабиринт веток гит</h1>
             </div>
         </header>
         <main class="main">
             <div class="container">
-                <div class="box-games">
-                    <a href="./dungeon.html" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/Attachment-1.png" alt="logo game">
-                        <span>Подземелье файловых команд</span>
-                    </a>
-                    <a href="./smithy.html" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/unnamed.png" alt="logo game">
-                        <span>Кузница репозитория</span>
-                    </a>
-                    <a href="./labyrinth.html" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/png-klev-club-p-labirint-png-12.png" alt="logo game">
-                        <span>Лабиринт веток Гит</span>
-                    </a>
-                    <a href="#" class="box-games__task">
-                        <img src="./assets/img/mapNewGame/book.png" alt="logo game">
-                        <span>Теневая комната</span>
-                    </a>
-                    <a href="#" class="box-games__task">
-                        <img class="box-games-img_castl" src="./assets/img/mapNewGame/csaasas2.png" alt="logo game">
-                        <span>Удаленный град Гитхаб</span>
-                    </a>
-                </div>
             </div>
         </main>
         <footer class="footer">
             <div class="container">
                 <div class="gameItems">
-                    <a class="gameItems__link-back" href="./index.html">Вернуться в меню</a>
+                    <a class="gameItems__link-back" href="./mapNewGame.html">Вернуться на карту</a>
                     <div class="gameItems__skills">
                         <span title="ваши достижения">Мои навыки:</span>
                         <div class="gameItems__box-skills">
@@ -80,6 +59,7 @@
                     <div class="gameItems__life">
                         <span title="Здесь количество ваших жизней">Количество жизней:</span>
                         <div class="gameItems__box-heart">
+
                         </div>
                     </div>
                 </div>
