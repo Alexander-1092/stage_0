@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -80,7 +81,7 @@ body .popupStart {
   justify-content: center;
   align-items: center;
   gap: 3.125rem;
-  background-image: url(../assets/img/smithy/smithy2.jpg);
+  background-image: url(../assets/img/labirint/lab0.jfif);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -115,7 +116,7 @@ body .wrapper {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  background-image: url(../assets/img/smithy/smithy2.jpg);
+  background-image: url(../assets/img/labirint/lab0.jfif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -129,6 +130,44 @@ body .wrapper .header .container .header__title {
 }
 body .wrapper .main {
   flex: 1;
+}
+body .wrapper .main .container .playingField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+body .wrapper .main .container .playingField .playingField__box {
+  position: relative;
+  width: 100vh;
+  height: 50vh;
+  background-image: url(../assets/img/labirint/карта\ игры.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #ffffff;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__pers {
+  position: absolute;
+  width: 5rem;
+  height: 3.75rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box {
+  display: flex;
+  justify-content: space-around;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn {
+  font-size: 2.125rem;
+  cursor: pointer;
+}
+body .wrapper .main .container .playingField .playingField__question {
+  font-size: 36px;
+  color: #000000;
+  font-weight: 700;
 }
 body .wrapper .footer .container .gameItems {
   display: flex;

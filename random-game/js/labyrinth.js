@@ -108,3 +108,11 @@ popupEndGameLink.addEventListener("click", () => {
   wrapper.classList.remove("inactive-wrapper");
 });
 //
+
+//механика движения
+const playingFieldPers = document.querySelector(".playingField__pers");
+
+let position = { x: 20, y: 200 };
+
+window.addEventListener("keydown", moveCharacter);
+//
