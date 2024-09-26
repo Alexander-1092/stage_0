@@ -39,6 +39,7 @@ const delheart = () => {
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
     showYouLoose(userName);
+    playSoundLoose();
   }
   checkHeart(counterHeart - 1);
 };
@@ -92,6 +93,7 @@ const showYouWin = (userName) => {
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
+  playSoundWin();
 };
 
 const showYouLoose = (userName) => {
@@ -150,6 +152,8 @@ const checkAnswer = () => {
     playSoundRight();
     counterСorrectАnswers += 1;
   } else {
+    getСorrectAnswer(countQeuestion);
+    showCorrectAnswer();
     playSoundEroro();
     delheart();
   }
@@ -158,6 +162,25 @@ const checkAnswer = () => {
   }
   sliderInput.value = "";
 };
+
+//Исправление
+const popupCorrectionText = document.querySelector(".popup-correction__text");
+const popupCorrection = document.querySelector(".popup-correction");
+
+const getСorrectAnswer = (countQeuestion) => {
+  popupCorrectionText.textContent = `Правильная руна: ${
+    answers[countQeuestion - 1][1]
+  }`;
+};
+
+const showCorrectAnswer = () => {
+  popupCorrection.classList.add("departure-popup-correction");
+  setTimeout(() => {
+    popupCorrection.classList.remove("departure-popup-correction");
+  }, 3000);
+};
+
+//
 
 //music
 const soundMain = document.querySelector(".sound-main");
