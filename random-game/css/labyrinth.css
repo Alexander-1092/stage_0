@@ -136,12 +136,13 @@ body .wrapper .main .container .playingField {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 5rem;
 }
 body .wrapper .main .container .playingField .playingField__box {
   position: relative;
-  width: 100vh;
+  width: 50vw;
   height: 50vh;
+  padding: 0px 1rem;
   background-image: url(../assets/img/labirint/карта\ игры.avif);
   background-repeat: no-repeat;
   background-size: cover;
@@ -159,13 +160,45 @@ body .wrapper .main .container .playingField .playingField__box .playingField__p
 body .wrapper .main .container .playingField .playingField__box .playingField__option-box {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn {
-  font-size: 2.125rem;
+  position: relative;
+  top: 6rem;
+  font-size: 1.625rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn::before {
+  content: "";
+  position: absolute;
+  top: -6.5rem;
+  left: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  transform: translateX(-50%);
+  background-image: url(../assets/img/labirint/cave_4ssjvzl8igxk.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:hover {
+  color: #6ebba4;
+  transform: scale(1.1);
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:nth-of-type(1) {
+  top: 10rem;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:nth-of-type(3) {
+  top: 10rem;
 }
 body .wrapper .main .container .playingField .playingField__question {
-  font-size: 36px;
+  text-align: center;
+  font-size: 1.75rem;
   color: #000000;
   font-weight: 700;
 }

@@ -1,3 +1,5 @@
+import { answersLabyrinth } from "./answers.js";
+
 const userName = JSON.parse(localStorage.getItem("userName")).userName;
 const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
 const gameItemsIconSkills = document.querySelectorAll(
@@ -6,7 +8,7 @@ const gameItemsIconSkills = document.querySelectorAll(
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("smithy");
+  data.push("labyrinth");
   localStorage.setItem("skills", JSON.stringify(data));
 };
 const showReceivedSkills = () => {
@@ -35,9 +37,8 @@ const delheart = () => {
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
-    stopPlaySoundMain();
     showYouLoose(userName);
-    playSoundLoose();
+    // playSoundLoose();
   }
   checkHeart(counterHeart - 1);
 };
@@ -87,15 +88,15 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Гефест репозиториев</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Сусанин Гита</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
-  playSoundWin();
+  // playSoundWin();
 };
 
 const showYouLoose = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб от прилетевшего в лоб молота.</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вы порерялись в лабиринте, и умрли с голоду.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
   popupEndGameLink.href = "./index.html";
@@ -109,10 +110,51 @@ popupEndGameLink.addEventListener("click", () => {
 });
 //
 
-//механика движения
-const playingFieldPers = document.querySelector(".playingField__pers");
+const playingFieldQuestion = document.querySelector(".playingField__question");
+const playingFieldBtn = document.querySelectorAll(".playingField__btn");
+const playingFieldOptionBox = document.querySelector(
+  ".playingField__option-box"
+);
+let numQuestion = 0;
 
-let position = { x: 20, y: 200 };
-
-window.addEventListener("keydown", moveCharacter);
+//отслеживание нажатия
+playingFieldOptionBox.addEventListener("click", (e) => {
+  if (e.target.className === "playingField__btn") {
+    checkAnswer(e.target.textContent, answersLabyrinth, numQuestion);
+    numQuestion += 1;
+    showAnswers(answersLabyrinth, numQuestion);
+    showQuestion(answersLabyrinth, numQuestion);
+  }
+});
 //
+
+//меняем вопрос
+const showQuestion = (answersLabyrinth, numQuestion) => {
+  playingFieldQuestion.textContent = answersLabyrinth[numQuestion][0];
+};
+//
+
+//меняем ответы
+const showAnswers = (answersLabyrinth, numQuestion) => {
+  playingFieldBtn[0].textContent = answersLabyrinth[numQuestion][1];
+  playingFieldBtn[1].textContent = answersLabyrinth[numQuestion][2];
+  playingFieldBtn[2].textContent = answersLabyrinth[numQuestion][3];
+};
+//
+
+let counterAnswers = 0;
+//проверяем правильность ответа
+const checkAnswer = (answer, answersLabyrinth, numQuestion) => {
+  counterAnswers += 1;
+  if (answer === answersLabyrinth[numQuestion][4]) {
+    console.log("yes");
+  } else {
+    delheart();
+  }
+  if (counterAnswers === 8) {
+    showYouWin(userName);
+  }
+};
+//
+showAnswers(answersLabyrinth, numQuestion);
+showQuestion(answersLabyrinth, numQuestion);
