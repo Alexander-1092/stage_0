@@ -39,6 +39,7 @@ body .popupEndGame {
   background-size: cover;
   background-position: center;
   border-radius: 0.625rem;
+  height: 100vh;
 }
 body .popupEndGame .popupEndGame__title {
   margin-bottom: 6.25rem;
@@ -60,6 +61,7 @@ body .popupEndGame .popupEndGame__text {
 body .popupEndGame .popupEndGame__link {
   margin-bottom: 1.875rem;
   font-size: 2rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
 }
