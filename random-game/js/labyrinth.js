@@ -37,8 +37,9 @@ const delheart = () => {
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
+    stopPlaySoundMain();
     showYouLoose(userName);
-    // playSoundLoose();
+    playSoundLoose();
   }
   checkHeart(counterHeart - 1);
 };
@@ -92,15 +93,15 @@ const showYouWin = (userName) => {
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
-  // playSoundWin();
 };
 
 const showYouLoose = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вы порерялись в лабиринте, и умрли с голоду.</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вы потерялись в лабиринте, и умрли с голоду.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
   popupEndGameLink.href = "./index.html";
   popupEndGame.classList.add("active-popupEndGame");
+  popupEndGame.classList.add("changeImgPopupEndGame");
   wrapper.classList.add("inactive-wrapper");
 };
 
@@ -121,9 +122,15 @@ let numQuestion = 0;
 playingFieldOptionBox.addEventListener("click", (e) => {
   if (e.target.className === "playingField__btn") {
     checkAnswer(e.target.textContent, answersLabyrinth, numQuestion);
+    showRightAnswer(answersLabyrinth, numQuestion);
+    setTimeout(() => {
+      dellRightAnswer();
+    }, 1300);
     numQuestion += 1;
-    showAnswers(answersLabyrinth, numQuestion);
-    showQuestion(answersLabyrinth, numQuestion);
+    setTimeout(() => {
+      showAnswers(answersLabyrinth, numQuestion);
+      showQuestion(answersLabyrinth, numQuestion);
+    }, 1300);
   }
 });
 //
@@ -147,14 +154,78 @@ let counterAnswers = 0;
 const checkAnswer = (answer, answersLabyrinth, numQuestion) => {
   counterAnswers += 1;
   if (answer === answersLabyrinth[numQuestion][4]) {
-    console.log("yes");
+    playSoundRight();
   } else {
     delheart();
+    playSoundEroro();
   }
   if (counterAnswers === 8) {
+    stopPlaySoundMain();
     showYouWin(userName);
+    playSoundWin();
   }
 };
 //
 showAnswers(answersLabyrinth, numQuestion);
 showQuestion(answersLabyrinth, numQuestion);
+
+//выделить правильный ответ
+const showRightAnswer = (answersLabyrinth, numQuestion) => {
+  playingFieldBtn.forEach((element) => {
+    if (element.textContent === answersLabyrinth[numQuestion][4]) {
+      element.classList.toggle("playingField__btn_right");
+    }
+  });
+};
+
+const dellRightAnswer = () => {
+  playingFieldBtn.forEach((element) => {
+    if (element.className === "playingField__btn playingField__btn_right") {
+      element.classList.remove("playingField__btn_right");
+    }
+  });
+};
+
+//
+
+//music
+const soundMain = document.querySelector(".sound-main");
+function playSoundMain() {
+  soundMain.currentTime = 0;
+  soundMain.play();
+}
+playSoundMain();
+
+function stopPlaySoundMain() {
+  soundMain.pause();
+  soundMain.currentTime = 0;
+}
+
+const soundError = document.querySelector(".sound-error");
+
+function playSoundEroro() {
+  soundError.currentTime = 0;
+  soundError.play();
+}
+
+const soundRight = document.querySelector(".sound-right");
+
+function playSoundRight() {
+  soundRight.currentTime = 0;
+  soundRight.play();
+}
+
+const soundWin = document.querySelector(".sound-win");
+
+function playSoundWin() {
+  soundWin.currentTime = 0;
+  soundWin.play();
+}
+
+const soundLoose = document.querySelector(".sound-loose");
+
+function playSoundLoose() {
+  soundLoose.currentTime = 0;
+  soundLoose.play();
+}
+//
