@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Теневая комната</title>
     <link rel="stylesheet" href="./css/shadow.css">
-    <script defer src="./js/shadow.js"></script>
+    <script type="module" defer src="./js/shadow.js"></script>
+    <script type="module" src="./js/answers.js"></script>
 </head>
 
 <body class="body">
@@ -18,7 +19,8 @@
     </div>
     <div class="popupStart">
         <h2 class="popupStart__title">Приветствуем тебя в теневой комнтате</h2>
-        <p class="popupStart__text">Перед вами вход в лабиринт веток Гит, чтобы найти верный путь следуйте подсказкам
+        <p class="popupStart__text">Здравствуй, путник, ты пришел за теневыми знаниями. Однако они не существуют в мире
+            смертных, а лишь по ту строну. Но я помогу тебе увидить их. Однако помни, ТОРОПИСЬ! У тебя мало времени.
         </p>
         <button type="button" class="popupStart__btn">Продолжить</button>
     </div>
@@ -30,7 +32,28 @@
         </header>
         <main class="main">
             <div class="container">
-
+                <div class="playing-field">
+                    <div class="playing-field__Answer">
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                    </div>
+                    <div class="playing-field__Question">
+                        <p class="playing-field__Question-text">Создать легковесный тег</p>
+                        <div class="playing-field__timer"></div>
+                    </div>
+                </div>
 
             </div>
         </main>

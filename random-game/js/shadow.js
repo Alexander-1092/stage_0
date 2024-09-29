@@ -1,3 +1,5 @@
+import { answerAhadow } from "./answers.js";
+
 const userName = JSON.parse(localStorage.getItem("userName")).userName;
 const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
 const gameItemsIconSkills = document.querySelectorAll(
@@ -72,6 +74,7 @@ const sayHelloUser = (userName) => {
 popupStartBtn.addEventListener("click", () => {
   popupStart.classList.add("inactive-popupStart");
   body.classList.add("active-body");
+  timerStart();
 });
 
 sayHelloUser(userName);
@@ -106,3 +109,38 @@ popupEndGameLink.addEventListener("click", () => {
   wrapper.classList.remove("inactive-wrapper");
 });
 //
+
+//Присвоить кнопкам ответы
+const playingFieldBtn = document.querySelectorAll(".playing-field__btn");
+
+const distributeAnswer = () => {
+  for (let index = 0; index < playingFieldBtn.length; index++) {
+    playingFieldBtn[index].textContent = answerAhadow[index][1];
+  }
+};
+
+distributeAnswer(answerAhadow);
+//
+
+//Создаем таймер
+const playingFieldTimer = document.querySelector(".playing-field__timer");
+let timer = 40;
+let cuinterTime;
+const timerStart = () => {
+  cuinterTime = setInterval(() => {
+    playingFieldTimer.textContent = `${timer}`;
+    timer -= 1;
+  }, 1000);
+  setTimeout(() => {
+    clearInterval(cuinterTime);
+  }, 31000);
+};
+//
+
+const playingFieldAnswer = document.querySelector(".playing-field__Answer");
+
+playingFieldAnswer.addEventListener("click", (e) => {
+  clearInterval(cuinterTime);
+});
+
+//проверка ответа
