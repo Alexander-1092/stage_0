@@ -88,14 +88,14 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Сусанин Гита</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы смогли выйти из комнаты теней, и обрести знания. Теперь вы архивариус тегов</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
 };
 
 const showYouLoose = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вы потерялись в лабиринте, и умрли с голоду.</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName}, вы покинули этот мир, и стали частью мира теней.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
   popupEndGameLink.href = "./index.html";
@@ -147,7 +147,9 @@ const timerStart = () => {
         timer % 60
       )}`;
     }
-
+    if (timer === 0) {
+      showYouLoose();
+    }
     timer -= 1;
   }, 1000);
   setTimeout(() => {
@@ -158,14 +160,23 @@ const timerStart = () => {
 
 const playingFieldAnswer = document.querySelector(".playing-field__Answer");
 let counterQuestion = 0;
+let clickBtn = 0;
 
 playingFieldAnswer.addEventListener("click", (e) => {
+  clickBtn += 1;
   if (e.target.className === "playing-field__btn") {
-    checkAnswer(e.target.textContent, answerShadow);
+    checkAnswer(e.target, answerShadow);
     counterQuestion += 1;
     changeQuestion(answerArray, counterQuestion);
   }
+  ShowGameEnd(clickBtn);
 });
+
+const ShowGameEnd = (clickBtn) => {
+  if (clickBtn === 14) {
+    showYouWin();
+  }
+};
 
 const playingFieldQuestionText = document.querySelector(
   ".playing-field__Question-text"
@@ -173,14 +184,24 @@ const playingFieldQuestionText = document.querySelector(
 //проверка ответа
 const checkAnswer = (answer, answerShadow) => {
   let question = playingFieldQuestionText.textContent;
-  if (answerShadow[question] === answer) {
-    console.log("yes");
+  if (answerShadow[question] === answer.textContent) {
+    answer.classList.add("playing-field__btn-right");
   } else {
-    console.log("no");
+    delheart();
+    showRightAnswer(question, answerShadow);
   }
 };
 
 //смена вопроса
 const changeQuestion = (answerArray, counterQuestion) => {
   playingFieldQuestionText.textContent = answerArray[counterQuestion][0];
+};
+
+//показать правильный ответ
+const showRightAnswer = (question, answerShadow) => {
+  playingFieldBtn.forEach((element) => {
+    if (answerShadow[question] === element.textContent) {
+      element.classList.add("playing-field__btn-erorr");
+    }
+  });
 };

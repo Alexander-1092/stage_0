@@ -35,7 +35,6 @@ body .popupEndGame {
   justify-content: center;
   gap: 1.875rem;
   height: 100vh;
-  background-image: url(../assets/img/labirint/endgame.jfif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -70,9 +69,6 @@ body .popupEndGame .popupEndGame__link:hover {
 }
 body .active-popupEndGame {
   display: flex;
-}
-body .changeImgPopupEndGame {
-  background-image: url(../assets/img/labirint/endGameLoose.webp);
 }
 body .popupStart {
   position: absolute;
@@ -230,21 +226,18 @@ body {
   overflow: hidden;
 }
 body .popupEndGame {
-  background-image: url(../assets/img/labirint/endgame.jfif);
+  background-image: url(../assets/img/shadow/youWin.jpg);
 }
-
-.changeImgPopupEndGame {
-  background-image: url(../assets/img/labirint/endGameLoose.webp);
+body .changeImgPopupEndGame {
+  background-image: url(../assets/img/shadow/endGameLoose.jpg);
 }
-
-.popupStart {
+body .popupStart {
   background-image: url(../assets/img/shadow/old-dark-room-with-stone-walls-candles_893012-128244.avif);
 }
-
-.wrapper .main {
+body .wrapper .main {
   flex: 1;
 }
-.wrapper .main .container .playing-field {
+body .wrapper .main .container .playing-field {
   width: 100%;
   height: 100%;
   display: flex;
@@ -253,35 +246,43 @@ body .popupEndGame {
   gap: 3.125rem;
   cursor: url(../assets/svg/shadow/torch2svg.svg), auto;
 }
-.wrapper .main .container .playing-field .playing-field__Answer {
+body .wrapper .main .container .playing-field .playing-field__Answer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   gap: 3.125rem;
 }
-.wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn {
+body .wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn {
   margin: 0.625rem;
   border: none;
   outline: none;
   background-color: transparent;
   font-size: 1.5rem;
   font-weight: 700;
-  color: rgba(236, 230, 230, 0.7725490196);
   color: transparent;
+  transition: all 0.5s ease-in-out;
   cursor: url(../assets/svg/shadow/torch2svg.svg), auto;
 }
-.wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn:hover {
+body .wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn:hover {
   color: rgba(236, 230, 230, 0.7725490196);
 }
-.wrapper .main .container .playing-field .playing-field__Question {
+body .wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn-right {
+  color: rgba(122, 219, 174, 0.7725490196);
+  pointer-events: none;
+}
+body .wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn-erorr {
+  color: rgba(201, 116, 116, 0.7725490196);
+  pointer-events: none;
+}
+body .wrapper .main .container .playing-field .playing-field__Question {
   display: flex;
   justify-content: space-around;
   color: rgba(236, 230, 230, 0.7725490196);
 }
-.wrapper .main .container .playing-field .playing-field__Question .playing-field__Question-text {
+body .wrapper .main .container .playing-field .playing-field__Question .playing-field__Question-text {
   font-size: 24px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
-.wrapper .main .container .playing-field .playing-field__Question .playing-field__timer {
+body .wrapper .main .container .playing-field .playing-field__Question .playing-field__timer {
   font-size: 32px;
 }

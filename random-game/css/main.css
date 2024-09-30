@@ -35,7 +35,6 @@ body .popupEndGame {
   justify-content: center;
   gap: 1.875rem;
   height: 100vh;
-  background-image: url(../assets/img/labirint/endgame.jfif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -70,9 +69,6 @@ body .popupEndGame .popupEndGame__link:hover {
 }
 body .active-popupEndGame {
   display: flex;
-}
-body .changeImgPopupEndGame {
-  background-image: url(../assets/img/labirint/endGameLoose.webp);
 }
 body .popupStart {
   position: absolute;
