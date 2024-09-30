@@ -8,7 +8,6 @@ navLinkNewGame.addEventListener("click", () => {
 });
 
 const checkContinue = () => {
-  console.log(localStorage.getItem("counterHeart") < 0);
   if (
     localStorage.getItem("userName") === null ||
     localStorage.getItem("counterHeart") <= 0

@@ -37,6 +37,9 @@ const delheart = () => {
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
   if (counterHeart == 1) {
+    stopPlaySoundError();
+    stopPlaySoundMain();
+    playSoundLoose();
     showYouLoose(userName);
   }
   checkHeart(counterHeart - 1);
@@ -150,7 +153,10 @@ const timerStart = () => {
       )}`;
     }
     if (timer === 0) {
-      // showYouLoose();
+      stopPlaySoundError();
+      stopPlaySoundMain();
+      playSoundLoose();
+      showYouLoose();
     }
     timer -= 1;
   }, 1000);
@@ -168,6 +174,9 @@ playingFieldAnswer.addEventListener("click", (e) => {
   clickBtn += 1;
   if (clickBtn === 14) {
     clearInterval(cuinterTime);
+    stopPlaySoundError();
+    stopPlaySoundMain();
+    playSoundWin();
     showYouWin(userName);
   } else {
     if (e.target.className === "playing-field__btn") {
@@ -185,8 +194,10 @@ const playingFieldQuestionText = document.querySelector(
 const checkAnswer = (answer, answerShadow) => {
   let question = playingFieldQuestionText.textContent;
   if (answerShadow[question] === answer.textContent) {
+    playSoundRight();
     answer.classList.add("playing-field__btn-right");
   } else {
+    playSoundEroro();
     delheart();
     showRightAnswer(question, answerShadow);
   }
@@ -206,3 +217,50 @@ const showRightAnswer = (question, answerShadow) => {
     }
   });
 };
+
+//music
+const soundMain = document.querySelector(".sound-main");
+function playSoundMain() {
+  soundMain.currentTime = 0;
+  soundMain.play();
+}
+playSoundMain();
+
+function stopPlaySoundMain() {
+  soundMain.pause();
+  soundMain.currentTime = 0;
+}
+
+const soundError = document.querySelector(".sound-error");
+
+function playSoundEroro() {
+  soundError.currentTime = 0;
+  soundError.play();
+}
+function stopPlaySoundError() {
+  soundError.pause();
+  soundError.currentTime = 0;
+}
+
+const soundRight = document.querySelector(".sound-right");
+
+function playSoundRight() {
+  soundRight.currentTime = 0;
+  soundRight.play();
+}
+
+const soundWin = document.querySelector(".sound-win");
+
+function playSoundWin() {
+  soundWin.currentTime = 0;
+  soundWin.play();
+}
+
+const soundLoose = document.querySelector(".sound-loose");
+
+function playSoundLoose() {
+  soundLoose.currentTime = 0;
+  soundLoose.play();
+}
+
+//
