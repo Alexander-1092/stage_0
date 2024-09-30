@@ -119,6 +119,7 @@ const distributeAnswer = (answerArray) => {
   }
 };
 
+const answerForBtn = Object.entries(answerShadow);
 let answerArray = Object.entries(answerShadow);
 
 //перемешиваем массив вопросов
@@ -129,7 +130,8 @@ const mixArray = (answers) => {
   }
 };
 mixArray(answerArray);
-distributeAnswer(answerArray);
+mixArray(answerForBtn);
+distributeAnswer(answerForBtn);
 //
 
 //Создаем таймер
@@ -148,7 +150,7 @@ const timerStart = () => {
       )}`;
     }
     if (timer === 0) {
-      showYouLoose();
+      // showYouLoose();
     }
     timer -= 1;
   }, 1000);
@@ -164,19 +166,17 @@ let clickBtn = 0;
 
 playingFieldAnswer.addEventListener("click", (e) => {
   clickBtn += 1;
-  if (e.target.className === "playing-field__btn") {
-    checkAnswer(e.target, answerShadow);
-    counterQuestion += 1;
-    changeQuestion(answerArray, counterQuestion);
-  }
-  ShowGameEnd(clickBtn);
-});
-
-const ShowGameEnd = (clickBtn) => {
   if (clickBtn === 14) {
-    showYouWin();
+    clearInterval(cuinterTime);
+    showYouWin(userName);
+  } else {
+    if (e.target.className === "playing-field__btn") {
+      counterQuestion += 1;
+      checkAnswer(e.target, answerShadow);
+      changeQuestion(answerArray, counterQuestion);
+    }
   }
-};
+});
 
 const playingFieldQuestionText = document.querySelector(
   ".playing-field__Question-text"
@@ -197,6 +197,7 @@ const changeQuestion = (answerArray, counterQuestion) => {
   playingFieldQuestionText.textContent = answerArray[counterQuestion][0];
 };
 
+changeQuestion(answerArray, counterQuestion);
 //показать правильный ответ
 const showRightAnswer = (question, answerShadow) => {
   playingFieldBtn.forEach((element) => {
