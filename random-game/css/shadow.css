@@ -251,6 +251,7 @@ body .popupEndGame {
   flex-direction: column;
   justify-content: center;
   gap: 3.125rem;
+  cursor: url(../assets/svg/shadow/torch2svg.svg), auto;
 }
 .wrapper .main .container .playing-field .playing-field__Answer {
   display: grid;
@@ -266,7 +267,8 @@ body .popupEndGame {
   font-size: 1.5rem;
   font-weight: 700;
   color: rgba(236, 230, 230, 0.7725490196);
-  cursor: pointer;
+  color: transparent;
+  cursor: url(../assets/svg/shadow/torch2svg.svg), auto;
 }
 .wrapper .main .container .playing-field .playing-field__Answer .playing-field__btn:hover {
   color: rgba(236, 230, 230, 0.7725490196);

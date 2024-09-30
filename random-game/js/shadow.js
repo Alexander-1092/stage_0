@@ -1,4 +1,4 @@
-import { answerAhadow } from "./answers.js";
+import { answerShadow } from "./answers.js";
 
 const userName = JSON.parse(localStorage.getItem("userName")).userName;
 const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
@@ -113,34 +113,74 @@ popupEndGameLink.addEventListener("click", () => {
 //Присвоить кнопкам ответы
 const playingFieldBtn = document.querySelectorAll(".playing-field__btn");
 
-const distributeAnswer = () => {
+const distributeAnswer = (answerArray) => {
   for (let index = 0; index < playingFieldBtn.length; index++) {
-    playingFieldBtn[index].textContent = answerAhadow[index][1];
+    playingFieldBtn[index].textContent = answerArray[index][1];
   }
 };
 
-distributeAnswer(answerAhadow);
+let answerArray = Object.entries(answerShadow);
+
+//перемешиваем массив вопросов
+const mixArray = (answers) => {
+  for (let i = answers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [answers[i], answers[j]] = [answers[j], answers[i]];
+  }
+};
+mixArray(answerArray);
+distributeAnswer(answerArray);
 //
 
 //Создаем таймер
 const playingFieldTimer = document.querySelector(".playing-field__timer");
-let timer = 40;
+let timer = 180;
 let cuinterTime;
 const timerStart = () => {
   cuinterTime = setInterval(() => {
-    playingFieldTimer.textContent = `${timer}`;
+    if (Math.round(timer % 60) < 10) {
+      playingFieldTimer.textContent = `${Math.round(
+        timer / 60
+      )} : 0${Math.round(timer % 60)}`;
+    } else {
+      playingFieldTimer.textContent = `${Math.round(timer / 60)} : ${Math.round(
+        timer % 60
+      )}`;
+    }
+
     timer -= 1;
   }, 1000);
   setTimeout(() => {
     clearInterval(cuinterTime);
-  }, 31000);
+  }, 181000);
 };
 //
 
 const playingFieldAnswer = document.querySelector(".playing-field__Answer");
+let counterQuestion = 0;
 
 playingFieldAnswer.addEventListener("click", (e) => {
-  clearInterval(cuinterTime);
+  if (e.target.className === "playing-field__btn") {
+    checkAnswer(e.target.textContent, answerShadow);
+    counterQuestion += 1;
+    changeQuestion(answerArray, counterQuestion);
+  }
 });
 
+const playingFieldQuestionText = document.querySelector(
+  ".playing-field__Question-text"
+);
 //проверка ответа
+const checkAnswer = (answer, answerShadow) => {
+  let question = playingFieldQuestionText.textContent;
+  if (answerShadow[question] === answer) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+};
+
+//смена вопроса
+const changeQuestion = (answerArray, counterQuestion) => {
+  playingFieldQuestionText.textContent = answerArray[counterQuestion][0];
+};
