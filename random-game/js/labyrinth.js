@@ -137,15 +137,19 @@ playingFieldOptionBox.addEventListener("click", (e) => {
 
 //меняем вопрос
 const showQuestion = (answersLabyrinth, numQuestion) => {
-  playingFieldQuestion.textContent = answersLabyrinth[numQuestion][0];
+  if (numQuestion < 8) {
+    playingFieldQuestion.textContent = answersLabyrinth[numQuestion][0];
+  }
 };
 //
 
 //меняем ответы
 const showAnswers = (answersLabyrinth, numQuestion) => {
-  playingFieldBtn[0].textContent = answersLabyrinth[numQuestion][1];
-  playingFieldBtn[1].textContent = answersLabyrinth[numQuestion][2];
-  playingFieldBtn[2].textContent = answersLabyrinth[numQuestion][3];
+  if (numQuestion < 8) {
+    playingFieldBtn[0].textContent = answersLabyrinth[numQuestion][1];
+    playingFieldBtn[1].textContent = answersLabyrinth[numQuestion][2];
+    playingFieldBtn[2].textContent = answersLabyrinth[numQuestion][3];
+  }
 };
 //
 
