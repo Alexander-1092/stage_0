@@ -234,6 +234,12 @@ body .changeImgPopupEndGame {
 body .popupStart {
   background-image: url(../assets/img/shadow/old-dark-room-with-stone-walls-candles_893012-128244.avif);
 }
+body .popupStart .popupStart__title {
+  color: rgba(255, 255, 255, 0.8431372549);
+}
+body .popupStart .popupStart__text {
+  color: rgba(255, 255, 255, 0.8431372549);
+}
 body .wrapper .main {
   flex: 1;
 }

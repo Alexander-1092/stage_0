@@ -70,7 +70,7 @@ const popupStartBtn = document.querySelector(".popupStart__btn");
 const body = document.querySelector(".body");
 
 const sayHelloUser = (userName) => {
-  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Приветствую тебя ${userName}</h2>`;
+  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Добро пожаловать, ${userName}!</h2>`;
 };
 
 //закрыть попап приветствия
@@ -156,7 +156,7 @@ const timerStart = () => {
       stopPlaySoundError();
       stopPlaySoundMain();
       playSoundLoose();
-      showYouLoose();
+      showYouLoose(userName);
     }
     timer -= 1;
   }, 1000);
