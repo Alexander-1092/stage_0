@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+li {
+  list-style-type: none;
+}
+
+body .popup-NewGame {
+  padding: 1.875rem 4.375rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  border-radius: 0.625rem;
+  background-image: url(../assets/img/mapNewGame/860.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .popup-NewGame .popup-NewGame__text {
+  text-align: center;
+  font-size: 1.375rem;
+  color: #ffffff;
+  font-weight: 700;
+  -webkit-text-stroke: 0.5px #000000;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .popup-NewGame .popup-NewGame__nameUser {
+  font-size: 1.375rem;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+body .popup-NewGame .popup-NewGame__btn {
+  font-size: 1.125rem;
+  padding: 0.3125rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+body .popup-NewGame .popup-NewGame__btn:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+body .popup-NewGame .popup-NewGame__btn:active {
+  color: #000000;
+  background-color: #ffffff;
+}
+body .inactive-popup-NewGame {
+  display: none;
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url(../assets/img/mapNewGame/chef-rpg-main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  pointer-events: none;
+}
+body .wrapper .header .container .header__title {
+  color: #c7936b;
+  -webkit-text-stroke: 1px #ffffff;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .main {
+  flex: 1;
+}
+body .wrapper .main .container .box-games {
+  margin-top: 20vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 3.125rem;
+}
+body .wrapper .main .container .box-games .box-games__task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4375rem;
+  font-size: 1.5rem;
+  -webkit-text-stroke: 0.2px #000000;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  transition: color 0.5s ease-in-out;
+}
+body .wrapper .main .container .box-games .box-games__task:hover > img {
+  color: #c7936b;
+  transform: scale(1.2);
+}
+body .wrapper .main .container .box-games .box-games__task:hover > span {
+  color: #c7936b;
+}
+body .wrapper .main .container .box-games .box-games__task:hover > .box-games-img_castl {
+  transform: scale(1.7);
+}
+body .wrapper .main .container .box-games .box-games__task img {
+  width: 6.25rem;
+  height: 6.25rem;
+  -o-object-fit: fill;
+     object-fit: fill;
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .box-games .box-games__task .box-games-img_castl {
+  transform: scale(1.5);
+}
+body .wrapper .footer .container .gameItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  gap: 10px;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back {
+  transition: color 0.5s ease-in-out;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back:hover {
+  color: #000000;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .gameItems__icon_skills {
+  width: 2rem;
+  display: none;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .active-gameItems__icon_skills {
+  display: flex;
+}
+body .wrapper .footer .container .gameItems .gameItems__life {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart {
+  display: flex;
+  gap: 0.3125rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart .gameItems__icon {
+  width: 2rem;
+}
+body .activ-wrapper {
+  pointer-events: all;
+  filter: brightness(1);
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 540px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (max-width: 430px) {
+  html {
+    font-size: 9px;
+  }
+}

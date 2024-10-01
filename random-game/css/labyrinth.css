@@ -1,0 +1,309 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  overflow: hidden;
+}
+body .popupEndGame {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 1.25rem 12.5rem;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+  height: 100vh;
+  background-image: url(../assets/img/labirint/endgame.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.625rem;
+}
+body .popupEndGame .popupEndGame__title {
+  margin-bottom: 6.25rem;
+  text-align: center;
+  font-size: 2.625rem;
+  color: #ffffff;
+  -webkit-text-stroke: 1px #000000;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .popupEndGame .popupEndGame__text {
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .popupEndGame .popupEndGame__link {
+  margin-bottom: 1.875rem;
+  font-size: 2rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+body .popupEndGame .popupEndGame__link:hover {
+  transform: scale(1.2);
+}
+body .active-popupEndGame {
+  display: flex;
+}
+body .changeImgPopupEndGame {
+  background-image: url(../assets/img/labirint/endGameLoose.webp);
+}
+body .popupStart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem;
+  background-image: url(../assets/img/labirint/lab0.jfif);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+body .popupStart .popupStart__title {
+  font-size: 3rem;
+  color: #ffffff;
+}
+body .popupStart .popupStart__text {
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  color: #d7eede;
+  font-weight: 700;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .popupStart .popupStart__btn {
+  padding: 0.9375rem 1.875rem;
+  font-size: 2rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+body .popupStart .popupStart__btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+body .inactive-popupStart {
+  display: none;
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url(../assets/img/labirint/lab0.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .wrapper .header .container .header__title {
+  color: #ffffff;
+  -webkit-text-stroke: 1px #000000;
+  font-size: 3.875rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .main {
+  flex: 1;
+}
+body .wrapper .main .container .playingField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+body .wrapper .main .container .playingField .playingField__box {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  padding: 0px 1rem;
+  background-image: url(../assets/img/labirint/карта\ игры.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #ffffff;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__pers {
+  position: absolute;
+  width: 5rem;
+  height: 3.75rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 0.9375rem;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn {
+  position: relative;
+  top: 6rem;
+  font-size: 1.625rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn::before {
+  content: "";
+  position: absolute;
+  top: -6rem;
+  left: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  transform: translateX(-50%);
+  background-image: url(../assets/img/labirint/cave_4ssjvzl8igxk.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:hover {
+  color: #6ebba4;
+  transform: scale(1.1);
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:nth-child(1) {
+  grid-column: 2;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:nth-child(2) {
+  grid-column: 1;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn:nth-child(3) {
+  grid-column: 3;
+}
+body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn_right {
+  color: #6ebba4;
+}
+body .wrapper .main .container .playingField .playingField__question {
+  text-align: center;
+  font-size: 1.75rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .footer .container .gameItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  gap: 10px;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back {
+  transition: color 0.5s ease-in-out;
+  color: #ffffff;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back:hover {
+  color: #757575;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills span {
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .gameItems__icon_skills {
+  width: 2rem;
+  display: none;
+}
+body .wrapper .footer .container .gameItems .gameItems__skills .gameItems__box-skills .active-gameItems__icon_skills {
+  display: flex;
+}
+body .wrapper .footer .container .gameItems .gameItems__life {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__life span {
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart {
+  display: flex;
+  gap: 0.3125rem;
+}
+body .wrapper .footer .container .gameItems .gameItems__life .gameItems__box-heart .gameItems__icon {
+  width: 2rem;
+}
+body .inactive-wrapper {
+  filter: brightness(0.5);
+}
+
+.active-body {
+  overflow: visible;
+}
+
+@media (max-width: 1100px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 540px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (max-width: 430px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 370px) {
+  html {
+    font-size: 8px;
+  }
+}

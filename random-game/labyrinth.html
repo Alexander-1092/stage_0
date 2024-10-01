@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабиринт веток Гит</title>
+    <link rel="stylesheet" href="./css/labyrinth.css">
+    <script defer type="module" src="./js/answers.js"></script>
+    <script defer type="module" src="./js/labyrinth.js"></script>
+</head>
+
+<body class="body">
+    <audio class="sound-win" src="./assets/media/general/kirya-pomedorkas-adventures-ost-z_uk-pobedy.mp3"></audio>
+    <audio class="sound-loose" src="./assets/media/labyrinth/88785d55e939c40.mp3"></audio>
+    <audio class="sound-error" src="./assets/media/labyrinth/monster-frankenstein-growl-creature_zyw2ehvu.mp3"></audio>
+    <audio class="sound-right" src="./assets/media/labyrinth/right.mp3"></audio>
+    <audio class="sound-main" src="./assets/media/labyrinth/main.mp3" loop></audio>
+    <div class="popupEndGame">
+        <h2 class="popupEndGame__title">Вы победили!</h2>
+        <p class="popupEndGame__text">Вы получили достижение - Сусанин Гита</p>
+        <a class="popupEndGame__link" href="./mapNewGame.html">ОК</a>
+    </div>
+    <div class="popupStart">
+        <h2 class="popupStart__title">Добро пожаловать в лабиринт Гит</h2>
+        <p class="popupStart__text">Перед вами вход в лабиринт веток Гит, чтобы найти верный путь следуйте подсказкам
+        </p>
+        <button type="button" class="popupStart__btn">Продолжить</button>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Лабиринт веток гит</h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="playingField">
+                    <div class="playingField__box">
+                        <img class="playingField__pers" src="./assets/svg/labirint/kitty_5enyvqh43nb6.svg" alt="">
+                        <div class="playingField__option-box">
+                            <button class="playingField__btn" type="button">swith -c имя ветки
+                            </button>
+                            <button class="playingField__btn" type="button">branch</button>
+                            <button class="playingField__btn" type="button">checkout -b</button>
+                        </div>
+
+                    </div>
+                    <p class="playingField__question">Вопрос</p>
+                </div>
+
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="gameItems">
+                    <a class="gameItems__link-back" href="./mapNewGame.html">Вернуться на карту</a>
+                    <div class="gameItems__skills">
+                        <span title="ваши достижения">Мои навыки:</span>
+                        <div class="gameItems__box-skills">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/noob_3zto2ooe6wig.svg" alt="logo skills"
+                                title="Поздравляю - вы нуб!">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/dungeon_igeoyu6xe3kq.svg" alt="logo skills"
+                                title="мастер темных мест">
+                            <img class="gameItems__icon gameItems__icon_skills" src="./assets/svg/general/smit.svg"
+                                alt="logo skills" title="Гефест репозиториев">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/minotaur_37pj6xip1n6w.svg" alt="logo skills"
+                                title="Сусанин Гита">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/book_cjzmtk6ao0un.svg" alt="logo skills"
+                                title="Архивариус тегов">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/heaven_k1i33cjv10es.svg" alt="logo skills"
+                                title="Бог Гитхаба">
+                        </div>
+                    </div>
+                    <div class="gameItems__life">
+                        <span title="Здесь количество ваших жизней">Количество жизней:</span>
+                        <div class="gameItems__box-heart">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

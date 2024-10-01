@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта</title>
+    <link rel="stylesheet" href="./css/mapNewGame.css">
+    <script defer src="./js/mapNewGame.js"></script>
+</head>
+
+<body>
+    <audio class="main-audio" src="./assets/media/general/mainmusic.mp3" loop></audio>
+    <div class="popup-NewGame">
+        <p class="popup-NewGame__text">
+            Приветствую тебя игрок!
+        </p>
+        <p class="popup-NewGame__text">Назови свое имя, чтобы начать приключения</p>
+        <input class="popup-NewGame__nameUser" type="text">
+        <button type="button" class="popup-NewGame__btn">начать приключения</button>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Карта приключений</h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="box-games">
+                    <a href="./dungeon.html" class="box-games__task">
+                        <img src="./assets/img/mapNewGame/Attachment-1.png" alt="logo game">
+                        <span>Подземелье файловых команд</span>
+                    </a>
+                    <a href="./smithy.html" class="box-games__task">
+                        <img src="./assets/img/mapNewGame/unnamed.png" alt="logo game">
+                        <span>Кузница репозитория</span>
+                    </a>
+                    <a href="./labyrinth.html" class="box-games__task">
+                        <img src="./assets/img/mapNewGame/png-klev-club-p-labirint-png-12.png" alt="logo game">
+                        <span>Лабиринт веток Гит</span>
+                    </a>
+                    <a href="./shadow.html" class="box-games__task">
+                        <img src="./assets/img/mapNewGame/book.png" alt="logo game">
+                        <span>Теневая комната</span>
+                    </a>
+                    <a href="./sky.html" class="box-games__task">
+                        <img class="box-games-img_castl" src="./assets/img/mapNewGame/csaasas2.png" alt="logo game">
+                        <span>Удаленный град Гитхаб</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="gameItems">
+                    <a class="gameItems__link-back" href="./index.html">Вернуться в меню</a>
+                    <div class="gameItems__skills">
+                        <span title="ваши достижения">Мои навыки:</span>
+                        <div class="gameItems__box-skills">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/noob_3zto2ooe6wig.svg" alt="logo skills"
+                                title="Поздравляю - вы нуб!">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/dungeon_igeoyu6xe3kq.svg" alt="logo skills"
+                                title="мастер темных мест">
+                            <img class="gameItems__icon gameItems__icon_skills" src="./assets/svg/general/smit.svg"
+                                alt="logo skills" title="Гефест репозиториев">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/minotaur_37pj6xip1n6w.svg" alt="logo skills"
+                                title="Сусанин Гита">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/book_cjzmtk6ao0un.svg" alt="logo skills"
+                                title="Архивариус тегов">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/heaven_k1i33cjv10es.svg" alt="logo skills"
+                                title="Бог Гитхаба">
+                        </div>
+                    </div>
+                    <div class="gameItems__life">
+                        <span title="Здесь количество ваших жизней">Количество жизней:</span>
+                        <div class="gameItems__box-heart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

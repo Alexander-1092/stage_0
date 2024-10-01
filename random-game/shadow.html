@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теневая комната</title>
+    <link rel="stylesheet" href="./css/shadow.css">
+    <script type="module" defer src="./js/shadow.js"></script>
+    <script type="module" src="./js/answers.js"></script>
+</head>
+
+<body class="body">
+    <audio class="sound-win" src="./assets/media/shadow/win.mp3"></audio>
+    <audio class="sound-loose" src="./assets/media/shadow/loose.mp3"></audio>
+    <audio class="sound-error" src="./assets/media/shadow/eror.mp3"></audio>
+    <audio class="sound-right" src="./assets/media/general/right.mp3"></audio>
+    <audio class="sound-main" src="./assets/media/shadow/main.mp3" loop></audio>
+    <div class="popupEndGame">
+        <h2 class="popupEndGame__title">Вы победили!</h2>
+        <p class="popupEndGame__text">Вы получили достижение - Сусанин Гита</p>
+        <a class="popupEndGame__link" href="./mapNewGame.html">ОК</a>
+    </div>
+    <div class="popupStart">
+        <h2 class="popupStart__title">Приветствуем тебя в теневой комнтате</h2>
+        <p class="popupStart__text">Ты пришел за теневыми знаниями. Однако они не существуют в мире
+            смертных, а лишь по ту строну. Но я помогу тебе увидить их. Води факелом по воздуху, и они появятся. Однако
+            помни, ТОРОПИСЬ! У тебя мало времени.
+        </p>
+        <button type="button" class="popupStart__btn">Продолжить</button>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Теневая комната</h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="playing-field">
+                    <div class="playing-field__Answer">
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                        <button type="button" class="playing-field__btn">Кнопка</button>
+                    </div>
+                    <div class="playing-field__Question">
+                        <p class="playing-field__Question-text"></p>
+                        <div class="playing-field__timer"></div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="gameItems">
+                    <a class="gameItems__link-back" href="./mapNewGame.html">Вернуться на карту</a>
+                    <div class="gameItems__skills">
+                        <span title="ваши достижения">Мои навыки:</span>
+                        <div class="gameItems__box-skills">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/noob_3zto2ooe6wig.svg" alt="logo skills"
+                                title="Поздравляю - вы нуб!">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/dungeon_igeoyu6xe3kq.svg" alt="logo skills"
+                                title="мастер темных мест">
+                            <img class="gameItems__icon gameItems__icon_skills" src="./assets/svg/general/smit.svg"
+                                alt="logo skills" title="Гефест репозиториев">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/minotaur_37pj6xip1n6w.svg" alt="logo skills"
+                                title="Сусанин Гита">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/book_cjzmtk6ao0un.svg" alt="logo skills"
+                                title="Архивариус тегов">
+                            <img class="gameItems__icon gameItems__icon_skills"
+                                src="./assets/svg/general/heaven_k1i33cjv10es.svg" alt="logo skills"
+                                title="Бог Гитхаба">
+                        </div>
+                    </div>
+                    <div class="gameItems__life">
+                        <span title="Здесь количество ваших жизней">Количество жизней:</span>
+                        <div class="gameItems__box-heart">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
