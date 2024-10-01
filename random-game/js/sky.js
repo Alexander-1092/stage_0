@@ -1,4 +1,4 @@
-import { answersLabyrinth } from "./answers.js";
+import { answerSky } from "./answers.js";
 
 const userName = JSON.parse(localStorage.getItem("userName")).userName;
 const gameItemsBoxHeart = document.querySelector(".gameItems__box-heart");
@@ -110,3 +110,24 @@ popupEndGameLink.addEventListener("click", () => {
   wrapper.classList.remove("inactive-wrapper");
 });
 //
+
+const arrAnswerSky = Object.entries(answerSky);
+
+const playingFieldCard = document.querySelectorAll(".playing-Field__card");
+console.log(arrAnswerSky[0][1][1]);
+
+const cardQuestion = document.querySelectorAll(".card__question");
+const cardHeart = document.querySelectorAll(".card__heart");
+const cardAttack = document.querySelectorAll(".card__attack");
+const cardHealing = document.querySelectorAll(".card__healing");
+
+const addQuestion = (cardQuestion, arrAnswerSky) => {
+  for (let index = 0; index < cardQuestion.length; index++) {
+    cardQuestion[index].textContent = arrAnswerSky[index][0];
+    cardHeart[index].textContent = arrAnswerSky[index][1][1];
+    cardAttack[index].textContent = arrAnswerSky[index][1][2];
+    cardHealing[index].textContent = arrAnswerSky[index][1][3];
+  }
+};
+
+addQuestion(cardQuestion, arrAnswerSky);

@@ -247,3 +247,38 @@ body .wrapper {
 body .wrapper .main {
   flex: 1;
 }
+body .wrapper .main .container .playing-Field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3125rem;
+  align-items: last baseline;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3125rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__img {
+  max-width: 6.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__question {
+  max-width: 100px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__skils {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3125rem;
+}
