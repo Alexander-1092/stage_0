@@ -250,35 +250,165 @@ body .wrapper .main {
 body .wrapper .main .container .playing-Field {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 80vh;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy {
+  display: flex;
   justify-content: center;
+  gap: 20px;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy span {
+  color: #ffffff;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  font-size: 24px;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Field__box-heart-enemy .playing-Field-heart-enemy {
+  width: 2rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9375rem;
+  max-width: 12.5rem;
+  background-color: #add3f1;
+  border-radius: 0.625rem;
+  padding: 0rem 0.3125rem;
+  filter: brightness(0.95);
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__img-user {
+  max-width: 6.25rem;
+  margin-top: 1.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__answer-user {
+  pointer-events: none;
+  border: none;
+  background-color: transparent;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__skils-user {
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+  filter: brightness(0.9);
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__btn-game {
+  max-height: 50px;
+  padding: 0px 50px;
+  font-size: 26px;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9375rem;
+  max-width: 12.5rem;
+  background-color: #add3f1;
+  border-radius: 0.625rem;
+  padding: 0rem 0.3125rem;
+  filter: brightness(0.95);
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__img-enemy {
+  max-width: 6.25rem;
+  margin-top: 1.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__answer-enemy {
+  pointer-events: none;
+  border: none;
+  background-color: transparent;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__skils-enemy {
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+  filter: brightness(0.9);
 }
 body .wrapper .main .container .playing-Field .playing-Field__user {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x: scroll;
   gap: 0.3125rem;
   align-items: last baseline;
+  max-width: 100%;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 0.3125rem;
+  gap: 1rem;
+  margin-bottom: 0.9375rem;
+  max-width: 12.5rem;
+  background-color: #add3f1;
+  border-radius: 0.625rem;
+  padding: 0rem 0.3125rem;
+  filter: brightness(0.95);
+  transition: all 0.5s ease-in-out;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__img {
   max-width: 6.25rem;
+  margin-top: 1.25rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__question {
-  max-width: 100px;
-  font-size: 18px;
+  max-width: 6.25rem;
+  font-size: 1.125rem;
   text-align: center;
   font-weight: 700;
+  height: 0;
+  overflow: hidden;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__answer {
+  max-width: 12.5rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__skils {
-  display: flex;
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
+  align-items: center;
   gap: 0.3125rem;
+  filter: brightness(0.9);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__btn {
+  padding: 0.3125rem 0.625rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card:hover {
+  cursor: pointer;
+  filter: brightness(1);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar {
+  height: 0.625rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.625rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
 }
