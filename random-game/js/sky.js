@@ -32,11 +32,11 @@ const showReceivedSkills = () => {
 };
 showReceivedSkills();
 // Блок сердечек
-const delheart = () => {
+const delheart = (heart) => {
   let counterHeart = localStorage.getItem("counterHeart");
   restarHeart(counterHeart);
-  localStorage.setItem("counterHeart", JSON.stringify(counterHeart - 1));
-  if (counterHeart == 1) {
+  localStorage.setItem("counterHeart", JSON.stringify(counterHeart - heart));
+  if (counterHeart <= 1) {
     // stopPlaySoundMain();
     showYouLoose(userName);
     // playSoundLoose();
@@ -237,5 +237,8 @@ const startFight = () => {
   let damageEnemy =
     cardSkillUser[1].textContent - cardSkillEnemy[0].textContent;
   let damageUser = cardSkillEnemy[1].textContent - cardSkillUser[0].textContent;
+  if (damageUser > 0) {
+    delheart(damageUser);
+  }
 };
 //
