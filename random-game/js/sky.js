@@ -176,9 +176,9 @@ const checkAnswer = (answer, question) => {
   console.log(answerSky[question][0]);
   if (answer === answerSky[question][0]) {
     changeSkillCard(answerSky, question);
-    console.log("yes");
+    // console.log("yes");
   } else {
-    console.log("No");
+    // console.log("No");
   }
 };
 //
@@ -233,12 +233,43 @@ playingFieldBtnGame.addEventListener("click", () => {
   }
 });
 
+let counterHeartEnemy = 7;
+
 const startFight = () => {
   let damageEnemy =
-    cardSkillUser[1].textContent - cardSkillEnemy[0].textContent;
-  let damageUser = cardSkillEnemy[1].textContent - cardSkillUser[0].textContent;
-  if (damageUser > 0) {
-    delheart(damageUser);
+    cardSkillEnemy[0].textContent - cardSkillUser[1].textContent;
+  let damageUser = cardSkillUser[0].textContent - cardSkillEnemy[1].textContent;
+  if (damageUser < 0) {
+    delheart(Math.abs(damageUser));
+  }
+
+  if (damageEnemy < 0) {
+    restarHeartEnemy(counterHeartEnemy);
+    counterHeartEnemy = counterHeartEnemy - Math.abs(damageEnemy);
+    createHeartEnemy(counterHeartEnemy);
   }
 };
 //
+
+const playingFieldBoxHeartEnemy = document.querySelector(
+  ".playing-Field__box-heart-enemy"
+);
+
+const createHeartEnemy = (counterHeartEnemy) => {
+  for (let index = 0; index < counterHeartEnemy; index++) {
+    playingFieldBoxHeartEnemy.insertAdjacentHTML(
+      "afterbegin",
+      "<img class='playing-Field-heart-enemy' src='./assets/img/general/240px-Heart.svg.png'alt='icon heart'>"
+    );
+  }
+};
+
+const restarHeartEnemy = (counterHeartEnemy) => {
+  for (let index = 0; index < counterHeartEnemy; index++) {
+    playingFieldBoxHeartEnemy.removeChild(
+      playingFieldBoxHeartEnemy.children[0]
+    );
+  }
+};
+
+createHeartEnemy(counterHeartEnemy);
