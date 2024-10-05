@@ -108,7 +108,7 @@ export const answerSky = {
     "remote add origin",
     "3",
     "3",
-    "0",
+    "1",
     "./assets/svg/sky/angel_card.svg",
   ],
   "Связать локальную ветку new_branch с удаленной веткой new_branch": [
@@ -143,7 +143,7 @@ export const answerSky = {
     "pull",
     "3",
     "2",
-    "0",
+    "2",
     "./assets/svg/sky/dragon_card.svg",
   ],
   "удалить файл с удаленного репозитория, без удаления его с локального": [
@@ -164,7 +164,7 @@ export const answerSky = {
     "clone",
     "3",
     "2",
-    "0",
+    "1",
     "./assets/svg/sky/wizard_card.svg",
   ],
   "Посмотреть все удаленные ветки": [

@@ -47,6 +47,7 @@ const checkHeart = () => {
   let counterHeart = localStorage.getItem("counterHeart");
   createHeart(Number(counterHeart));
 };
+
 const createHeart = (counterHeart) => {
   for (let index = 0; index < counterHeart; index++) {
     gameItemsBoxHeart.insertAdjacentHTML(
@@ -240,6 +241,8 @@ const startFight = () => {
   let damageEnemy =
     cardSkillEnemy[0].textContent - cardSkillUser[1].textContent;
   let damageUser = cardSkillUser[0].textContent - cardSkillEnemy[1].textContent;
+  let therapyUser = cardSkillUser[2].textContent;
+  let therapyEnemy = cardSkillEnemy[2].textContent;
   if (damageUser < 0) {
     delheart(Math.abs(damageUser));
   }
@@ -250,7 +253,28 @@ const startFight = () => {
     createHeartEnemy(counterHeartEnemy);
   }
   playingFieldBtnGame.classList.add("playing-Field__btn-game-inactive");
+
+  addHeartUser(therapyUser);
+  addHearEnemy(counterHeartEnemy, therapyEnemy);
+
   removeOldCard();
+};
+//
+
+//Лечим юзера
+const addHeartUser = (therapyUser) => {
+  let counterHeart = localStorage.getItem("counterHeart");
+  let newHeartUser = Number(counterHeart) + Number(therapyUser);
+  localStorage.setItem("counterHeart", JSON.stringify(newHeartUser));
+  restarHeart(counterHeart);
+  createHeart(newHeartUser);
+};
+//
+
+//Лечим врага
+const addHearEnemy = (counterHeartEnemy, therapyEnemy) => {
+  restarHeartEnemy(counterHeartEnemy);
+  createHeartEnemy(Number(counterHeartEnemy) + Number(therapyEnemy));
 };
 //
 
