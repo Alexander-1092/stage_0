@@ -250,6 +250,7 @@ const startFight = () => {
     createHeartEnemy(counterHeartEnemy);
   }
   playingFieldBtnGame.classList.add("playing-Field__btn-game-inactive");
+  removeOldCard();
 };
 //
 
@@ -283,6 +284,20 @@ const removeInactive = () => {
   playingFieldCard.forEach((element) => {
     element.classList.remove("playing-Field__card-inactive");
   });
+};
+
+//
+
+//Обнулить картинкуи скиллы сыгранных карт
+const removeOldCard = () => {
+  cardImgUser.src = "./assets/svg/sky/null.svg";
+  cardImgEnemy.src = "./assets/svg/sky/null.svg";
+  cardSkillUser[0].textContent = 0;
+  cardSkillUser[1].textContent = 0;
+  cardSkillUser[2].textContent = 0;
+  cardSkillEnemy[0].textContent = 0;
+  cardSkillEnemy[1].textContent = 0;
+  cardSkillEnemy[2].textContent = 0;
 };
 
 //
