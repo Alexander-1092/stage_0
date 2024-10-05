@@ -232,6 +232,7 @@ body .changeImgPopupEndGame {
   background-image: url(../assets/img/shadow/endGameLoose.jpg);
 }
 body .popupStart {
+  min-height: 100vh;
   background-image: url(../assets/img/sky/city.jfif);
 }
 body .popupStart .popupStart__title {
@@ -256,12 +257,12 @@ body .wrapper .main .container .playing-Field {
 body .wrapper .main .container .playing-Field .playing-Field__enemy {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__enemy span {
   color: #ffffff;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Field__box-heart-enemy .playing-Field-heart-enemy {
   width: 2rem;
@@ -270,7 +271,7 @@ body .wrapper .main .container .playing-Field .playing-Field__general {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 1.875rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user {
   display: flex;
@@ -307,9 +308,9 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
   filter: brightness(0.9);
 }
 body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__btn-game {
-  max-height: 50px;
-  padding: 0px 50px;
-  font-size: 26px;
+  max-height: 3.125rem;
+  padding: 0rem 3.125rem;
+  font-size: 1.625rem;
   cursor: pointer;
 }
 body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy {
@@ -374,12 +375,15 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
      object-fit: cover;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__question {
-  max-width: 6.25rem;
   font-size: 1.125rem;
   text-align: center;
   font-weight: 700;
   height: 0;
   overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__question-active {
+  height: auto;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__answer {
   max-width: 12.5rem;
@@ -401,6 +405,14 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card:hover {
   cursor: pointer;
   filter: brightness(1);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card-inactive {
+  pointer-events: none;
+  filter: brightness(0.4);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card-permoment-inactive {
+  pointer-events: none;
+  filter: brightness(0.5);
 }
 body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar {
   height: 0.625rem;

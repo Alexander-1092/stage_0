@@ -111,10 +111,8 @@ popupEndGameLink.addEventListener("click", () => {
 });
 //
 
+//Раскидываем вопросы и скиллы
 const arrAnswerSky = Object.entries(answerSky);
-
-const playingFieldCard = document.querySelectorAll(".playing-Field__card");
-console.log(arrAnswerSky[0][1][1]);
 
 const cardQuestion = document.querySelectorAll(".card__question");
 const cardHeart = document.querySelectorAll(".card__heart");
@@ -131,3 +129,113 @@ const addQuestion = (cardQuestion, arrAnswerSky) => {
 };
 
 addQuestion(cardQuestion, arrAnswerSky);
+//
+
+const playingFieldUser = document.querySelector(".playing-Field__user");
+const playingFieldCard = document.querySelectorAll(".playing-Field__card");
+
+playingFieldUser.addEventListener("click", (e) => {
+  getAnswer(e);
+  showQuestion(e);
+});
+
+let answer = "";
+let question = "";
+
+const showQuestion = (e) => {
+  if (
+    e.target.className === "card__btn" &&
+    e.target.textContent === "Выбрать"
+  ) {
+    e.target.textContent = "Ответить";
+    question = e.target.parentNode.childNodes[3].textContent;
+    e.target.parentNode.childNodes[3].classList.add("card__question-active");
+    e.target.parentNode.classList.add("playing-Field__card-active");
+    disableСards();
+  }
+};
+
+let counterMove = -1;
+//Получить ответ
+const getAnswer = (e) => {
+  if (
+    e.target.className === "card__btn" &&
+    e.target.textContent === "Ответить"
+  ) {
+    counterMove += 1;
+    answer = e.target.parentNode.childNodes[5].value;
+    checkAnswer(answer, question);
+    e.target.parentNode.classList.add("playing-Field__card-permoment-inactive");
+    showCardEnemy(arrAnswerSky, counterMove);
+  }
+};
+//
+
+//Проверка ответа
+const checkAnswer = (answer, question) => {
+  console.log(answerSky[question][0]);
+  if (answer === answerSky[question][0]) {
+    changeSkillCard(answerSky, question);
+    console.log("yes");
+  } else {
+    console.log("No");
+  }
+};
+//
+
+//Меняем данные карты боя
+const cardSkillUser = document.querySelectorAll(".card__skill-user");
+const cardImgUser = document.querySelector(".card__img-user");
+
+const changeSkillCard = (answerSky, question) => {
+  cardSkillUser[0].textContent = answerSky[question][1];
+  cardSkillUser[1].textContent = answerSky[question][2];
+  cardSkillUser[2].textContent = answerSky[question][3];
+  cardImgUser.src = answerSky[question][4];
+};
+//
+
+//вырубаем лишние карты
+const disableСards = () => {
+  playingFieldCard.forEach((element) => {
+    if (element.className === "playing-Field__card")
+      element.classList.add("playing-Field__card-inactive");
+  });
+};
+//
+
+//Показываем карту противника
+const mixArray = (arrAnswerSky) => {
+  for (let i = arrAnswerSky.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arrAnswerSky[i], arrAnswerSky[j]] = [arrAnswerSky[j], arrAnswerSky[i]];
+  }
+  return arrAnswerSky;
+};
+
+mixArray(arrAnswerSky);
+
+const cardImgEnemy = document.querySelector(".card__img-enemy");
+const cardSkillEnemy = document.querySelectorAll(".card__skill-enemy");
+const showCardEnemy = (arrAnswerSky, counterMove) => {
+  cardSkillEnemy[0].textContent = arrAnswerSky[counterMove][1][1];
+  cardSkillEnemy[1].textContent = arrAnswerSky[counterMove][1][2];
+  cardSkillEnemy[2].textContent = arrAnswerSky[counterMove][1][3];
+  cardImgEnemy.src = arrAnswerSky[counterMove][1][4];
+};
+//
+
+//Начать бой
+const playingFieldBtnGame = document.querySelector(".playing-Field__btn-game");
+playingFieldBtnGame.addEventListener("click", () => {
+  if (cardSkillEnemy[0].textContent != 0) {
+    startFight();
+  }
+});
+
+const startFight = () => {
+  let damageEnemy =
+    cardSkillUser[1].textContent - cardSkillEnemy[0].textContent;
+  let damageUser = cardSkillEnemy[1].textContent - cardSkillUser[0].textContent;
+};
+//
