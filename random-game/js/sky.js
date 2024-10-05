@@ -167,13 +167,13 @@ const getAnswer = (e) => {
     checkAnswer(answer, question);
     e.target.parentNode.classList.add("playing-Field__card-permoment-inactive");
     showCardEnemy(arrAnswerSky, counterMove);
+    playingFieldBtnGame.classList.remove("playing-Field__btn-game-inactive");
   }
 };
 //
 
 //Проверка ответа
 const checkAnswer = (answer, question) => {
-  console.log(answerSky[question][0]);
   if (answer === answerSky[question][0]) {
     changeSkillCard(answerSky, question);
     // console.log("yes");
@@ -231,6 +231,7 @@ playingFieldBtnGame.addEventListener("click", () => {
   if (cardSkillEnemy[0].textContent != 0) {
     startFight();
   }
+  removeInactive();
 });
 
 let counterHeartEnemy = 7;
@@ -248,9 +249,11 @@ const startFight = () => {
     counterHeartEnemy = counterHeartEnemy - Math.abs(damageEnemy);
     createHeartEnemy(counterHeartEnemy);
   }
+  playingFieldBtnGame.classList.add("playing-Field__btn-game-inactive");
 };
 //
 
+//Удалить-создать жизни врага
 const playingFieldBoxHeartEnemy = document.querySelector(
   ".playing-Field__box-heart-enemy"
 );
@@ -273,3 +276,13 @@ const restarHeartEnemy = (counterHeartEnemy) => {
 };
 
 createHeartEnemy(counterHeartEnemy);
+//
+
+//снять деактивацию с карт
+const removeInactive = () => {
+  playingFieldCard.forEach((element) => {
+    element.classList.remove("playing-Field__card-inactive");
+  });
+};
+
+//

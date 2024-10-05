@@ -313,6 +313,9 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
   font-size: 1.625rem;
   cursor: pointer;
 }
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__btn-game-inactive {
+  pointer-events: none;
+}
 body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy {
   display: flex;
   flex-direction: column;
