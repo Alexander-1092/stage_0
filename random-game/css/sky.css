@@ -226,10 +226,10 @@ body {
   overflow: hidden;
 }
 body .popupEndGame {
-  background-image: url(../assets/img/shadow/youWin.jpg);
+  background-image: url(../assets/img/sky/win_sky.avif);
 }
 body .changeImgPopupEndGame {
-  background-image: url(../assets/img/shadow/endGameLoose.jpg);
+  background-image: url(../assets/img/sky/loose_sky.jpg);
 }
 body .popupStart {
   min-height: 100vh;
@@ -264,6 +264,12 @@ body .wrapper .main .container .playing-Field .playing-Field__enemy span {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   font-size: 1.5rem;
 }
+body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Field__box-heart-enemy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+}
 body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Field__box-heart-enemy .playing-Field-heart-enemy {
   width: 2rem;
 }
@@ -280,7 +286,7 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.9375rem;
-  max-width: 12.5rem;
+  max-width: 13.5rem;
   background-color: #add3f1;
   border-radius: 0.625rem;
   padding: 0rem 0.3125rem;
@@ -294,6 +300,7 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
      object-fit: cover;
 }
 body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__answer-user {
+  font-size: 0.875rem;
   pointer-events: none;
   border: none;
   background-color: transparent;
@@ -323,7 +330,7 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.9375rem;
-  max-width: 12.5rem;
+  max-width: 13.5rem;
   background-color: #add3f1;
   border-radius: 0.625rem;
   padding: 0rem 0.3125rem;
@@ -337,6 +344,7 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
      object-fit: cover;
 }
 body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__answer-enemy {
+  font-size: 0.875rem;
   pointer-events: none;
   border: none;
   background-color: transparent;
@@ -364,7 +372,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.9375rem;
-  max-width: 12.5rem;
+  max-width: 13.5rem;
   background-color: #add3f1;
   border-radius: 0.625rem;
   padding: 0rem 0.3125rem;
@@ -390,6 +398,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__answer {
   max-width: 12.5rem;
+  font-size: 18px;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__skils {
   margin-bottom: 1.25rem;
@@ -418,12 +427,12 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
   filter: brightness(0.5);
 }
 body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar {
-  height: 0.625rem;
+  height: 1rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.616);
   border-radius: 0.625rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.26);
 }

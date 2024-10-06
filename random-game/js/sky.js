@@ -73,10 +73,17 @@ const sayHelloUser = (userName) => {
   popupStartTitle.innerHTML = `<h2 class="popupStart__title">Приветствую тебя, ${userName}!</h2>`;
 };
 
+const popupStartText = document.querySelector(".popupStart__text");
 //закрыть попап приветствия
 popupStartBtn.addEventListener("click", () => {
-  popupStart.classList.add("inactive-popupStart");
-  body.classList.add("active-body");
+  if (popupStartBtn.textContent === "Начать") {
+    popupStart.classList.add("inactive-popupStart");
+    body.classList.add("active-body");
+  } else {
+    popupStartBtn.textContent = "Начать";
+    popupStartText.textContent =
+      "Сыграем в игру. Тебе дана колода карт, у каждой карты есть три свойства жизнь (Ж), атака (А), лечение (Л). Выбери любую карту, и если правильно ответишь на вопрос существа, то оно станет биться за тебя. Обрати внимание, если атака существа больше его жизней, то оставшийся урон понесет игрок. Чтобы победить меня ты должен разбить все мои сердца, либо использовать все карты в колоды. Ты готов?";
+  }
 });
 
 sayHelloUser(userName);
@@ -90,14 +97,14 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Сусанин Гита</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Бог Гитхаба</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
 };
 
 const showYouLoose = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вы потерялись в лабиринте, и умрли с голоду.</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вас скинули с высот Града, и вы разбились насмерть.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
   popupEndGameLink.href = "./index.html";
@@ -164,7 +171,7 @@ const getAnswer = (e) => {
     e.target.textContent === "Ответить"
   ) {
     counterMove += 1;
-    answer = e.target.parentNode.childNodes[5].value;
+    answer = e.target.parentNode.childNodes[5];
     checkAnswer(answer, question);
     e.target.parentNode.classList.add("playing-Field__card-permoment-inactive");
     showCardEnemy(arrAnswerSky, counterMove);
@@ -175,11 +182,10 @@ const getAnswer = (e) => {
 
 //Проверка ответа
 const checkAnswer = (answer, question) => {
-  if (answer === answerSky[question][0]) {
+  if (answer.value === answerSky[question][0]) {
     changeSkillCard(answerSky, question);
-    // console.log("yes");
   } else {
-    // console.log("No");
+    answer.value = answerSky[question][0];
   }
 };
 //
