@@ -360,7 +360,7 @@ function stopPlaySoundMain() {
   soundMain.pause();
   soundMain.currentTime = 0;
 }
-// playSoundMain();
+playSoundMain();
 const soundError = document.querySelector(".sound-error");
 
 function playSoundEroro() {
@@ -397,3 +397,22 @@ function playSoundLoose() {
 }
 
 //
+
+const playingFieldInputVolume = document.querySelector(
+  ".playing-Field__input-volume"
+);
+
+soundMain.volume = playingFieldInputVolume.value;
+
+playingFieldInputVolume.addEventListener("input", () => {
+  soundMain.volume = playingFieldInputVolume.value;
+});
+
+playingFieldInputVolume.addEventListener("mouseover", () => {
+  playingFieldInputVolume.classList.add("playing-Field__input-volume-active");
+});
+playingFieldInputVolume.addEventListener("mouseout", () => {
+  playingFieldInputVolume.classList.remove(
+    "playing-Field__input-volume-active"
+  );
+});

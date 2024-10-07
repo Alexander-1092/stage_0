@@ -274,6 +274,7 @@ body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Fie
   width: 2rem;
 }
 body .wrapper .main .container .playing-Field .playing-Field__general {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,6 +358,55 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
   align-items: center;
   gap: 0.3125rem;
   filter: brightness(0.9);
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .volume-img {
+  max-width: 50px;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume {
+  position: relative;
+  transform: rotate(-90deg);
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-radius: 26px;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  right: -25px;
+  background-image: url(../assets/svg/main/sound_m9cdqqu0dgs6.svg);
+  transform: rotate(90deg) translateY(-50%);
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #6ea2cc;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume-active {
+  background-color: #7aafd3;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume-active:hover::-webkit-slider-thumb {
+  background-color: #17598f;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user {
   display: flex;
