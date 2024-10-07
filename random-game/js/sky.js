@@ -36,11 +36,6 @@ const delheart = (heart) => {
   let counterHeart = localStorage.getItem("counterHeart");
   restarHeart(counterHeart);
   localStorage.setItem("counterHeart", JSON.stringify(counterHeart - heart));
-  if (counterHeart <= 1) {
-    // stopPlaySoundMain();
-    showYouLoose(userName);
-    // playSoundLoose();
-  }
   checkHeart(counterHeart - 1);
 };
 const checkHeart = () => {
@@ -97,6 +92,7 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
+  stopPlaySoundMain();
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Бог Гитхаба</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
@@ -104,6 +100,7 @@ const showYouWin = (userName) => {
 };
 
 const showYouLoose = (userName) => {
+  stopPlaySoundMain();
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вас скинули с высот Града, и вы разбились насмерть.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
@@ -184,8 +181,10 @@ const getAnswer = (e) => {
 const checkAnswer = (answer, question) => {
   if (answer.value === answerSky[question][0]) {
     changeSkillCard(answerSky, question);
+    playSoundRight();
   } else {
     answer.value = answerSky[question][0];
+    playSoundEroro();
   }
 };
 //
@@ -234,11 +233,17 @@ const showCardEnemy = (arrAnswerSky, counterMove) => {
 
 //Начать бой
 const playingFieldBtnGame = document.querySelector(".playing-Field__btn-game");
+
 playingFieldBtnGame.addEventListener("click", () => {
+  playSoundFlight();
   if (cardSkillEnemy[0].textContent != 0) {
     startFight();
   }
   removeInactive();
+  if (counterMove === 10) {
+    playSoundWin();
+    showYouWin(userName);
+  }
 });
 
 let counterHeartEnemy = 7;
@@ -261,7 +266,18 @@ const startFight = () => {
   playingFieldBtnGame.classList.add("playing-Field__btn-game-inactive");
 
   addHeartUser(therapyUser);
-  addHearEnemy(counterHeartEnemy, therapyEnemy);
+  addHearEnemy(therapyEnemy);
+
+  if (localStorage.getItem("counterHeart") <= 0) {
+    showYouLoose(userName);
+    stopPlaySoundMain();
+    playSoundLoose();
+  }
+  if (counterHeartEnemy <= 0) {
+    stopPlaySoundMain();
+    playSoundWin();
+    showYouWin(userName);
+  }
 
   removeOldCard();
 };
@@ -278,9 +294,10 @@ const addHeartUser = (therapyUser) => {
 //
 
 //Лечим врага
-const addHearEnemy = (counterHeartEnemy, therapyEnemy) => {
+const addHearEnemy = (therapyEnemy) => {
   restarHeartEnemy(counterHeartEnemy);
-  createHeartEnemy(Number(counterHeartEnemy) + Number(therapyEnemy));
+  counterHeartEnemy = Number(counterHeartEnemy) + Number(therapyEnemy);
+  createHeartEnemy(counterHeartEnemy);
 };
 //
 
@@ -329,5 +346,54 @@ const removeOldCard = () => {
   cardSkillEnemy[1].textContent = 0;
   cardSkillEnemy[2].textContent = 0;
 };
+
+//
+
+//music
+const soundMain = document.querySelector(".sound-main");
+function playSoundMain() {
+  soundMain.currentTime = 0;
+  soundMain.play();
+}
+
+function stopPlaySoundMain() {
+  soundMain.pause();
+  soundMain.currentTime = 0;
+}
+// playSoundMain();
+const soundError = document.querySelector(".sound-error");
+
+function playSoundEroro() {
+  soundError.currentTime = 0;
+  soundError.play();
+}
+
+const soundFlight = document.querySelector(".sound-flight");
+
+function playSoundFlight() {
+  soundFlight.currentTime = 0;
+  soundFlight.play();
+}
+
+const soundRight = document.querySelector(".sound-right");
+
+function playSoundRight() {
+  soundRight.currentTime = 0;
+  soundRight.play();
+}
+
+const soundWin = document.querySelector(".sound-win");
+
+function playSoundWin() {
+  soundWin.currentTime = 0;
+  soundWin.play();
+}
+
+const soundLoose = document.querySelector(".sound-loose");
+
+function playSoundLoose() {
+  soundLoose.currentTime = 0;
+  soundLoose.play();
+}
 
 //
