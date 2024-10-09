@@ -416,3 +416,11 @@ playingFieldInputVolume.addEventListener("mouseout", () => {
     "playing-Field__input-volume-active"
   );
 });
+
+//Блокируем переход по ссылке
+const gameItemsLinkBack = document.querySelector(".gameItems__link-back");
+gameItemsLinkBack.addEventListener("click", (e) => {
+  e.preventDefault();
+});
+
+//
