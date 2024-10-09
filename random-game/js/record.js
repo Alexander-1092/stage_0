@@ -22,3 +22,11 @@ if (recordList) {
   recordList.sort((a, b) => b[1] - a[1]);
   checkLenghtRecordList(recordList);
 }
+
+const mainMusic = document.querySelector(".main-music");
+
+const PlayMainMusic = () => {
+  mainMusic.currentTime = 0;
+  mainMusic.play();
+};
+PlayMainMusic();
