@@ -80,3 +80,59 @@ function playSoundMain() {
   mainAudio.play();
 }
 playSoundMain();
+
+function stopPlaySoundMain() {
+  mainAudio.pause();
+  mainAudio.currentTime = 0;
+}
+
+const finalAudio = document.querySelector(".final-audio");
+
+const musicfinalAudio = () => {
+  finalAudio.currentTime = 0;
+  finalAudio.play;
+};
+
+//финальный поп ап
+const popupFininalBtn = document.querySelector(".popup-fininal__btn");
+let record = [];
+
+popupFininalBtn.addEventListener("click", () => {
+  setRecord();
+  removeOldDataGame();
+  window.location.href = "./index.html";
+});
+
+const setRecord = () => {
+  let userName = JSON.parse(localStorage.getItem("userName")).userName;
+  let heartUser = JSON.parse(localStorage.getItem("counterHeart"));
+  if (localStorage.getItem("record")) {
+    record = JSON.parse(localStorage.getItem("record"));
+    record.push([userName, heartUser]);
+    localStorage.setItem("record", JSON.stringify(record));
+  } else {
+    record.push([userName, heartUser]);
+    localStorage.setItem("record", JSON.stringify(record));
+  }
+};
+
+const removeOldDataGame = () => {
+  localStorage.removeItem("counterHeart");
+  localStorage.removeItem("userName");
+  localStorage.removeItem("skills");
+};
+//
+
+//Активация финального поп апа
+let counterSkills = JSON.parse(localStorage.getItem("skills"));
+const popupFininal = document.querySelector(".popup-fininal");
+
+const checkCounterSkills = () => {
+  if (counterSkills.length === 6) {
+    stopPlaySoundMain();
+    musicfinalAudio();
+    popupFininal.classList.add("popup-fininal__active");
+  }
+};
+
+checkCounterSkills();

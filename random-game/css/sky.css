@@ -226,12 +226,13 @@ body {
   overflow: hidden;
 }
 body .popupEndGame {
-  background-image: url(../assets/img/shadow/youWin.jpg);
+  background-image: url(../assets/img/sky/win_sky.avif);
 }
 body .changeImgPopupEndGame {
-  background-image: url(../assets/img/shadow/endGameLoose.jpg);
+  background-image: url(../assets/img/sky/loose_sky.jpg);
 }
 body .popupStart {
+  min-height: 100vh;
   background-image: url(../assets/img/sky/city.jfif);
 }
 body .popupStart .popupStart__title {
@@ -246,4 +247,242 @@ body .wrapper {
 }
 body .wrapper .main {
   flex: 1;
+}
+body .wrapper .main .container .playing-Field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80vh;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy span {
+  color: #ffffff;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  font-size: 1.5rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Field__box-heart-enemy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__enemy .playing-Field__box-heart-enemy .playing-Field-heart-enemy {
+  width: 2rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9375rem;
+  max-width: 13.5rem;
+  background-color: #add3f1;
+  border-radius: 0.625rem;
+  padding: 0rem 0.3125rem;
+  filter: brightness(0.95);
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__img-user {
+  max-width: 6.25rem;
+  margin-top: 1.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__answer-user {
+  font-size: 0.875rem;
+  pointer-events: none;
+  border: none;
+  background-color: transparent;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-user .card__skils-user {
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+  filter: brightness(0.9);
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__btn-game {
+  max-height: 3.125rem;
+  padding: 0rem 3.125rem;
+  font-size: 1.625rem;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__btn-game-inactive {
+  pointer-events: none;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9375rem;
+  max-width: 13.5rem;
+  background-color: #add3f1;
+  border-radius: 0.625rem;
+  padding: 0rem 0.3125rem;
+  filter: brightness(0.95);
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__img-enemy {
+  max-width: 6.25rem;
+  margin-top: 1.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__answer-enemy {
+  font-size: 0.875rem;
+  pointer-events: none;
+  border: none;
+  background-color: transparent;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__card-enemy .card__skils-enemy {
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+  filter: brightness(0.9);
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .volume-img {
+  max-width: 50px;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume {
+  position: relative;
+  transform: rotate(-90deg);
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-radius: 26px;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  right: -25px;
+  background-image: url(../assets/svg/main/sound_m9cdqqu0dgs6.svg);
+  transform: rotate(90deg) translateY(-50%);
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #6ea2cc;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume-active {
+  background-color: #7aafd3;
+}
+body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume-active:hover::-webkit-slider-thumb {
+  background-color: #17598f;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user {
+  display: flex;
+  overflow-x: scroll;
+  gap: 0.3125rem;
+  align-items: last baseline;
+  max-width: 100%;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9375rem;
+  max-width: 13.5rem;
+  background-color: #add3f1;
+  border-radius: 0.625rem;
+  padding: 0rem 0.3125rem;
+  filter: brightness(0.95);
+  transition: all 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__img {
+  max-width: 6.25rem;
+  margin-top: 1.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__question {
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 700;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__question-active {
+  height: auto;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__answer {
+  max-width: 12.5rem;
+  font-size: 18px;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__skils {
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3125rem;
+  filter: brightness(0.9);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__btn {
+  padding: 0.3125rem 0.625rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card:hover {
+  cursor: pointer;
+  filter: brightness(1);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card-inactive {
+  pointer-events: none;
+  filter: brightness(0.4);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card-permoment-inactive {
+  pointer-events: none;
+  filter: brightness(0.5);
+}
+body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar {
+  height: 1rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.616);
+  border-radius: 0.625rem;
+}
+body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.26);
 }

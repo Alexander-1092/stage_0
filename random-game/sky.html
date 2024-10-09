@@ -11,11 +11,12 @@
 </head>
 
 <body class="body">
-    <!-- <audio class="sound-win" src="./assets/media/general/kirya-pomedorkas-adventures-ost-z_uk-pobedy.mp3"></audio>
-    <audio class="sound-loose" src="./assets/media/labyrinth/88785d55e939c40.mp3"></audio>
-    <audio class="sound-error" src="./assets/media/labyrinth/monster-frankenstein-growl-creature_zyw2ehvu.mp3"></audio>
-    <audio class="sound-right" src="./assets/media/labyrinth/right.mp3"></audio>
-    <audio class="sound-main" src="./assets/media/labyrinth/main.mp3" loop></audio> -->
+    <audio class="sound-win" src="./assets/media/sky/win.mp3"></audio>
+    <audio class="sound-loose" src="./assets/media/sky/loose.mp3"></audio>
+    <audio class="sound-error" src="./assets/media/sky/error_1.mp3"></audio>
+    <audio class="sound-flight" src="./assets/media/sky/sword.mp3"></audio>
+    <audio class="sound-right" src="./assets/media/sky/right.mp3"></audio>
+    <audio class="sound-main" src="./assets/media/sky/main.mp3" loop></audio>
     <div class="popupEndGame">
         <h2 class="popupEndGame__title">Вы победили!</h2>
         <p class="popupEndGame__text">Вы получили достижение - Бог Гитхаба</p>
@@ -23,7 +24,8 @@
     </div>
     <div class="popupStart">
         <h2 class="popupStart__title">Добро пожаловать в удаленный град Гитхаб</h2>
-        <p class="popupStart__text">Текст для Гитхаб
+        <p class="popupStart__text">тебя встречает привратник у ворот града. <br> - Я вижу ты решил войти во врата
+            священного города, но перед этим ты должен победить меня.
         </p>
         <button type="button" class="popupStart__btn">Продолжить</button>
     </div>
@@ -35,12 +37,209 @@
         </header>
         <main class="main">
             <div class="container">
+                <div class="playing-Field">
+                    <div class="playing-Field__enemy">
+                        <span title="Количество жизней">Количество жизней привратника:</span>
+                        <div class="playing-Field__box-heart-enemy"></div>
+                    </div>
+                    <div class="playing-Field__general">
+                        <div class="playing-Field__card-user">
+                            <img class="card__img-user" src="./assets/svg/sky/null.svg" alt="card">
+                            <input type="text" class="card__answer-user">
+                            <div class="card__skils-user">
+                                <div class="txt-description-user" title="Жизнь">Ж</div>
+                                <div class="txt-description-user" title="Атака">А</div>
+                                <div class="txt-description-user" title="Лечение">Л</div>
+                                <div class="card__skill-user">0</div>
+                                <div class="card__skill-user">0</div>
+                                <div class="card__skill-user">0</div>
+                            </div>
+                        </div>
+                        <button class="playing-Field__btn-game playing-Field__btn-game-inactive"
+                            type="button">Бой</button>
+                        <div class="playing-Field__card-enemy">
+                            <img class="card__img-enemy" src="./assets/svg/sky/null.svg" alt="card">
+                            <input type="text" class="card__answer-enemy">
+                            <div class="card__skils-enemy">
+                                <div class="txt-description-enemy" title="Жизнь">Ж</div>
+                                <div class="txt-description-enemy" title="Атака">А</div>
+                                <div class="txt-description-enemy" title="Лечение">Л</div>
+                                <div class="card__skill-enemy">0</div>
+                                <div class="card__skill-enemy">0</div>
+                                <div class="card__skill-enemy">0</div>
+                            </div>
+                        </div>
+                        <label class="playing-Field__volume">
+                            <input class="playing-Field__input-volume" type="range" min="0" max="1" step="0.01"
+                                value="0.5">
+                        </label>
+                    </div>
+                    <div class="playing-Field__user">
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/angel_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/archer_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/beard_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/cannon_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/cerberus_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/dragon_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/knight_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/peasant_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/wizard_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/viking_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                        <div class="playing-Field__card">
+                            <img class="card__img" src="./assets/svg/sky/soldier_card.svg" alt="card">
+                            <div class="card__question"></div>
+                            <input type="text" class="card__answer" placeholder="git">
+                            <div class="card__skils">
+                                <div class="txt-description" title="Жизнь">Ж</div>
+                                <div class="txt-description" title="Атака">А</div>
+                                <div class="txt-description" title="Лечение">Л</div>
+                                <div class="card__heart"></div>
+                                <div class="card__attack"></div>
+                                <div class="card__healing"></div>
+                            </div>
+                            <button class="card__btn" type="button">Выбрать</button>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </main>
         <footer class="footer">
             <div class="container">
                 <div class="gameItems">
-                    <a class="gameItems__link-back" href="./mapNewGame.html">Вернуться на карту</a>
+                    <a class="gameItems__link-back" href="./mapNewGame.html"
+                        title="Назад пути нет, только вперед">Вернуться на карту</a>
                     <div class="gameItems__skills">
                         <span title="ваши достижения">Мои навыки:</span>
                         <div class="gameItems__box-skills">
