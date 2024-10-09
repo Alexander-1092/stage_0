@@ -139,9 +139,33 @@ body .wrapper .main .container .table {
   font-size: 32px;
   color: #ffffff;
 }
-body .wrapper .main .container .table td {
+body .wrapper .main .container .table .tbody td {
   padding-top: 25px;
 }
+body .wrapper .main .container .table .tbody .tabl__odd {
+  background-color: rgba(31, 26, 26, 0.3411764706);
+}
+body .wrapper .main .container .table .tbody .tabl__even {
+  background-color: rgba(255, 255, 255, 0.337254902);
+}
+body .wrapper .footer .container .gameItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  gap: 10px;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back {
+  transition: color 0.5s ease-in-out;
+  color: #ffffff;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .wrapper .footer .container .gameItems .gameItems__link-back:hover {
+  color: #757575;
+}
+
 @media (max-width: 1100px) {
   html {
     font-size: 15px;
