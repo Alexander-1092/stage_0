@@ -81,6 +81,18 @@ function playSoundMain() {
 }
 playSoundMain();
 
+function stopPlaySoundMain() {
+  mainAudio.pause();
+  mainAudio.currentTime = 0;
+}
+
+const finalAudio = document.querySelector(".final-audio");
+
+const musicfinalAudio = () => {
+  finalAudio.currentTime = 0;
+  finalAudio.play;
+};
+
 //финальный поп ап
 const popupFininalBtn = document.querySelector(".popup-fininal__btn");
 let record = [];
@@ -117,6 +129,8 @@ const popupFininal = document.querySelector(".popup-fininal");
 
 const checkCounterSkills = () => {
   if (counterSkills.length === 6) {
+    stopPlaySoundMain();
+    musicfinalAudio();
     popupFininal.classList.add("popup-fininal__active");
   }
 };

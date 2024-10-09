@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шпаргалка</title>
+    <link rel="stylesheet" href="./css/crib.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Шпаргалка</h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="table__box">
+                    <table class="table table-dangeon">
+                        <caption class="table-dangeon__title">
+                            Файловые команды
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="table__title" scope="col">Описание</th>
+                                <th class="table__title" scope="col">Команда</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tabl__odd">
+                                <td>переместиться на одну папку назад</td>
+                                <td>cd ..</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>ппереместиться на одну папку вперед назад</td>
+                                <td>cd /</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>перейти к домашней папке</td>
+                                <td>cd ~</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>вернуться к предыдущей папке</td>
+                                <td>cd -</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>посмотреть содержимое папки</td>
+                                <td>ls</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>создать файл</td>
+                                <td>touch</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>создать папку</td>
+                                <td>mkdir</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>удалить файл</td>
+                                <td>rm</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>удалить папку</td>
+                                <td>rmdir</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>открыть папку в редакторе кода</td>
+                                <td>code .</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-labyrinth">
+                        <caption class="table-dangeon__title">
+                            Векти GIT
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="table__title" scope="col">Описание</th>
+                                <th class="table__title" scope="col">Команда</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tabl__odd">
+                                <td>создать ветку main</td>
+                                <td>checkout -b main \ swith -c main</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>удаление ветки main</td>
+                                <td>branch -d main</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>слияние ветки</td>
+                                <td>merge</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>перебазирование ветки new-branch</td>
+                                <td>rebase main</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>создать новую ветку из коммита (хеш:d617836) ветки main</td>
+                                <td>checkout -b main хеш</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>получить изменения из старого коммита, в ветку new-branch из ветки main,без слияния
+                                    с
+                                    последними коммитами</td>
+                                <td>cherry-pick хеш</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>удалить ветку new-branch, которая не была полностью синхронизированна</td>
+                                <td>branch -D new-branch</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Команда для переименовании ветки в ветку main</td>
+                                <td>branch -m main</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-shadow">
+                        <caption class="table-dangeon__title">
+                            Теги и Stash
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="table__title" scope="col">Описание</th>
+                                <th class="table__title" scope="col">Команда</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tabl__odd">
+                                <td>Создать легковесный тег</td>
+                                <td>tag имя_тега</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Создать аннонтированный тег</td>
+                                <td>tag -a имя_тега</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Для просмотра всех тегов</td>
+                                <td>tag</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Для просмотра тега</td>
+                                <td>show имя_тега</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Для перехода на тег</td>
+                                <td>checkout имя_тега</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Для удаления тега</td>
+                                <td>tag -d имя_тега</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Команда, предназначенная для временного сохранения незакоммиченных изменений</td>
+                                <td>stash</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Поместить изменения в рабочей области в специальное хранилище, оставив при этом
+                                    сообщение к нему</td>
+                                <td>stash push -m 'сообщение'</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Восстановить последние сохранённые изменения из stash</td>
+                                <td>stash apply</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Применяет последние сохранённые изменения из stash и одновременно удаляет их из
+                                    списка
+                                    stash</td>
+                                <td>stash pop</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Восстановить конкретный stash</td>
+                                <td>stash apply stash@{1}</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Удалить определенный stash</td>
+                                <td>stash drop stash@{1}</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Удалить все stash</td>
+                                <td>stash clear</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Посмотреть все сохраненные stash</td>
+                                <td>stash list</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-smithy">
+                        <caption class="table-dangeon__title">
+                            Создание и изменения данных репозитория
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="table__title" scope="col">Описание</th>
+                                <th class="table__title" scope="col">Команда</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tabl__odd">
+                                <td>Создать репозиторий</td>
+                                <td>init</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Проиндексировать все файлы</td>
+                                <td>add -A</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Зафиксировать коммит с коментарием</td>
+                                <td>commit -m</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>отменить предыдущий коммит, не удаляя его из истории</td>
+                                <td>revert HEAD</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Измененить текст последнего коммита</td>
+                                <td>commit --amend -m</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>удалить последний коммит со всеми добавленными данными</td>
+                                <td>reset --hard HEAD~1</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Отмена индексации</td>
+                                <td>restore --staged</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Измененить описание старого коммита (3 с конца), не удаляя его из истории</td>
+                                <td>rebase -i HEAD~3</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Посмотреть историю коммитов (в одну строку)</td>
+                                <td>log --oneline</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Посмотреть коммит</td>
+                                <td>show</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Посмотреть статус файла</td>
+                                <td>status</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Откатить ваше текущее состояние ветки на n коммитов назад и удалить все изменения
+                                </td>
+                                <td>reset --hard HEAD~n</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-shadow">
+                        <caption class="table-dangeon__title">
+                            Гитхаб
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="table__title" scope="col">Описание</th>
+                                <th class="table__title" scope="col">Команда</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tabl__odd">
+                                <td>устанавливает связь между локальным и удаленным репозиторием</td>
+                                <td>remote add origin</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Связать локальную ветку new_branch с удаленной веткой new_branch"</td>
+                                <td>push -u origin new_branch</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Передать данные в удаленный репозиторий</td>
+                                <td>push</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>показать с каким удаленным репозиторием есть связь</td>
+                                <td>remote -v</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Скачать данные без слияния их с локальнным репозиторием</td>
+                                <td>fetch</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Скачать данные с удаленного репозитория в локальный</td>
+                                <td>pull</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>удалить файл с удаленного репозитория, без удаления его с локального</td>
+                                <td>rm --cached</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Удаления ветки - new_branch с удаленного репозитория</td>
+                                <td>push origin --delete new_branch</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>создать копию удаленного репозитория</td>
+                                <td>clone</td>
+                            </tr>
+                            <tr class="tabl__even">
+                                <td>Посмотреть все удаленные ветки</td>
+                                <td>branch -r</td>
+                            </tr>
+                            <tr class="tabl__odd">
+                                <td>Отсоединить удаленный репозиторий от локального</td>
+                                <td>remote remove origin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="gameItems">
+                    <a class="gameItems__link-back" href="./index.html">Вернуться в меню</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
