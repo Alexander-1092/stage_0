@@ -358,6 +358,7 @@ function playSoundMain() {
 }
 
 function stopPlaySoundMain() {
+  soundMain.volume = 0.3;
   soundMain.pause();
   soundMain.currentTime = 0;
 }
@@ -399,24 +400,24 @@ function playSoundLoose() {
 
 //
 
-const playingFieldInputVolume = document.querySelector(
-  ".playing-Field__input-volume"
-);
+// const playingFieldInputVolume = document.querySelector(
+//   ".playing-Field__input-volume"
+// );
 
-soundMain.volume = playingFieldInputVolume.value;
+// soundMain.volume = playingFieldInputVolume.value;
 
-playingFieldInputVolume.addEventListener("input", () => {
-  soundMain.volume = playingFieldInputVolume.value;
-});
+// playingFieldInputVolume.addEventListener("input", () => {
+//   soundMain.volume = playingFieldInputVolume.value;
+// });
 
-playingFieldInputVolume.addEventListener("mouseover", () => {
-  playingFieldInputVolume.classList.add("playing-Field__input-volume-active");
-});
-playingFieldInputVolume.addEventListener("mouseout", () => {
-  playingFieldInputVolume.classList.remove(
-    "playing-Field__input-volume-active"
-  );
-});
+// playingFieldInputVolume.addEventListener("mouseover", () => {
+//   playingFieldInputVolume.classList.add("playing-Field__input-volume-active");
+// });
+// playingFieldInputVolume.addEventListener("mouseout", () => {
+//   playingFieldInputVolume.classList.remove(
+//     "playing-Field__input-volume-active"
+//   );
+// });
 
 //Блокируем переход по ссылке
 const gameItemsLinkBack = document.querySelector(".gameItems__link-back");
