@@ -91,7 +91,7 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы смогли выйти из комнаты теней, и обрести знания. Теперь вы архивариус тегов</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю, ${userName}! Вы смогли выйти из комнаты тени, и обрести знания. Теперь вы архивариус тегов</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();

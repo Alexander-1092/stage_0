@@ -141,13 +141,13 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - мастер темных мест</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю, ${userName}! Вы получили достижение - мастер темных мест</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
 };
 
 const showYouLoose = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб в темных тонелях поземелья</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб в темных тоннелях подземелья</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
   popupEndGameLink.href = "./index.html";
@@ -212,7 +212,7 @@ const body = document.querySelector(".body");
 popupStartBtn.addEventListener("click", () => {});
 
 const sayHelloUser = (userName) => {
-  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Привет ${userName}</h2>`;
+  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Привет, ${userName}!</h2>`;
 };
 
 popupStartBtn.addEventListener("click", () => {

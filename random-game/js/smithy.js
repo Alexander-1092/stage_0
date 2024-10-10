@@ -81,7 +81,7 @@ const popupStartBtn = document.querySelector(".popupStart__btn");
 const body = document.querySelector(".body");
 
 const sayHelloUser = (userName) => {
-  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Приветствую тебя ${userName}</h2>`;
+  popupStartTitle.innerHTML = `<h2 class="popupStart__title">Приветствую тебя, ${userName}!</h2>`;
 };
 
 //закрыть попап приветствия
@@ -101,7 +101,7 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы получили достижение - Гефест репозиториев</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю, ${userName}! Вы получили достижение - Гефест репозиториев</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
