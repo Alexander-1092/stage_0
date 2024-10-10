@@ -221,6 +221,7 @@ const showRightAnswer = (question, answerShadow) => {
 //music
 const soundMain = document.querySelector(".sound-main");
 function playSoundMain() {
+  soundMain.volume = 0.2;
   soundMain.currentTime = 0;
   soundMain.play();
 }

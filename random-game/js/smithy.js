@@ -198,6 +198,7 @@ const showCorrectAnswer = () => {
 //music
 const soundMain = document.querySelector(".sound-main");
 function playSoundMain() {
+  soundMain.volume = 0.3;
   soundMain.currentTime = 0;
   soundMain.play();
 }

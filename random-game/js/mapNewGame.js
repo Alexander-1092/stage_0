@@ -82,6 +82,7 @@ showReceivedSkills();
 
 const mainAudio = document.querySelector(".main-audio");
 function playSoundMain() {
+  mainAudio.volume = 0.3;
   mainAudio.currentTime = 0;
   mainAudio.play();
 }
