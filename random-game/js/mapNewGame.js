@@ -12,9 +12,15 @@ const checkPlayer = () => {
 };
 
 checkPlayer();
-
+const regex = /^[a-zA-Zа-яА-ЯёЁ]{3,15}$/;
 popupNewGameBtn.addEventListener("click", () => {
-  removePopup(popupNewGameNameUser);
+  if (regex.test(popupNewGameNameUser.value)) {
+    removePopup(popupNewGameNameUser);
+  } else {
+    alert(
+      "Имя должно содержать только буквенные символы и иметь длинну от 3 - 15 символов"
+    );
+  }
 });
 
 const removePopup = (popupNewGameNameUser) => {
