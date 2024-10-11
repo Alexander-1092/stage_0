@@ -25,5 +25,6 @@ const checkGame = () => {
     localStorage.removeItem("counterHeart");
     localStorage.removeItem("userName");
     localStorage.removeItem("skills");
+    localStorage.removeItem("Nochit");
   }
 };

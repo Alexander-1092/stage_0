@@ -143,3 +143,27 @@ const checkCounterSkills = () => {
 };
 
 checkCounterSkills();
+
+//От читтерства в игре sky
+const taskSky = document.querySelector(".task-sky");
+taskSky.addEventListener("click", () => {
+  let noChit = true;
+  localStorage.setItem("Nochit", JSON.stringify(noChit));
+});
+
+const checkChit = () => {
+  let dataSkills = JSON.parse(localStorage.getItem("skills"));
+  let chit = JSON.parse(localStorage.getItem("Nochit"));
+  if (!dataSkills.includes("sky") & (chit === true)) {
+    alert(
+      "О, неет!!! С удлаленного града нельзя спуститься самому. Придется начать всё заново"
+    );
+
+    localStorage.removeItem("Nochit");
+    localStorage.removeItem("userName");
+    window.location.href = "./index.html";
+  }
+};
+
+checkChit();
+//
