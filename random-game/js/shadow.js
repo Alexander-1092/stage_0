@@ -8,8 +8,10 @@ const gameItemsIconSkills = document.querySelectorAll(
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("shadow");
-  localStorage.setItem("skills", JSON.stringify(data));
+  if (!data.includes("shadow")) {
+    data.push("shadow");
+    localStorage.setItem("skills", JSON.stringify(data));
+  }
 };
 const showReceivedSkills = () => {
   let dataSkills = JSON.parse(localStorage.getItem("skills"));

@@ -90,8 +90,10 @@ const compareAnswers = (oneAnswer, twoAnswer) => {
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("doungeon");
-  localStorage.setItem("skills", JSON.stringify(data));
+  if (!data.includes("doungeon")) {
+    data.push("doungeon");
+    localStorage.setItem("skills", JSON.stringify(data));
+  }
 };
 //
 

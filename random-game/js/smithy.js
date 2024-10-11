@@ -20,8 +20,10 @@ mixArray(answers);
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("smithy");
-  localStorage.setItem("skills", JSON.stringify(data));
+  if (!data.includes("smithy")) {
+    data.push("smithy");
+    localStorage.setItem("skills", JSON.stringify(data));
+  }
 };
 const showReceivedSkills = () => {
   let dataSkills = JSON.parse(localStorage.getItem("skills"));
