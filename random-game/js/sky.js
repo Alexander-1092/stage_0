@@ -8,8 +8,10 @@ const gameItemsIconSkills = document.querySelectorAll(
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("sky");
-  localStorage.setItem("skills", JSON.stringify(data));
+  if (!data.includes("sky")) {
+    data.push("sky");
+    localStorage.setItem("skills", JSON.stringify(data));
+  }
 };
 const showReceivedSkills = () => {
   let dataSkills = JSON.parse(localStorage.getItem("skills"));
@@ -77,7 +79,7 @@ popupStartBtn.addEventListener("click", () => {
   } else {
     popupStartBtn.textContent = "Начать";
     popupStartText.textContent =
-      "Сыграем в игру. Тебе дана колода карт, у каждой карты есть три свойства жизнь (Ж), атака (А), лечение (Л). Выбери любую карту, и если правильно ответишь на вопрос существа, то оно станет биться за тебя. Обрати внимание, если атака существа больше его жизней, то оставшийся урон понесет игрок. Чтобы победить меня ты должен разбить все мои сердца, либо использовать все карты в колоды. Ты готов?";
+      "Давайте сыграем в игру. Тебе дана колода карт, у каждой карты есть три свойства: жизнь (Ж), атака (А), лечение (Л). Выбери любую карту, и если правильно ответишь на вопрос существа, то оно станет сражаться за тебя. Обрати внимание, если атака враждебного существа больше, чем жизней у твоей карты-существа, то оставшийся урон понесет игрок. Чтобы победить меня, ты должен разбить все мои сердца или использовать все карты в колоде. Ты готов?";
   }
 });
 
@@ -352,11 +354,13 @@ const removeOldCard = () => {
 //music
 const soundMain = document.querySelector(".sound-main");
 function playSoundMain() {
+  soundMain.volume = 0.3;
   soundMain.currentTime = 0;
   soundMain.play();
 }
 
 function stopPlaySoundMain() {
+  soundMain.volume = 0.3;
   soundMain.pause();
   soundMain.currentTime = 0;
 }
@@ -398,24 +402,24 @@ function playSoundLoose() {
 
 //
 
-const playingFieldInputVolume = document.querySelector(
-  ".playing-Field__input-volume"
-);
+// const playingFieldInputVolume = document.querySelector(
+//   ".playing-Field__input-volume"
+// );
 
-soundMain.volume = playingFieldInputVolume.value;
+// soundMain.volume = playingFieldInputVolume.value;
 
-playingFieldInputVolume.addEventListener("input", () => {
-  soundMain.volume = playingFieldInputVolume.value;
-});
+// playingFieldInputVolume.addEventListener("input", () => {
+//   soundMain.volume = playingFieldInputVolume.value;
+// });
 
-playingFieldInputVolume.addEventListener("mouseover", () => {
-  playingFieldInputVolume.classList.add("playing-Field__input-volume-active");
-});
-playingFieldInputVolume.addEventListener("mouseout", () => {
-  playingFieldInputVolume.classList.remove(
-    "playing-Field__input-volume-active"
-  );
-});
+// playingFieldInputVolume.addEventListener("mouseover", () => {
+//   playingFieldInputVolume.classList.add("playing-Field__input-volume-active");
+// });
+// playingFieldInputVolume.addEventListener("mouseout", () => {
+//   playingFieldInputVolume.classList.remove(
+//     "playing-Field__input-volume-active"
+//   );
+// });
 
 //Блокируем переход по ссылке
 const gameItemsLinkBack = document.querySelector(".gameItems__link-back");

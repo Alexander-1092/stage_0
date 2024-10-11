@@ -12,9 +12,15 @@ const checkPlayer = () => {
 };
 
 checkPlayer();
-
+const regex = /^[a-zA-Zа-яА-ЯёЁ]{3,15}$/;
 popupNewGameBtn.addEventListener("click", () => {
-  removePopup(popupNewGameNameUser);
+  if (regex.test(popupNewGameNameUser.value)) {
+    removePopup(popupNewGameNameUser);
+  } else {
+    alert(
+      "Имя должно содержать только буквенные символы и иметь длинну от 3 - 15 символов"
+    );
+  }
 });
 
 const removePopup = (popupNewGameNameUser) => {
@@ -76,6 +82,7 @@ showReceivedSkills();
 
 const mainAudio = document.querySelector(".main-audio");
 function playSoundMain() {
+  mainAudio.volume = 0.3;
   mainAudio.currentTime = 0;
   mainAudio.play();
 }
@@ -136,3 +143,27 @@ const checkCounterSkills = () => {
 };
 
 checkCounterSkills();
+
+//От читтерства в игре sky
+const taskSky = document.querySelector(".task-sky");
+taskSky.addEventListener("click", () => {
+  let noChit = true;
+  localStorage.setItem("Nochit", JSON.stringify(noChit));
+});
+
+const checkChit = () => {
+  let dataSkills = JSON.parse(localStorage.getItem("skills"));
+  let chit = JSON.parse(localStorage.getItem("Nochit"));
+  if (!dataSkills.includes("sky") & (chit === true)) {
+    alert(
+      "О, неет!!! С удлаленного града нельзя спуститься самому. Придется начать всё заново"
+    );
+
+    localStorage.removeItem("Nochit");
+    localStorage.removeItem("userName");
+    window.location.href = "./index.html";
+  }
+};
+
+checkChit();
+//

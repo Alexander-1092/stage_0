@@ -26,6 +26,7 @@ if (recordList) {
 const mainMusic = document.querySelector(".main-music");
 
 const PlayMainMusic = () => {
+  mainMusic.volume = 0.3;
   mainMusic.currentTime = 0;
   mainMusic.play();
 };

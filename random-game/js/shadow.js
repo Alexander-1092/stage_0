@@ -8,8 +8,10 @@ const gameItemsIconSkills = document.querySelectorAll(
 //функция для перезаписи скиллов
 const addSkillLocalStorage = () => {
   let data = JSON.parse(localStorage.getItem("skills"));
-  data.push("shadow");
-  localStorage.setItem("skills", JSON.stringify(data));
+  if (!data.includes("shadow")) {
+    data.push("shadow");
+    localStorage.setItem("skills", JSON.stringify(data));
+  }
 };
 const showReceivedSkills = () => {
   let dataSkills = JSON.parse(localStorage.getItem("skills"));
@@ -91,7 +93,7 @@ const wrapper = document.querySelector(".wrapper");
 const popupEndGameTitle = document.querySelector(".popupEndGame__title");
 
 const showYouWin = (userName) => {
-  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю ${userName}! Вы смогли выйти из комнаты теней, и обрести знания. Теперь вы архивариус тегов</p>`;
+  popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Поздравляю, ${userName}! Вы смогли выйти из комнаты тени, и обрести знания. Теперь вы архивариус тегов</p>`;
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
   addSkillLocalStorage();
@@ -221,6 +223,7 @@ const showRightAnswer = (question, answerShadow) => {
 //music
 const soundMain = document.querySelector(".sound-main");
 function playSoundMain() {
+  soundMain.volume = 0.2;
   soundMain.currentTime = 0;
   soundMain.play();
 }
