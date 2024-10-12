@@ -161,9 +161,9 @@ const checkChit = () => {
 
     localStorage.removeItem("Nochit");
     localStorage.removeItem("userName");
-    window.location.href = "./index.html";
+    // window.location.href = "./index.html";
   }
 };
 
-checkChit();
+// checkChit();
 //
