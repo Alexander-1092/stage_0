@@ -107,7 +107,7 @@ let record = [];
 popupFininalBtn.addEventListener("click", () => {
   setRecord();
   removeOldDataGame();
-  window.location.href = "./index.html";
+  window.location.href = "./record.html";
 });
 
 const setRecord = () => {
