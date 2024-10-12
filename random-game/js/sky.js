@@ -427,4 +427,8 @@ gameItemsLinkBack.addEventListener("click", (e) => {
   e.preventDefault();
 });
 
+window.addEventListener("popstate", function (event) {
+  console.log("yes");
+  window.location.href = "./index.html";
+});
 //
