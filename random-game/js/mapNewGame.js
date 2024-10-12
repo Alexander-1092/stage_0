@@ -144,7 +144,7 @@ const checkCounterSkills = () => {
 
 checkCounterSkills();
 
-//От читтерства в игре sky
+//От читтерства в игре sky/
 const taskSky = document.querySelector(".task-sky");
 taskSky.addEventListener("click", () => {
   let noChit = true;
@@ -161,9 +161,8 @@ const checkChit = () => {
 
     localStorage.removeItem("Nochit");
     localStorage.removeItem("userName");
-    // window.location.href = "./index.html";
+    window.location.href = "./index.html";
   }
 };
-
-// checkChit();
+setTimeout(checkChit(), 2000);
 //
