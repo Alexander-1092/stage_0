@@ -58,6 +58,8 @@ const gameItemsIconSkills = document.querySelectorAll(
   ".gameItems__icon_skills"
 );
 
+const boxGamesTask = document.querySelectorAll(".box-games__task");
+
 const showReceivedSkills = () => {
   let dataSkills = JSON.parse(localStorage.getItem("skills"));
 
@@ -66,14 +68,19 @@ const showReceivedSkills = () => {
       gameItemsIconSkills[0].classList.add("active-gameItems__icon_skills");
     } else if (skill === "doungeon") {
       gameItemsIconSkills[1].classList.add("active-gameItems__icon_skills");
+      boxGamesTask[0].classList.add("box-games__task-done");
     } else if (skill === "smithy") {
       gameItemsIconSkills[2].classList.add("active-gameItems__icon_skills");
+      boxGamesTask[1].classList.add("box-games__task-done");
     } else if (skill === "labyrinth") {
       gameItemsIconSkills[3].classList.add("active-gameItems__icon_skills");
+      boxGamesTask[2].classList.add("box-games__task-done");
     } else if (skill === "shadow") {
       gameItemsIconSkills[4].classList.add("active-gameItems__icon_skills");
+      boxGamesTask[3].classList.add("box-games__task-done");
     } else if (skill === "sky") {
       gameItemsIconSkills[5].classList.add("active-gameItems__icon_skills");
+      boxGamesTask[4].classList.add("box-games__task-done");
     }
   });
 };
