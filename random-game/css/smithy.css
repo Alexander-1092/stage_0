@@ -143,7 +143,7 @@ body .wrapper .main .container .slider {
 }
 body .wrapper .main .container .slider .slider__title {
   margin-bottom: 6.25rem;
-  font-size: 42px;
+  font-size: 2.625rem;
   color: #501605;
 }
 body .wrapper .main .container .slider .slider__track {
@@ -206,6 +206,25 @@ body .wrapper .main .container .slider .slider__track .slider__answer .slider__i
   z-index: 1;
   width: 18.75rem;
   transform: rotate(-135deg);
+}
+body .wrapper .main .container .slider .slider_clue {
+  width: 6.25rem;
+  height: 6.25rem;
+  background-image: url(../assets/svg/smithy/book_01.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-self: self-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+body .wrapper .main .container .slider .slider_clue .slider_clue-counter {
+  color: #ffffff;
+  margin-bottom: -7.5rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 body .wrapper .main .container .slider .popup-correction {
   position: absolute;

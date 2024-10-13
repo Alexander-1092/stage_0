@@ -195,6 +195,20 @@ const showCorrectAnswer = () => {
   }, 3000);
 };
 
+let counterClue = 3;
+const sliderClue = document.querySelector(".slider_clue");
+const sliderClueCounter = document.querySelector(".slider_clue-counter");
+
+sliderClue.addEventListener("click", () => {
+  console.log(counterClue);
+  if (counterClue > 0) {
+    counterClue -= 1;
+    sliderClueCounter.textContent = `Подсказка: ${counterClue}`;
+    popupCorrectionText.textContent = `Правильная руна: ${answers[countQeuestion][1]}`;
+    showCorrectAnswer();
+  }
+});
+
 //
 
 //music
