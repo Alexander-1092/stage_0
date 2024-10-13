@@ -245,6 +245,40 @@ body .popupStart .popupStart__text {
 body .wrapper {
   background-image: url(../assets/img/sky/city.jfif);
 }
+body .wrapper .header .container {
+  position: relative;
+}
+body .wrapper .header .container .clue {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 0;
+}
+body .wrapper .header .container .clue .clue__img {
+  position: relative;
+  width: 3.125rem;
+  height: 3.125rem;
+  cursor: pointer;
+  background-image: url(../assets/svg/sky/question_mark.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .wrapper .header .container .clue .clue__img-active {
+  background-image: url(../assets/svg/sky/questio-active.svg);
+}
+body .wrapper .header .container .clue .clue__text {
+  display: none;
+  width: 12.5rem;
+  padding: 0px 10px;
+  text-align: justify;
+  color: #000000;
+  background-color: rgba(197, 223, 231, 0.8823529412);
+  transition: color 0.5s ease-in-out;
+}
+body .wrapper .header .container .clue .clue__text-active {
+  display: block;
+}
 body .wrapper .main {
   flex: 1;
 }

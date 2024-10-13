@@ -421,10 +421,22 @@ function playSoundLoose() {
 //   );
 // });
 
-//Блокируем переход по ссылке
-const gameItemsLinkBack = document.querySelector(".gameItems__link-back");
-gameItemsLinkBack.addEventListener("click", (e) => {
-  e.preventDefault();
+//Блокируем переход по ссылке. Разрешенно на время проверки
+// const gameItemsLinkBack = document.querySelector(".gameItems__link-back");
+// gameItemsLinkBack.addEventListener("click", (e) => {
+//   e.preventDefault();
+// });
+
+//
+
+//активировать подсказку
+const clue = document.querySelector(".clue");
+const clueText = document.querySelector(".clue__text");
+const clueImg = document.querySelector(".clue__img");
+
+clue.addEventListener("click", () => {
+  clueText.classList.toggle("clue__text-active");
+  clueImg.classList.toggle("clue__img-active");
 });
 
 //
