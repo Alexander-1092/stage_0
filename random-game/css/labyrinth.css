@@ -211,6 +211,23 @@ body .wrapper .main .container .playingField .playingField__box .playingField__o
 body .wrapper .main .container .playingField .playingField__box .playingField__option-box .playingField__btn_right {
   color: #6ebba4;
 }
+body .wrapper .main .container .playingField .playingField__input {
+  width: 100%;
+  height: 1.875rem;
+  pointer-events: none;
+  background-color: rgba(29, 136, 104, 0.5490196078);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+body .wrapper .main .container .playingField .playingField__input::-webkit-slider-thumb {
+  background-image: url(../assets/svg/labirint/kitty_5enyvqh43nb6.svg);
+  cursor: pointer;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
 body .wrapper .main .container .playingField .playingField__question {
   text-align: center;
   font-size: 1.75rem;
