@@ -171,6 +171,9 @@ body .wrapper .main .container .box-games .box-games__task img {
 body .wrapper .main .container .box-games .box-games__task .box-games-img_castl {
   transform: scale(1.5);
 }
+body .wrapper .main .container .box-games .box-games__task-done {
+  filter: brightness(0.6);
+}
 body .wrapper .footer .container .gameItems {
   display: flex;
   justify-content: space-between;
