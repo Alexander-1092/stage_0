@@ -170,6 +170,7 @@ const checkAnswer = (answer, answersLabyrinth, numQuestion) => {
     showYouWin(userName);
     playSoundWin();
   }
+  showProgress(counterAnswers);
 };
 //
 showAnswers(answersLabyrinth, numQuestion);
@@ -193,6 +194,11 @@ const dellRightAnswer = () => {
 };
 
 //
+const playingFieldInput = document.querySelector(".playingField__input");
+
+const showProgress = (counterAnswers) => {
+  playingFieldInput.value = counterAnswers;
+};
 
 //music
 const soundMain = document.querySelector(".sound-main");

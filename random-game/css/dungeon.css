@@ -128,16 +128,14 @@ body .wrapper .header .container .header__title {
   text-align: center;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
-body .wrapper .main {
-  flex: 1;
-}
 body .wrapper .main .container .game-field {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 9.375rem;
+  gap: 3rem;
   max-width: 100%;
+  height: 100%;
 }
 body .wrapper .main .container .game-field .game-field__answers {
   display: grid;
@@ -177,7 +175,9 @@ body .wrapper .main .container .game-field .game-field__answers .active-game-fie
 body .wrapper .main .container .game-field .game-field__questions {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 3.125rem;
+  row-gap: 1.5rem;
+  -moz-column-gap: 4.5rem;
+       column-gap: 4.5rem;
 }
 body .wrapper .main .container .game-field .game-field__questions .game-field__card {
   padding: 3rem;

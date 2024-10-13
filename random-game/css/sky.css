@@ -286,7 +286,8 @@ body .wrapper .main .container .playing-Field {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 80vh;
+  gap: 1.5625rem;
+  min-height: 100%;
 }
 body .wrapper .main .container .playing-Field .playing-Field__enemy {
   display: flex;
