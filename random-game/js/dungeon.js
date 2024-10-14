@@ -152,6 +152,12 @@ const showYouLoose = (userName) => {
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'>Авантюрист ${userName} погиб в темных тоннелях подземелья</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
+  const newParagraph = document.createElement("p");
+  newParagraph.className = "popupEndGame__counter-skill";
+  newParagraph.textContent = `Количество пройденных данжей: ${
+    JSON.parse(localStorage.getItem("skills")).length - 1
+  }`;
+  popupEndGameText.insertAdjacentElement("afterend", newParagraph);
   popupEndGameLink.href = "./index.html";
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");

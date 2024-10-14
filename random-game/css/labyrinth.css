@@ -59,6 +59,12 @@ body .popupEndGame .popupEndGame__text {
   font-size: 2.5rem;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
+body .popupEndGame .popupEndGame__counter-skill {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
 body .popupEndGame .popupEndGame__link {
   margin-bottom: 1.875rem;
   font-size: 2rem;
