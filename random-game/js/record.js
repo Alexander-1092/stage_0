@@ -21,7 +21,13 @@ const showTablRecord = (recordList) => {
 };
 
 if (recordList) {
-  recordList.sort((a, b) => b[1] - a[1]);
+  recordList.sort((a, b) => {
+    if (a[1] > 0) {
+      return b[1] - a[1];
+    } else {
+      return b[2] - a[2];
+    }
+  });
   checkLenghtRecordList(recordList);
 }
 
