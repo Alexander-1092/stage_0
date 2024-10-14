@@ -120,10 +120,26 @@ const showYouLoose = (userName) => {
   newParagraph.textContent = `Количество пройденных данжей: ${
     JSON.parse(localStorage.getItem("skills")).length - 1
   }`;
+  setRecord();
   popupEndGameText.insertAdjacentElement("afterend", newParagraph);
   popupEndGameLink.href = "./index.html";
   popupEndGame.classList.add("active-popupEndGame");
   wrapper.classList.add("inactive-wrapper");
+};
+
+const setRecord = () => {
+  let record = [];
+  let userName = JSON.parse(localStorage.getItem("userName")).userName;
+  let heartUser = JSON.parse(localStorage.getItem("counterHeart"));
+  let counterTask = JSON.parse(localStorage.getItem("skills")).length - 1;
+  if (localStorage.getItem("record")) {
+    record = JSON.parse(localStorage.getItem("record"));
+    record.push([userName, heartUser, counterTask]);
+    localStorage.setItem("record", JSON.stringify(record));
+  } else {
+    record.push([userName, heartUser, counterTask]);
+    localStorage.setItem("record", JSON.stringify(record));
+  }
 };
 
 popupEndGameLink.addEventListener("click", () => {
