@@ -2,6 +2,7 @@ const recordList = JSON.parse(localStorage.getItem("record"));
 
 const tableNameHeroes = document.querySelectorAll(".table__name-heroes");
 const tableNameHeart = document.querySelectorAll(".table__name-heart");
+const tableSkills = document.querySelectorAll(".table__skills");
 
 const checkLenghtRecordList = (recordList) => {
   if (recordList.length <= 10) {
@@ -15,6 +16,7 @@ const showTablRecord = (recordList) => {
   for (let index = 0; index < recordList.length; index++) {
     tableNameHeroes[index].textContent = recordList[index][0];
     tableNameHeart[index].textContent = recordList[index][1];
+    tableSkills[index].textContent = recordList[index][2];
   }
 };
 

@@ -120,12 +120,13 @@ popupFininalBtn.addEventListener("click", () => {
 const setRecord = () => {
   let userName = JSON.parse(localStorage.getItem("userName")).userName;
   let heartUser = JSON.parse(localStorage.getItem("counterHeart"));
+  let counterTask = JSON.parse(localStorage.getItem("skills")).length - 1;
   if (localStorage.getItem("record")) {
     record = JSON.parse(localStorage.getItem("record"));
-    record.push([userName, heartUser]);
+    record.push([userName, heartUser, counterTask]);
     localStorage.setItem("record", JSON.stringify(record));
   } else {
-    record.push([userName, heartUser]);
+    record.push([userName, heartUser, counterTask]);
     localStorage.setItem("record", JSON.stringify(record));
   }
 };
