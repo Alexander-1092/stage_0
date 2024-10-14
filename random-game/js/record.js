@@ -23,7 +23,6 @@ const showTablRecord = (recordList) => {
 if (recordList) {
   recordList.sort((a, b) => {
     if (a[1] > 0) {
-      console.log(a[1]);
       return b[1] - a[1];
     } else {
       return b[2] - a[2];
