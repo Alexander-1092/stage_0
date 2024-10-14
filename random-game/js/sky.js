@@ -101,11 +101,20 @@ const showYouWin = (userName) => {
   addSkillLocalStorage();
 };
 
+console.log(JSON.parse(localStorage.getItem("skills")).length);
+
 const showYouLoose = (userName) => {
   stopPlaySoundMain();
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вас скинули с высот Града, и вы разбились насмерть.</p>`;
   popupEndGameTitle.innerHTML =
     "<h2 class='popupEndGame__title'>Вы проиграли!</h2>";
+
+  const newParagraph = document.createElement("p");
+  newParagraph.className = "popupEndGame__counter-skill";
+  newParagraph.textContent = `Количество пройденных данжей: ${
+    JSON.parse(localStorage.getItem("skills")).length - 1
+  }`;
+  popupEndGameText.insertAdjacentElement("afterend", newParagraph);
   popupEndGameLink.href = "./index.html";
   popupEndGame.classList.add("active-popupEndGame");
   popupEndGame.classList.add("changeImgPopupEndGame");
