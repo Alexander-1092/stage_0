@@ -129,6 +129,11 @@ body .wrapper {
   background-size: cover;
   background-position: center;
 }
+body .wrapper .header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
 body .wrapper .header .container .header__title {
   color: #ffffff;
   -webkit-text-stroke: 1px #000000;
@@ -228,6 +233,41 @@ body .inactive-wrapper {
     font-size: 8px;
   }
 }
+body .wrapper .header .container {
+  display: grid;
+  grid-template-columns: 1fr 6.25rem;
+  justify-content: center;
+}
+body .wrapper .header .container .header__title {
+  margin-left: 6.25rem;
+  justify-content: center;
+}
+body .wrapper .header .container .header__sound {
+  justify-self: end;
+  position: relative;
+  width: 3.75rem;
+  height: 3.75rem;
+  background-image: url(../assets/svg/main/sound.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+body .wrapper .header .container .header__sound:hover {
+  transform: scale(1.2);
+}
+body .wrapper .header .container .header__sound-inactive::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  transform: rotate(45deg);
+  width: 3.75rem;
+  height: 4px;
+  z-index: 2;
+  background-color: rgba(32, 32, 32, 0.8235294118);
+}
+
 body {
   overflow: hidden;
 }

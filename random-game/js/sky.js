@@ -101,8 +101,6 @@ const showYouWin = (userName) => {
   addSkillLocalStorage();
 };
 
-console.log(JSON.parse(localStorage.getItem("skills")).length);
-
 const showYouLoose = (userName) => {
   stopPlaySoundMain();
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вас скинули с высот Града, и вы разбились насмерть.</p>`;
@@ -425,34 +423,22 @@ function playSoundLoose() {
   soundLoose.play();
 }
 
-//
+//включить отключить звук
+const headerSound = document.querySelector(".header__sound");
+headerSound.addEventListener("click", () => {
+  headerSound.classList.toggle("header__sound-inactive");
+  if (headerSound.className === "header__sound header__sound-inactive") {
+    stopPlaySoundMain();
+  } else {
+    playSoundMain();
+  }
+});
 
-// const playingFieldInputVolume = document.querySelector(
-//   ".playing-Field__input-volume"
-// );
-
-// soundMain.volume = playingFieldInputVolume.value;
-
-// playingFieldInputVolume.addEventListener("input", () => {
-//   soundMain.volume = playingFieldInputVolume.value;
-// });
-
-// playingFieldInputVolume.addEventListener("mouseover", () => {
-//   playingFieldInputVolume.classList.add("playing-Field__input-volume-active");
-// });
-// playingFieldInputVolume.addEventListener("mouseout", () => {
-//   playingFieldInputVolume.classList.remove(
-//     "playing-Field__input-volume-active"
-//   );
-// });
-
-//Блокируем переход по ссылке. Разрешенно на время проверки
+// Блокируем переход по ссылке. Разрешенно на время проверки
 // const gameItemsLinkBack = document.querySelector(".gameItems__link-back");
 // gameItemsLinkBack.addEventListener("click", (e) => {
 //   e.preventDefault();
 // });
-
-//
 
 //активировать подсказку
 const clue = document.querySelector(".clue");

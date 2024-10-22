@@ -129,6 +129,11 @@ body .wrapper {
   background-size: cover;
   background-position: center;
 }
+body .wrapper .header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
 body .wrapper .header .container .header__title {
   color: #ffffff;
   -webkit-text-stroke: 1px #000000;

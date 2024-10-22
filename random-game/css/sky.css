@@ -129,6 +129,11 @@ body .wrapper {
   background-size: cover;
   background-position: center;
 }
+body .wrapper .header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
 body .wrapper .header .container .header__title {
   color: #ffffff;
   -webkit-text-stroke: 1px #000000;
@@ -253,12 +258,11 @@ body .wrapper {
 }
 body .wrapper .header .container {
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 body .wrapper .header .container .clue {
-  position: absolute;
-  z-index: 1;
-  top: 20px;
-  left: 0;
+  position: relative;
 }
 body .wrapper .header .container .clue .clue__img {
   position: relative;
@@ -270,10 +274,17 @@ body .wrapper .header .container .clue .clue__img {
   background-size: cover;
   background-position: center;
 }
+body .wrapper .header .container .clue .clue__img:hover {
+  transform: scale(1.2);
+}
 body .wrapper .header .container .clue .clue__img-active {
   background-image: url(../assets/svg/sky/questio-active.svg);
 }
 body .wrapper .header .container .clue .clue__text {
+  position: absolute;
+  top: 3.75rem;
+  left: 0;
+  z-index: 2;
   display: none;
   width: 12.5rem;
   padding: 0px 10px;
@@ -284,6 +295,30 @@ body .wrapper .header .container .clue .clue__text {
 }
 body .wrapper .header .container .clue .clue__text-active {
   display: block;
+}
+body .wrapper .header .container .header__sound {
+  position: relative;
+  width: 3.75rem;
+  height: 3.75rem;
+  background-image: url(../assets/svg/main/sound.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+body .wrapper .header .container .header__sound:hover {
+  transform: scale(1.2);
+}
+body .wrapper .header .container .header__sound-inactive::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  transform: rotate(45deg);
+  width: 3.75rem;
+  height: 4px;
+  z-index: 2;
+  background-color: rgba(32, 32, 32, 0.8235294118);
 }
 body .wrapper .main {
   flex: 1;
@@ -400,55 +435,6 @@ body .wrapper .main .container .playing-Field .playing-Field__general .playing-F
   gap: 0.3125rem;
   filter: brightness(0.9);
 }
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .volume-img {
-  max-width: 50px;
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume {
-  position: relative;
-  transform: rotate(-90deg);
-  -webkit-appearance: none;
-  background-color: transparent;
-  border-radius: 26px;
-  transition: all 0.5s ease-in-out;
-  outline: none;
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::after {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: -5px;
-  right: -25px;
-  background-image: url(../assets/svg/main/sound_m9cdqqu0dgs6.svg);
-  transform: rotate(90deg) translateY(-50%);
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: transparent;
-  cursor: pointer;
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #6ea2cc;
-  cursor: pointer;
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume-active {
-  background-color: #7aafd3;
-}
-body .wrapper .main .container .playing-Field .playing-Field__general .playing-Field__volume .playing-Field__input-volume-active:hover::-webkit-slider-thumb {
-  background-color: #17598f;
-}
 body .wrapper .main .container .playing-Field .playing-Field__user {
   display: flex;
   overflow-x: scroll;
@@ -463,7 +449,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.9375rem;
-  max-width: 13.5rem;
+  width: 100%;
   background-color: #add3f1;
   border-radius: 0.625rem;
   padding: 0rem 0.3125rem;
@@ -488,7 +474,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
   height: auto;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__answer {
-  max-width: 12.5rem;
+  max-width: 18.75rem;
   font-size: 18px;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__skils {
@@ -526,4 +512,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scro
 }
 body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.26);
+}
+body .wrapper .footer .container {
+  padding-top: 0px;
 }

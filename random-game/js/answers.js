@@ -111,14 +111,15 @@ export const answerSky = {
     "1",
     "./assets/svg/sky/angel_card.svg",
   ],
-  "Связать локальную ветку new_branch с удаленной веткой new_branch": [
-    "push -u origin new_branch",
-    "2",
-    "4",
-    "0",
-    "./assets/svg/sky/archer_card.svg",
-  ],
-  "Передать данные в удаленный репозиторий": [
+  "Связать локальную ветку new_branch с удаленной веткой new_branch. В команде должно быть название ветки":
+    [
+      "push -u origin new_branch",
+      "2",
+      "4",
+      "0",
+      "./assets/svg/sky/archer_card.svg",
+    ],
+  "Передать данные в удаленный репозиторий. Короткая форма команды": [
     "push",
     "4",
     "0",
