@@ -129,6 +129,11 @@ body .wrapper {
   background-size: cover;
   background-position: center;
 }
+body .wrapper .header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
 body .wrapper .header .container .header__title {
   color: #ffffff;
   -webkit-text-stroke: 1px #000000;
@@ -444,7 +449,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.9375rem;
-  max-width: 13.5rem;
+  width: 100%;
   background-color: #add3f1;
   border-radius: 0.625rem;
   padding: 0rem 0.3125rem;
@@ -469,7 +474,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user .playing-Fiel
   height: auto;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__answer {
-  max-width: 12.5rem;
+  max-width: 18.75rem;
   font-size: 18px;
 }
 body .wrapper .main .container .playing-Field .playing-Field__user .playing-Field__card .card__skils {
@@ -507,4 +512,7 @@ body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scro
 }
 body .wrapper .main .container .playing-Field .playing-Field__user::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.26);
+}
+body .wrapper .footer .container {
+  padding-top: 0px;
 }

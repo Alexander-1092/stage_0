@@ -151,3 +151,14 @@ const checkCounterSkills = () => {
 };
 
 checkCounterSkills();
+
+//включить отключить звук
+const headerSound = document.querySelector(".header__sound");
+headerSound.addEventListener("click", () => {
+  headerSound.classList.toggle("header__sound-inactive");
+  if (headerSound.className === "header__sound header__sound-inactive") {
+    stopPlaySoundMain();
+  } else {
+    playSoundMain();
+  }
+});

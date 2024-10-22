@@ -101,8 +101,6 @@ const showYouWin = (userName) => {
   addSkillLocalStorage();
 };
 
-console.log(JSON.parse(localStorage.getItem("skills")).length);
-
 const showYouLoose = (userName) => {
   stopPlaySoundMain();
   popupEndGameText.innerHTML = `<p class='popupEndGame__text'> ${userName} вас скинули с высот Града, и вы разбились насмерть.</p>`;
@@ -425,6 +423,7 @@ function playSoundLoose() {
   soundLoose.play();
 }
 
+//включить отключить звук
 const headerSound = document.querySelector(".header__sound");
 headerSound.addEventListener("click", () => {
   headerSound.classList.toggle("header__sound-inactive");
